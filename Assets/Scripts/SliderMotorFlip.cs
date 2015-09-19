@@ -30,12 +30,13 @@ public class SliderMotorFlip : MonoBehaviour
 		case JointLimitState2D.LowerLimit:
 		{
 			motorDirectionShouldChange = true;			
-			motorSpeedMultiplier = -1;
+			motorSpeedMultiplier = (initialMotorSpeed < 1) ?  -1 : 1;
 			break;
 		}
 		case JointLimitState2D.UpperLimit:
 		{
 			motorDirectionShouldChange = true;
+			motorSpeedMultiplier = (initialMotorSpeed < 1) ?  1 : -1;
 			break;
 		}
 		default:
