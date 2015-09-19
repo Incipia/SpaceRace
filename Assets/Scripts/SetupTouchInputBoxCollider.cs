@@ -48,10 +48,9 @@ public class SetupTouchInputBoxCollider : MonoBehaviour
 	{
 		float width = mainCamera.ScreenToWorldPoint(pixelDimensions).x;
 		float height = mainCamera.ScreenToWorldPoint(pixelDimensions).y;
+		float xPosMultiplier = side == TouchInputSide.Left ? -1 : 1;
 
 		boxCollider.size = new Vector2(width, height * 2);
-
-		float xPosMultiplier = side == TouchInputSide.Left ? -1 : 1;
 		boxCollider.offset = new Vector3(width * .5f * xPosMultiplier, 0);
 	}
 }
