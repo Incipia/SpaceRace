@@ -21,11 +21,11 @@ public class PlayerKeyboardInput : MonoBehaviour
 		KeyCode leftMovementCode = player1 ? KeyCode.LeftArrow : KeyCode.A;
 
 		JumpDirection direction = JumpDirection.Invalid;
-		if (Input.GetKey(leftMovementCode))
+		if (Input.GetKeyDown(leftMovementCode))
 		{
 			direction = JumpDirection.Left;
 		}
-		else if(Input.GetKey (rightMovementCode))
+		if(Input.GetKeyDown(rightMovementCode))
 		{
 			direction = JumpDirection.Right;
 		}
