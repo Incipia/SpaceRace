@@ -32,7 +32,12 @@ public class MovePlayer : MonoBehaviour
 			Vector3 jumpDirection = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
 			applyForceWithDirection(jumpDirection);
 		}
+	}
 
+	public void jumpWithTouchInputSide(TouchInputSide side)
+	{
+		JumpDirection direction = side == TouchInputSide.Left ? JumpDirection.Left : JumpDirection.Right;
+		jumpWithDirection(direction);
 	}
 
 	private float angleForDirection(JumpDirection direction)
