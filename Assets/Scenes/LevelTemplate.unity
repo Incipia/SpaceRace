@@ -619,7 +619,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460887883}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b6f216ba64b44953a5be2adea0ad779, type: 3}
   m_Name: 
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxYVelocity: 40
+  maxVelocity: {x: 20, y: 40}
   jumpAngle: 25
   jumpForce: 40
   playerRigidBody: {fileID: 460887886}
