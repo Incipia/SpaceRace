@@ -42,8 +42,7 @@ public class PlatformOscillation : MonoBehaviour
 
 	private void animateToPosition(Vector3 position, Action completion)
 	{
-//		LeanTween.move(gameObject, position, movementDuration).setEase(LeanTweenType.easeInOutQuad).setOnComplete(completion);
-		LeanTween.moveLocal(gameObject, position, movementDuration).setEase(LeanTweenType.easeInOutQuad).setOnComplete(completion);
+		LeanTween.move(gameObject, position, movementDuration).setEase(LeanTweenType.easeInOutQuad).setOnComplete(completion);
 	}
 
 	private bool currentIndexIsAtLastObject()
