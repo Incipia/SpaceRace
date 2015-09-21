@@ -4,7 +4,14 @@ using System.Collections.Generic;
 
 public class PlatformOscilation : MonoBehaviour 
 {
+	public float loopTime = 1.0f;
 	public List<Vector3> positions;
+
+	void Start()
+	{
+		setObjectToFirstPoint();
+		LeanTween.moveSpline(gameObject, positions.ToArray(), loopTime).setEase(LeanTweenType.easeInOutCirc);
+	}
 
 	public void reset()
 	{
@@ -26,7 +33,10 @@ public class PlatformOscilation : MonoBehaviour
 
 	public void setObjectToFirstPoint()
 	{
-		transform.position = positions[0];
+		if(positions.Count >= 1)
+		{
+			transform.position = positions[0];
+		}
 	}
 	
 	void OnDrawGizmos() 
