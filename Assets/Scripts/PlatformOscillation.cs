@@ -34,12 +34,8 @@ public class PlatformOscillation : MonoBehaviour
 				if (shouldReverse)
 				{
 					currentPositions.Reverse();
-					currentIndex = 0;
 				}
-				else
-				{
-					currentIndex = -1;
-				}
+				currentIndex = 0;
 			}
 		}
 	}
