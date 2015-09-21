@@ -625,6 +625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: 1
+  movePlayer: {fileID: 460887889}
 --- !u!114 &460887889
 MonoBehaviour:
   m_ObjectHideFlags: 0
