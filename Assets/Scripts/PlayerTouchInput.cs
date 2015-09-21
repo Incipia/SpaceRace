@@ -3,44 +3,29 @@ using System.Collections;
 
 public class PlayerTouchInput : MonoBehaviour 
 {
-	public GameObject player;
 	public TouchInputSide side;
-	public Collider2D touchArea;
-
-	private MovePlayer movePlayer;
-
-	// Use this for initialization
-	void Start () 
-	{
-		getMovePlayerScript();
-	}
-
+	public Collider2D touchArea;	
+	public MovePlayer movePlayer;
+	
 	void Update()
 	{
-		foreach(Touch touch in Input.touches)
+		foreach (Touch touch in Input.touches)
 		{
-			if(touch.phase == TouchPhase.Began)
+			if (touch.phase == TouchPhase.Began)
 			{
-				Vector3 worldPoint = Camera.main.ScreenToWorldPoint(touch.position);
-				Vector2 touchPosition = new Vector2(worldPoint.x, worldPoint.y);
+				Vector3 worldPosition = Camera.main.ScreenToWorldPoint(touch.position);
+				Vector2 touchPosition = new Vector2(worldPosition.x, worldPosition.y);
 				Collider2D[] touchingColliders = Physics2D.OverlapPointAll(touchPosition);
-				foreach(Collider2D touchingCollider in touchingColliders)
+
+				foreach (Collider2D touchingCollider in touchingColliders)
 				{
-					if(touchingCollider == touchArea)
+					if (touchingCollider == touchArea)
 					{
 						movePlayer.jumpWithTouchInputSide(side);
+						break;
 					}
 				}
 			}
-		}
-	}
-
-	private void getMovePlayerScript()
-	{
-		movePlayer = player.GetComponent<MovePlayer>();
-		if (!movePlayer)
-		{
-			Debug.Log("move player script not found");
 		}
 	}
 }

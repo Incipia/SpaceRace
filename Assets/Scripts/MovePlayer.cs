@@ -9,35 +9,29 @@ public enum JumpDirection {
 
 public class MovePlayer : MonoBehaviour 
 {
-	public float jumpAngle; // the vertical offset angle
-	public float jumpForce;
+	public float jumpAngle = 25; // the vertical offset angle
+	public float jumpForce = 35;
+	public Rigidbody2D playerRigidBody;
 
-	private Rigidbody2D playerRigidBody;
-	
-	// Use this for initialization
-	void Start() 
+	private JumpDirection jumpDirection = JumpDirection.Invalid;
+
+	void FixedUpdate()
 	{
-		playerRigidBody = GetComponent<Rigidbody2D>();
-		if (!playerRigidBody)
+		if (jumpDirection != JumpDirection.Invalid)
 		{
-			Debug.Log("rigid body on player not found");
+			applyForceWithDirection(jumpDirection);
+			jumpDirection = JumpDirection.Invalid;
 		}
 	}
 
 	public void jumpWithDirection(JumpDirection direction)
 	{
-		if (direction != JumpDirection.Invalid)
-		{
-			float angle = angleForDirection(direction);
-			Vector3 jumpDirection = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-			applyForceWithDirection(jumpDirection);
-		}
+		jumpDirection = direction;
 	}
 
 	public void jumpWithTouchInputSide(TouchInputSide side)
 	{
-		JumpDirection direction = side == TouchInputSide.Left ? JumpDirection.Left : JumpDirection.Right;
-		jumpWithDirection(direction);
+		jumpDirection = side == TouchInputSide.Left ? JumpDirection.Left : JumpDirection.Right;
 	}
 
 	private float angleForDirection(JumpDirection direction)
@@ -57,20 +51,10 @@ public class MovePlayer : MonoBehaviour
 		return angle;
 	}
 	
-	private void applyForceWithDirection(Vector2 direction)
+	private void applyForceWithDirection(JumpDirection direction)
 	{
-		resetRigidBody();
-		playerRigidBody.AddForce(direction * jumpForce, ForceMode2D.Impulse);
-	}
-	
-	private void resetRigidBody()
-	{
-		playerRigidBody.isKinematic = true;
-		playerRigidBody.isKinematic = false;
-	}
-
-	void OnMouseDown()
-	{
-		jumpWithDirection(JumpDirection.Right);
+		float angle = angleForDirection(direction);
+		Vector3 directionVector = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
+		playerRigidBody.velocity = directionVector * jumpForce;
 	}
 }

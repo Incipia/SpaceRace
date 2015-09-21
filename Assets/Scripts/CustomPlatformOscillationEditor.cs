@@ -1,8 +1,7 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
-
 using System.Collections;
-using System.Collections.Generic;
 
 [CustomEditor(typeof(PlatformOscillation))]
 public class CustomPlatformOscillationEditor : Editor
@@ -30,3 +29,4 @@ public class CustomPlatformOscillationEditor : Editor
 		}
 	}
 }
+#endif

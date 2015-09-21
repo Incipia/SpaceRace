@@ -65,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -84,9 +85,6 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!127 &5
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!1 &41929887
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 1
+  boxCollider: {fileID: 1242925272}
 --- !u!61 &1242925272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2274,9 +2273,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44e8371069c148d286b745e24ca7cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1345021871}
   side: 1
   touchArea: {fileID: 1242925272}
+  movePlayer: {fileID: 1345021877}
 --- !u!1 &1263015631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,8 +2563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpAngle: 35
-  jumpForce: 25
+  jumpAngle: 25
+  jumpForce: 35
+  playerRigidBody: {fileID: 1345021875}
 --- !u!1 &1348098375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3016,6 +3016,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -3421,6 +3422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 0
+  boxCollider: {fileID: 1744404026}
 --- !u!61 &1744404026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3457,9 +3459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44e8371069c148d286b745e24ca7cd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1345021871}
   side: 0
   touchArea: {fileID: 1744404026}
+  movePlayer: {fileID: 1345021877}
 --- !u!1 &1804512756
 GameObject:
   m_ObjectHideFlags: 0
