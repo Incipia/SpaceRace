@@ -1,16 +1,57 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 public class PlatformOscilation : MonoBehaviour 
 {
-	public float loopTime = 1.0f;
+	public bool loop = true;
+	public bool shouldReverse;
+	public float movementDuration = 1.0f;
 	public List<Vector3> positions;
+
+	private List<Vector3> currentPositions;
+	private int currentIndex = 0;
 
 	void Start()
 	{
+		currentPositions = new List<Vector3>(positions);
+
 		setObjectToFirstPoint();
-		LeanTween.moveSpline(gameObject, positions.ToArray(), loopTime).setEase(LeanTweenType.easeInOutCirc);
+		advanceToNextPosition();
+	}
+
+	private void advanceToNextPosition()
+	{
+		++currentIndex;
+		if (currentPositions.Count > currentIndex)
+		{
+			Vector3 targetPosition = currentPositions[currentIndex];
+			animateToPosition(targetPosition, advanceToNextPosition);
+
+			if (currentIndexIsAtLastObject() && loop)
+			{
+				if (shouldReverse)
+				{
+					currentPositions.Reverse();
+					currentIndex = 0;
+				}
+				else
+				{
+					currentIndex = -1;
+				}
+			}
+		}
+	}
+
+	private void animateToPosition(Vector3 position, Action completion)
+	{
+		LeanTween.move(gameObject, position, movementDuration).setEase(LeanTweenType.easeOutQuad).setOnComplete(completion);
+	}
+
+	private bool currentIndexIsAtLastObject()
+	{
+		return currentIndex == currentPositions.Count - 1;
 	}
 
 	public void reset()
@@ -25,7 +66,7 @@ public class PlatformOscilation : MonoBehaviour
 
 	public void closePath()
 	{
-		if(positions.Count > 1)
+		if (positions.Count > 1)
 		{
 			positions.Add(positions[0]);
 		}
@@ -33,7 +74,7 @@ public class PlatformOscilation : MonoBehaviour
 
 	public void setObjectToFirstPoint()
 	{
-		if(positions.Count >= 1)
+		if (positions.Count >= 1)
 		{
 			transform.position = positions[0];
 		}
