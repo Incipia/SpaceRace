@@ -31,7 +31,22 @@ public class MovePlayer : MonoBehaviour
 
 	public void jumpWithTouchInputSide(TouchInputSide side)
 	{
-		jumpDirection = side == TouchInputSide.Left ? JumpDirection.Left : JumpDirection.Right;
+		jumpDirection = jumpDirectionForTouchInputSide(side);
+	}
+
+	private JumpDirection jumpDirectionForTouchInputSide(TouchInputSide side)
+	{
+		JumpDirection direction = JumpDirection.Invalid;
+		switch (side)
+		{
+		case TouchInputSide.Left:
+			direction = JumpDirection.Left;
+			break;
+		case TouchInputSide.Right:
+			direction = JumpDirection.Right;
+			break;
+		}
+		return direction;
 	}
 
 	private float angleForDirection(JumpDirection direction)
