@@ -9,7 +9,7 @@ public enum JumpDirection {
 
 public class MovePlayer : MonoBehaviour 
 {
-	public float maxYVelocity = 50;
+	public float maxYVelocity = 40;
 	public float jumpAngle = 25; // the vertical offset angle
 	public float jumpForce = 35;
 	public Rigidbody2D playerRigidBody;
