@@ -4,14 +4,14 @@ using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
 
-[CustomEditor(typeof(PlatformOscilation))]
-public class CustomPlatformOscilationEditor : Editor
+[CustomEditor(typeof(PlatformOscillation))]
+public class CustomPlatformOscillationEditor : Editor
 {
 	public override void OnInspectorGUI()
 	{
 		DrawDefaultInspector();
 		
-		PlatformOscilation myScript = (PlatformOscilation)target;
+		PlatformOscillation myScript = (PlatformOscillation)target;
 		if (GUILayout.Button("Store Transform"))
 		{
 			myScript.storeTransform();

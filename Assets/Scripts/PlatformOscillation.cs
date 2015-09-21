@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlatformOscilation : MonoBehaviour 
+public class PlatformOscillation : MonoBehaviour 
 {
 	public bool loop = true;
 	public bool shouldReverse;
@@ -84,7 +84,7 @@ public class PlatformOscilation : MonoBehaviour
 	{
 		Gizmos.color = Color.yellow;
 		
-		if (positions.Count >= 1)
+		if (positions.Count > 1)
 		{
 			Vector3 previousPosition = positions[0];
 			foreach (Vector3 position in positions)
