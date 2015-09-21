@@ -637,6 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxYVelocity: 40
   jumpAngle: 25
   jumpForce: 40
   playerRigidBody: {fileID: 460887886}
