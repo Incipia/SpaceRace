@@ -34,21 +34,13 @@ public class MovePlayer : MonoBehaviour
 		jumpDirection = jumpDirectionForTouchInputSide(side);
 	}
 
-	private JumpDirection jumpDirectionForTouchInputSide(TouchInputSide side)
+	private void applyForceWithDirection(JumpDirection direction)
 	{
-		JumpDirection direction = JumpDirection.Invalid;
-		switch (side)
-		{
-		case TouchInputSide.Left:
-			direction = JumpDirection.Left;
-			break;
-		case TouchInputSide.Right:
-			direction = JumpDirection.Right;
-			break;
-		}
-		return direction;
+		float angle = angleForDirection(direction);
+		Vector3 directionVector = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
+		playerRigidBody.velocity = directionVector * jumpForce;
 	}
-
+	
 	private float angleForDirection(JumpDirection direction)
 	{
 		float angle = 0;
@@ -65,11 +57,19 @@ public class MovePlayer : MonoBehaviour
 		}
 		return angle;
 	}
-	
-	private void applyForceWithDirection(JumpDirection direction)
+
+	private JumpDirection jumpDirectionForTouchInputSide(TouchInputSide side)
 	{
-		float angle = angleForDirection(direction);
-		Vector3 directionVector = Quaternion.AngleAxis(angle, Vector3.forward) * Vector3.right;
-		playerRigidBody.velocity = directionVector * jumpForce;
+		JumpDirection direction = JumpDirection.Invalid;
+		switch (side)
+		{
+		case TouchInputSide.Left:
+			direction = JumpDirection.Left;
+			break;
+		case TouchInputSide.Right:
+			direction = JumpDirection.Right;
+			break;
+		}
+		return direction;
 	}
 }
