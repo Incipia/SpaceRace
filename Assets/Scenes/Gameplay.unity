@@ -2491,7 +2491,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345021871}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b6f216ba64b44953a5be2adea0ad779, type: 3}
   m_Name: 
@@ -2522,7 +2522,7 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 15
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4

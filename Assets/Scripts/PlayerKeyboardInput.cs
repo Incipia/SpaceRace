@@ -4,39 +4,20 @@ using System.Collections;
 public class PlayerKeyboardInput : MonoBehaviour 
 {
 	public bool player1 = true;
-	private MovePlayer movePlayer;
+	public MovePlayer movePlayer;
 
-	void Start()
-	{
-		movePlayer = GetComponent<MovePlayer>();
-		if (!movePlayer)
-		{
-			Debug.Log("could not fine MovePlayer script");
-		}
-	}
-
-	void FixedUpdate()
+	void Update()
 	{
 		KeyCode rightMovementCode = player1 ? KeyCode.RightArrow : KeyCode.D;
 		KeyCode leftMovementCode = player1 ? KeyCode.LeftArrow : KeyCode.A;
 
-		JumpDirection direction = JumpDirection.Invalid;
 		if (Input.GetKeyDown(leftMovementCode))
 		{
-			direction = JumpDirection.Left;
+			movePlayer.jumpWithDirection(JumpDirection.Left);
 		}
 		if(Input.GetKeyDown(rightMovementCode))
 		{
-			direction = JumpDirection.Right;
-		}
-		movePlayerWithDirection(direction);
-	}
-
-	private void movePlayerWithDirection(JumpDirection direction)
-	{
-		if (movePlayer)
-		{
-			movePlayer.jumpWithDirection(direction);
+			movePlayer.jumpWithDirection(JumpDirection.Right);
 		}
 	}
 }
