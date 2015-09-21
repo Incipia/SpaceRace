@@ -10,6 +10,7 @@ public enum JumpDirection {
 public class MovePlayer : MonoBehaviour 
 {
 	public Vector2 maxVelocity = new Vector2(20, 35);
+	public float maxFallVelocity = -10.0f;
 	public float jumpAngle = 25; // the vertical offset angle
 	public float jumpForce = 35;
 	public Rigidbody2D playerRigidBody;
@@ -25,8 +26,10 @@ public class MovePlayer : MonoBehaviour
 			capVelocity();
 
 			resetJumpDirection();
-			// apply forces from environment
 		}
+
+		capFallSpeed();
+		// apply forces from environment
 	}
 
 	public void jumpWithDirection(JumpDirection direction)
@@ -62,6 +65,15 @@ public class MovePlayer : MonoBehaviour
 		float yVelocity = Mathf.Min(maxVelocity.y, velocity.y);
 
 		playerRigidBody.velocity = new Vector2(xVelocity, yVelocity);
+	}
+
+	private void capFallSpeed()
+	{
+		Vector2 velocity = playerRigidBody.velocity;
+		if(velocity.y < 0)
+		{
+			playerRigidBody.velocity = new Vector2(velocity.x, Mathf.Max(velocity.y, maxFallVelocity));
+		}
 	}
 	
 	private float angleForDirection(JumpDirection direction)
