@@ -9,7 +9,7 @@ public enum JumpDirection {
 
 public class MovePlayer : MonoBehaviour 
 {
-	public float maxYVelocity = 40;
+	public Vector2 maxVelocity = new Vector2(20, 35);
 	public float jumpAngle = 25; // the vertical offset angle
 	public float jumpForce = 35;
 	public Rigidbody2D playerRigidBody;
@@ -22,9 +22,9 @@ public class MovePlayer : MonoBehaviour
 		{
 			// apply force from tap and cap it off at max velocity
 			applyForceWithDirection(jumpDirection);
-			jumpDirection = JumpDirection.Invalid;
-
 			capVelocity();
+
+			resetJumpDirection();
 			// apply forces from environment
 		}
 	}
@@ -39,6 +39,11 @@ public class MovePlayer : MonoBehaviour
 		jumpDirection = jumpDirectionForTouchInputSide(side);
 	}
 
+	private void resetJumpDirection()
+	{
+		jumpDirection = JumpDirection.Invalid;
+	}
+
 	private void applyForceWithDirection(JumpDirection direction)
 	{
 		float angle = angleForDirection(direction);
@@ -50,8 +55,13 @@ public class MovePlayer : MonoBehaviour
 	private void capVelocity()
 	{
 		Vector2 velocity = playerRigidBody.velocity;
-		float yVelocity = Mathf.Min(maxYVelocity, velocity.y);
-		playerRigidBody.velocity = new Vector2(velocity.x, yVelocity);
+
+		float xVelocityMultiplier = velocity.x < 1 ? -1 : 1;
+
+		float xVelocity = Mathf.Min(maxVelocity.x, Mathf.Abs(velocity.x)) * xVelocityMultiplier;
+		float yVelocity = Mathf.Min(maxVelocity.y, velocity.y);
+
+		playerRigidBody.velocity = new Vector2(xVelocity, yVelocity);
 	}
 	
 	private float angleForDirection(JumpDirection direction)
