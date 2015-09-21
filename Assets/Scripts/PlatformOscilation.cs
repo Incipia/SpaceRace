@@ -15,6 +15,19 @@ public class PlatformOscilation : MonoBehaviour
 	{
 		positions.Add(transform.position);
 	}
+
+	public void closePath()
+	{
+		if(positions.Count > 1)
+		{
+			positions.Add(positions[0]);
+		}
+	}
+
+	public void setObjectToFirstPoint()
+	{
+		transform.position = positions[0];
+	}
 	
 	void OnDrawGizmos() 
 	{
@@ -26,7 +39,7 @@ public class PlatformOscilation : MonoBehaviour
 			foreach (Vector3 position in positions)
 			{
 				Gizmos.DrawLine(previousPosition, position);
-				Gizmos.DrawSphere(previousPosition, .1f);
+				Gizmos.DrawSphere(position, 0.5f);
 				previousPosition = position;
 			}
        	}

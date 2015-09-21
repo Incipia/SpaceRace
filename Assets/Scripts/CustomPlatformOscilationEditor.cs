@@ -16,6 +16,14 @@ public class CustomPlatformOscilationEditor : Editor
 		{
 			myScript.storeTransform();
 		}
+		if (GUILayout.Button("Close Path"))
+		{
+			myScript.closePath();
+		}
+		if (GUILayout.Button("Set Object To Start"))
+		{
+			myScript.setObjectToFirstPoint();
+		}
 		if (GUILayout.Button("Reset"))
 		{
 			myScript.reset();
