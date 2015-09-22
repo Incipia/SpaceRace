@@ -18,7 +18,10 @@ public class SpeedBoostArea : MonoBehaviour
 	// Update is called once per frame
 	private void FixedUpdate() 
 	{
-		MovePlayer.addForce(forceToApply);
+		foreach(MovePlayer player in playersToBoost)
+		{
+			player.addImpulse(forceToApply);
+		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)

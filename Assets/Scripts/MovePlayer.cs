@@ -36,6 +36,7 @@ public class MovePlayer : MonoBehaviour
 		}
 
 		addEnvironmentalForces();
+		resetEnvironmentalForces();
 		capFallSpeed();
 	}
 
@@ -74,7 +75,7 @@ public class MovePlayer : MonoBehaviour
 
 	private void resetEnvironmentalForces()
 	{
-		environmentForceToAdd = Vector2.zero;
+		environmentForceToAdd = Vector2.Lerp(environmentForceToAdd, Vector2.zero, 0.1f);
 		environmentImpulseToAdd = Vector2.zero;
 	}
 
