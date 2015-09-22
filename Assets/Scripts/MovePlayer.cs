@@ -17,19 +17,36 @@ public class MovePlayer : MonoBehaviour
 
 	private JumpDirection jumpDirection = JumpDirection.Invalid;
 
+	private Vector2 environmentForceToAdd;
+	private Vector2 environmentImpulseToAdd;
+
+	void Start()
+	{
+		environmentForceToAdd = Vector2.zero;
+		environmentImpulseToAdd = Vector2.zero;
+	}
+
 	void FixedUpdate()
 	{
 		if (jumpDirection != JumpDirection.Invalid)
 		{
-			// apply force from tap and cap it off at max velocity
 			applyForceWithDirection(jumpDirection);
 			resetJumpDirection();
-
 			capVelocity();
 		}
 
+		addEnvironmentalForces();
 		capFallSpeed();
-		// apply forces from environment
+	}
+
+	public void addForce(Vector2 forceVector)
+	{
+		environmentForceToAdd += forceVector;
+	}
+
+	public void addImpulse(Vector2 impulseVector)
+	{
+		environmentImpulseToAdd += impulseVector;
 	}
 
 	public void jumpWithDirection(JumpDirection direction)
@@ -40,6 +57,25 @@ public class MovePlayer : MonoBehaviour
 	public void jumpWithTouchInputSide(TouchInputSide side)
 	{
 		jumpDirection = jumpDirectionForTouchInputSide(side);
+	}
+
+	private void addEnvironmentalForces()
+	{
+		if (environmentForceToAdd != Vector2.zero)
+		{	
+			playerRigidBody.AddForce(environmentForceToAdd);
+		}
+
+		if (environmentImpulseToAdd != Vector2.zero)
+		{
+			playerRigidBody.AddForce(environmentImpulseToAdd, ForceMode2D.Impulse);
+		}
+	}
+
+	private void resetEnvironmentalForces()
+	{
+		environmentForceToAdd = Vector2.zero;
+		environmentImpulseToAdd = Vector2.zero;
 	}
 
 	private void resetJumpDirection()
