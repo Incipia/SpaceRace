@@ -2564,10 +2564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: {x: 20, y: 35}
-  maxFallVelocity: -25
-  jumpAngle: 25
-  jumpForce: 35
+  maxVelocity: {x: 15, y: 40}
+  maxFallVelocity: -30
+  jumpAngle: 50
+  jumpForce: 50
   playerRigidBody: {fileID: 1345021875}
 --- !u!1 &1348098375
 GameObject:
