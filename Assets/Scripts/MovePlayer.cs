@@ -9,10 +9,10 @@ public enum JumpDirection {
 
 public class MovePlayer : MonoBehaviour 
 {
-	public Vector2 maxVelocity = new Vector2(20, 35);
-	public float maxFallVelocity = -25.0f;
-	public float jumpAngle = 25; // the vertical offset angle
-	public float jumpForce = 35;
+	public Vector2 maxVelocity = new Vector2(15, 30);
+	public float maxFallVelocity = -30.0f;
+	public float jumpAngle = 50; // the vertical offset angle
+	public float jumpForce = 100;
 	public Rigidbody2D playerRigidBody;
 
 	private JumpDirection jumpDirection = JumpDirection.Invalid;
