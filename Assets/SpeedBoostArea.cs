@@ -30,7 +30,7 @@ public class SpeedBoostArea : MonoBehaviour
 		if(movePlayer != null)
 		{
 			playersToBoost.Add(movePlayer);
-			movePlayer.temporarilyDisableMaxVelocity();
+			movePlayer.disableMaxVelocity();
 		}
 	}
 
