@@ -22,7 +22,6 @@ public class MovePlayer : MonoBehaviour
 
 	private float initialJumpAngle;
 	private bool maxVelocityTemporarilyDisabled;
-	private float yVelocitySinceMaxVelocityDisabled;
 	private bool readyToEnableMaxVelocity;
 
 	void Start()
@@ -45,12 +44,9 @@ public class MovePlayer : MonoBehaviour
 		resetEnvironmentalForces();
 		capFallSpeed();
 
-		if (readyToEnableMaxVelocity && playerRigidBody.velocity.y <= maxVelocity.y)
+		if (maxVelocityTemporarilyDisabled)
 		{
-			enableAngularMovementFromTouchInput();
-			maxVelocityTemporarilyDisabled = false;
-			readyToEnableMaxVelocity = false;
-			yVelocitySinceMaxVelocityDisabled = 0;
+			enableMaxVelocityIfNecessary();
 		}
 	}
 
@@ -62,8 +58,6 @@ public class MovePlayer : MonoBehaviour
 	public void temporarilyDisableMaxVelocity()
 	{
 		maxVelocityTemporarilyDisabled = true;
-		yVelocitySinceMaxVelocityDisabled = playerRigidBody.velocity.y;
-
 		disableAngularMovementFromTouchInput();
 	}
 
@@ -80,6 +74,16 @@ public class MovePlayer : MonoBehaviour
 	public void jumpWithDirection(JumpDirection direction)
 	{
 		jumpDirection = direction;
+	}
+
+	private void enableMaxVelocityIfNecessary()
+	{
+		if (readyToEnableMaxVelocity && playerRigidBody.velocity.y <= maxVelocity.y)
+		{
+			enableAngularMovementFromTouchInput();
+			maxVelocityTemporarilyDisabled = false;
+			readyToEnableMaxVelocity = false;
+		}
 	}
 
 	private void disableAngularMovementFromTouchInput()
