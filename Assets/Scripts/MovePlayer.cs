@@ -20,8 +20,14 @@ public class MovePlayer : MonoBehaviour
 	private Vector2 environmentForceToAdd;
 	private Vector2 environmentImpulseToAdd;
 
+	private float initialJumpAngle;
+	private bool maxVelocityTemporarilyDisabled;
+	private float yVelocitySinceMaxVelocityDisabled;
+	private bool readyToEnableMaxVelocity;
+
 	void Start()
 	{
+		initialJumpAngle = jumpAngle;
 		environmentForceToAdd = Vector2.zero;
 		environmentImpulseToAdd = Vector2.zero;
 	}
@@ -38,6 +44,27 @@ public class MovePlayer : MonoBehaviour
 		addEnvironmentalForces();
 		resetEnvironmentalForces();
 		capFallSpeed();
+
+		if (readyToEnableMaxVelocity && playerRigidBody.velocity.y <= maxVelocity.y)
+		{
+			enableAngularMovementFromTouchInput();
+			maxVelocityTemporarilyDisabled = false;
+			readyToEnableMaxVelocity = false;
+			yVelocitySinceMaxVelocityDisabled = 0;
+		}
+	}
+
+	public void enableMaxVelocity()
+	{
+		readyToEnableMaxVelocity = true;
+	}
+
+	public void temporarilyDisableMaxVelocity()
+	{
+		maxVelocityTemporarilyDisabled = true;
+		yVelocitySinceMaxVelocityDisabled = playerRigidBody.velocity.y;
+
+		disableAngularMovementFromTouchInput();
 	}
 
 	public void addForce(Vector2 forceVector)
@@ -53,6 +80,16 @@ public class MovePlayer : MonoBehaviour
 	public void jumpWithDirection(JumpDirection direction)
 	{
 		jumpDirection = direction;
+	}
+
+	private void disableAngularMovementFromTouchInput()
+	{
+		jumpAngle = 90;
+	}
+
+	private void enableAngularMovementFromTouchInput()
+	{
+		jumpAngle = 50;
 	}
 
 	private void addEnvironmentalForces()
@@ -94,7 +131,7 @@ public class MovePlayer : MonoBehaviour
 		float xVelocityMultiplier = velocity.x < 1 ? -1 : 1;
 
 		float xVelocity = Mathf.Min(maxVelocity.x, Mathf.Abs(velocity.x)) * xVelocityMultiplier;
-		float yVelocity = Mathf.Min(maxVelocity.y, velocity.y);
+		float yVelocity = maxVelocityTemporarilyDisabled ? velocity.y : Mathf.Min(maxVelocity.y, velocity.y);
 
 		playerRigidBody.velocity = new Vector2(xVelocity, yVelocity);
 	}
