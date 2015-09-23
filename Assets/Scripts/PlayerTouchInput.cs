@@ -6,6 +6,13 @@ public class PlayerTouchInput : MonoBehaviour
 	public TouchInputSide side;
 	public Collider2D touchArea;	
 	public MovePlayer movePlayer;
+
+	private JumpDirection jumpDirection;
+
+	void Start()
+	{
+		jumpDirection = jumpDirectionForTouchInputSide(side);
+	}
 	
 	void Update()
 	{
@@ -21,11 +28,26 @@ public class PlayerTouchInput : MonoBehaviour
 				{
 					if (touchingCollider == touchArea)
 					{
-						movePlayer.jumpWithTouchInputSide(side);
+						movePlayer.jumpWithDirection(jumpDirection);
 						break;
 					}
 				}
 			}
 		}
+	}
+	
+	private JumpDirection jumpDirectionForTouchInputSide(TouchInputSide side)
+	{
+		JumpDirection direction = JumpDirection.Invalid;
+		switch (side)
+		{
+		case TouchInputSide.Left:
+			direction = JumpDirection.Left;
+			break;
+		case TouchInputSide.Right:
+			direction = JumpDirection.Right;
+			break;
+		}
+		return direction;
 	}
 }

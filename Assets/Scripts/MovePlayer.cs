@@ -55,11 +55,6 @@ public class MovePlayer : MonoBehaviour
 		jumpDirection = direction;
 	}
 
-	public void jumpWithTouchInputSide(TouchInputSide side)
-	{
-		jumpDirection = jumpDirectionForTouchInputSide(side);
-	}
-
 	private void addEnvironmentalForces()
 	{
 		if (environmentForceToAdd != Vector2.zero)
@@ -128,20 +123,5 @@ public class MovePlayer : MonoBehaviour
 			break;
 		}
 		return angle;
-	}
-
-	private JumpDirection jumpDirectionForTouchInputSide(TouchInputSide side)
-	{
-		JumpDirection direction = JumpDirection.Invalid;
-		switch (side)
-		{
-		case TouchInputSide.Left:
-			direction = JumpDirection.Left;
-			break;
-		case TouchInputSide.Right:
-			direction = JumpDirection.Right;
-			break;
-		}
-		return direction;
 	}
 }
