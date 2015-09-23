@@ -111,7 +111,7 @@ public class MovePlayer : MonoBehaviour
 
 	private void resetEnvironmentalForces()
 	{
-		environmentForceToAdd = Vector2.Lerp(environmentForceToAdd, Vector2.zero, 0.1f);
+		environmentForceToAdd = Vector2.zero;
 		environmentImpulseToAdd = Vector2.zero;
 	}
 
