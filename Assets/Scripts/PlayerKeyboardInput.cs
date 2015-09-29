@@ -8,8 +8,8 @@ public class PlayerKeyboardInput : MonoBehaviour
 
 	void Update()
 	{
-		KeyCode rightMovementCode = player1 ? KeyCode.RightArrow : KeyCode.D;
-		KeyCode leftMovementCode = player1 ? KeyCode.LeftArrow : KeyCode.A;
+		KeyCode rightMovementCode = player1 ? KeyCode.RightArrow : KeyCode.Period;
+		KeyCode leftMovementCode = player1 ? KeyCode.LeftArrow : KeyCode.Comma;
 
 		if (Input.GetKeyDown(leftMovementCode))
 		{
