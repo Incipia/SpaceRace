@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 using System.Collections;
 
 public enum JumpDirection {
@@ -7,7 +8,7 @@ public enum JumpDirection {
 	Invalid
 }
 
-public class MovePlayer : MonoBehaviour 
+public class MovePlayer : NetworkBehaviour 
 {
 	public Vector2 maxVelocity = new Vector2(15, 30);
 	public float maxFallVelocity = -30.0f;

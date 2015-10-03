@@ -19,9 +19,12 @@ namespace UnityStandardAssets._2D
         // Use this for initialization
         private void Start()
         {
-            m_LastTargetPosition = target.position;
-            m_OffsetZ = (transform.position - target.position).z;
-            transform.parent = null;
+			if (target != null)
+			{
+				m_LastTargetPosition = target.position;
+				m_OffsetZ = (transform.position - target.position).z;
+				transform.parent = null;
+			}
         }
 
 		public void assignTarget(GameObject gameObj)
