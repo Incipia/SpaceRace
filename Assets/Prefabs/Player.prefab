@@ -254,12 +254,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: .0714285746
+  m_SendInterval: .0500000007
   m_SyncRotationAxis: 0
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
   m_MovementTheshold: 9.99999994e-09
-  m_SnapThreshold: 10
+  m_SnapThreshold: 30
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
 --- !u!114 &11498502
@@ -393,7 +393,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SendInterval
-      value: .0714285746
+      value: .0500000007
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled
@@ -409,7 +409,7 @@ Prefab:
       objectReference: {fileID: 5035912}
     - target: {fileID: 0}
       propertyPath: m_SnapThreshold
-      value: 10
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: playerTransform
