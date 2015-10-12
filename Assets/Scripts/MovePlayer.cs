@@ -8,7 +8,7 @@ public enum JumpDirection {
 	Invalid
 }
 
-public class MovePlayer : NetworkBehaviour 
+public class MovePlayer : MonoBehaviour 
 {
 	public Vector2 maxVelocity = new Vector2(15, 30);
 	public float maxFallVelocity = -30.0f;
