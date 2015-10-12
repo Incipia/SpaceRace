@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   id="svg2989"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Star.svg"
+   inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\Particles\Star.png"
+   inkscape:export-xdpi="45"
+   inkscape:export-ydpi="45">
+  <defs
+     id="defs2991" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.6894726"
+     inkscape:cx="157.54284"
+     inkscape:cy="153.06098"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2994">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-796.3598)">
+    <path
+       sodipodi:type="star"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path3772"
+       sodipodi:sides="4"
+       sodipodi:cx="130.1541"
+       sodipodi:cy="120.63973"
+       sodipodi:r1="85.723251"
+       sodipodi:r2="32.746281"
+       sodipodi:arg1="0.78539816"
+       sodipodi:arg2="1.5707963"
+       inkscape:flatsided="false"
+       inkscape:rounded="0.12"
+       inkscape:randomized="0"
+       d="m 190.76959,181.25522 c -5.66098,5.66099 -52.60966,-27.86921 -60.61549,-27.86921 -8.00584,0 -54.954513,33.5302 -60.615494,27.86921 -5.66098,-5.66098 27.869212,-52.60965 27.869212,-60.61549 0,-8.00583 -33.530193,-54.954509 -27.869212,-60.61549 5.66098,-5.660981 52.609654,27.869212 60.615494,27.869212 8.00583,0 54.95451,-33.530193 60.61549,-27.869212 5.66098,5.66098 -27.86921,52.60966 -27.86921,60.61549 0,8.00584 33.53019,54.95451 27.86921,60.61549 z"
+       transform="translate(0,796.3598)" />
+  </g>
+</svg>
