@@ -11,6 +11,7 @@ public class PlatformOscillation : MonoBehaviour
 	public List<Vector3> positions;
 
 	private List<Vector3> currentPositions;
+	private List<Vector3> worldPoints = new List<Vector3>();
 	private int currentIndex = 0;
 
 	void Start()
@@ -42,7 +43,7 @@ public class PlatformOscillation : MonoBehaviour
 
 	private void animateToPosition(Vector3 position, Action completion)
 	{
-		LeanTween.move(gameObject, position, movementDuration).setEase(LeanTweenType.easeInOutQuad).setOnComplete(completion);
+		LeanTween.moveLocal(gameObject, position, movementDuration).setEase(LeanTweenType.easeInOutQuad).setOnComplete(completion);
 	}
 
 	private bool currentIndexIsAtLastObject()
@@ -53,11 +54,13 @@ public class PlatformOscillation : MonoBehaviour
 	public void reset()
 	{
 		positions.Clear();
+		worldPoints.Clear();
 	}
 	
 	public void storeTransform()
 	{
-		positions.Add(transform.position);
+		positions.Add(transform.localPosition);
+		worldPoints.Add(transform.position);
 	}
 
 	public void closePath()
@@ -65,6 +68,7 @@ public class PlatformOscillation : MonoBehaviour
 		if (positions.Count > 1)
 		{
 			positions.Add(positions[0]);
+			worldPoints.Add(worldPoints[0]);
 		}
 	}
 
@@ -72,7 +76,7 @@ public class PlatformOscillation : MonoBehaviour
 	{
 		if (positions.Count >= 1)
 		{
-			transform.position = positions[0];
+			transform.localPosition = positions[0];
 		}
 	}
 	
@@ -80,10 +84,10 @@ public class PlatformOscillation : MonoBehaviour
 	{
 		Gizmos.color = Color.yellow;
 		
-		if (positions.Count > 1)
+		if (worldPoints.Count > 1)
 		{
-			Vector3 previousPosition = positions[0];
-			foreach (Vector3 position in positions)
+			Vector3 previousPosition = worldPoints[0];
+			foreach (Vector3 position in worldPoints)
 			{
 				Gizmos.DrawLine(previousPosition, position);
 				Gizmos.DrawSphere(position, 0.5f);
