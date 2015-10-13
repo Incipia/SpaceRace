@@ -5,18 +5,28 @@ using System.Collections.Generic;
 
 public class PlatformOscillation : MonoBehaviour 
 {
+	[System.Serializable]
+	public class OscillationPoint
+	{
+		public OscillationPoint(Vector3 pos) {
+			position = pos;
+		}
+		public Vector3 position;
+		public float waitDuration = 0;
+	}
+
 	public bool loop = true;
 	public bool shouldReverse;
 	public float movementDuration = 1.0f;
-	public List<Vector3> positions;
+	public List<OscillationPoint> oscillationPoints;
 
-	private List<Vector3> currentPositions;
+	private List<OscillationPoint> currentOscillationPoints;
 	private List<Vector3> worldPoints = new List<Vector3>();
 	private int currentIndex = 0;
 
 	void Start()
 	{
-		currentPositions = new List<Vector3>(positions);
+		currentOscillationPoints = new List<OscillationPoint>(oscillationPoints);
 
 		setObjectToFirstPoint();
 		advanceToNextPosition();
@@ -25,58 +35,67 @@ public class PlatformOscillation : MonoBehaviour
 	private void advanceToNextPosition()
 	{
 		++currentIndex;
-		if (currentPositions.Count > currentIndex)
+		if (currentOscillationPoints.Count > currentIndex)
 		{
-			Vector3 targetPosition = currentPositions[currentIndex];
-			animateToPosition(targetPosition, advanceToNextPosition);
+			OscillationPoint targetOscillationPos = currentOscillationPoints[currentIndex];
+			float waitDuration = currentOscillationPoints[currentIndex-1].waitDuration;
 
+			animateToPosition(targetOscillationPos.position, waitDuration, advanceToNextPosition);
 			if (currentIndexIsAtLastObject() && loop)
 			{
 				if (shouldReverse)
 				{
-					currentPositions.Reverse();
+					currentOscillationPoints.Reverse();
 				}
 				currentIndex = 0;
 			}
 		}
 	}
 
-	private void animateToPosition(Vector3 position, Action completion)
+	private void animateToPosition(Vector3 position, float waitDuration, Action completion)
 	{
-		LeanTween.moveLocal(gameObject, position, movementDuration).setEase(LeanTweenType.easeInOutQuad).setOnComplete(completion);
+		LeanTween.
+			moveLocal(gameObject, position, movementDuration).
+			setEase(LeanTweenType.easeInOutQuad).
+				setOnComplete(completion).setDelay(waitDuration);
 	}
 
 	private bool currentIndexIsAtLastObject()
 	{
-		return currentIndex == currentPositions.Count - 1;
+		return currentIndex == currentOscillationPoints.Count - 1;
 	}
 
 	public void reset()
 	{
-		positions.Clear();
+		oscillationPoints.Clear();
 		worldPoints.Clear();
 	}
 	
 	public void storeTransform()
 	{
-		positions.Add(transform.localPosition);
+		OscillationPoint oscPoint = new OscillationPoint(transform.localPosition);
+		oscillationPoints.Add(oscPoint);
+
 		worldPoints.Add(transform.position);
 	}
 
 	public void closePath()
 	{
-		if (positions.Count > 1)
+		if (oscillationPoints.Count > 1)
 		{
-			positions.Add(positions[0]);
+			Vector3 firstPosition = oscillationPoints[0].position;
+			OscillationPoint oscPoint = new OscillationPoint(firstPosition);
+			oscillationPoints.Add(oscPoint);
+
 			worldPoints.Add(worldPoints[0]);
 		}
 	}
 
 	public void setObjectToFirstPoint()
 	{
-		if (positions.Count >= 1)
+		if (oscillationPoints.Count >= 1)
 		{
-			transform.localPosition = positions[0];
+			transform.localPosition = oscillationPoints[0].position;
 		}
 	}
 	
