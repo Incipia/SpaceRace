@@ -37,9 +37,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
---- !u!127 &3
-LevelGameManager:
-  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -68,6 +65,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
+    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -197,6 +195,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -431,6 +430,10 @@ Prefab:
       propertyPath: m_Color.b
       value: .71340394
       objectReference: {fileID: 0}
+    - target: {fileID: 119330, guid: f33e251c53710754d82738b6f2ba2b1f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f33e251c53710754d82738b6f2ba2b1f, type: 2}
   m_IsPrefabParent: 0
@@ -558,6 +561,10 @@ Prefab:
     - target: {fileID: 21220666, guid: f33e251c53710754d82738b6f2ba2b1f, type: 2}
       propertyPath: m_Color.b
       value: .720588207
+      objectReference: {fileID: 0}
+    - target: {fileID: 119330, guid: f33e251c53710754d82738b6f2ba2b1f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f33e251c53710754d82738b6f2ba2b1f, type: 2}
