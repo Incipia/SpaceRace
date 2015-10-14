@@ -10,7 +10,7 @@ public class PlatformRotator : MonoBehaviour
 
 	private Vector3 rotation;
 	private float direction;
-
+	
 	void Start () 
 	{
 		transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, pingpongStartAngle);

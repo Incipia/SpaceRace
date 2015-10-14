@@ -99,19 +99,19 @@ public class PlatformOscillation : MonoBehaviour
 		}
 	}
 	
-	void OnDrawGizmos() 
-	{
-		Gizmos.color = Color.yellow;
-		
-		if (worldPoints.Count > 1)
-		{
-			Vector3 previousPosition = worldPoints[0];
-			foreach (Vector3 position in worldPoints)
-			{
-				Gizmos.DrawLine(previousPosition, position);
-				Gizmos.DrawSphere(position, 0.5f);
-				previousPosition = position;
-			}
-       	}
-   	}
+//	void OnDrawGizmos() 
+//	{
+//		Gizmos.color = Color.yellow;
+//		
+//		if (worldPoints.Count > 1)
+//		{
+//			Vector3 previousPosition = worldPoints[0];
+//			foreach (Vector3 position in worldPoints)
+//			{
+//				Gizmos.DrawLine(previousPosition, position);
+//				Gizmos.DrawSphere(position, 0.5f);
+//				previousPosition = position;
+//			}
+//       	}
+//   	}
 }
