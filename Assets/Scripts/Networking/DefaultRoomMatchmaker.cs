@@ -29,7 +29,7 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 					isVisible = false
 				};
 
-				PhotonNetwork.CreateRoom(roomName, roomOptions, TypedLobby.Default);
+				PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
 			}
 			
 			// Join Room
@@ -48,14 +48,9 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 	{
 		roomsList = PhotonNetwork.GetRoomList();
 	}
+
 	void OnJoinedRoom()
 	{
-		Debug.Log("Connected to Room");
-	}
-
-	public override void OnJoinedLobby()
-	{
-		Debug.Log("joined lobby");
-		PhotonNetwork.JoinRoom("default");
+		PhotonNetwork.Instantiate("NetworkPlayer", Vector3.zero, Quaternion.identity, 0);
 	}
 }
