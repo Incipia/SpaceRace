@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3b1de084aa76040a282081bd79404c20
-timeCreated: 1444695416
+timeCreated: 1444783818
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,72 +59,62 @@ TextureImporter:
     - name: Background_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 9
-        width: 121
-        height: 1000
+        x: 26
+        y: 14
+        width: 297
+        height: 1997
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Background_1
       rect:
         serializedVersion: 2
-        x: 146
-        y: 9
-        width: 121
-        height: 1000
+        x: 363
+        y: 14
+        width: 297
+        height: 1997
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Background_2
       rect:
         serializedVersion: 2
-        x: 279
-        y: 9
-        width: 123
-        height: 1000
+        x: 696
+        y: 14
+        width: 297
+        height: 1997
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Background_3
       rect:
         serializedVersion: 2
-        x: 419
-        y: 9
-        width: 121
-        height: 1000
+        x: 1037
+        y: 14
+        width: 297
+        height: 1997
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Background_4
       rect:
         serializedVersion: 2
-        x: 557
-        y: 9
-        width: 121
-        height: 1000
+        x: 1378
+        y: 14
+        width: 297
+        height: 1997
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Background_5
       rect:
         serializedVersion: 2
-        x: 697
-        y: 9
-        width: 121
-        height: 1001
+        x: 1722
+        y: 14
+        width: 297
+        height: 1997
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Background_6
-      rect:
-        serializedVersion: 2
-        x: 835
-        y: 9
-        width: 179
-        height: 1001
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
