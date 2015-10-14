@@ -10,12 +10,11 @@ GameObject:
   - 4: {fileID: 447724}
   - 50: {fileID: 5010432}
   - 58: {fileID: 5805704}
-  - 114: {fileID: 11432830}
   - 114: {fileID: 11419678}
   - 114: {fileID: 11406870}
   - 114: {fileID: 11471424}
-  - 114: {fileID: 11457352}
-  - 114: {fileID: 11438374}
+  - 114: {fileID: 11407860}
+  - 114: {fileID: 11473000}
   m_Layer: 0
   m_Name: NetworkPlayer
   m_TagString: Untagged
@@ -55,7 +54,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &170306
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +107,7 @@ Transform:
   m_GameObject: {fileID: 119330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.0713177, y: -13.5411558, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .699999988, y: .699999988, z: .699999988}
   m_Children:
   - {fileID: 438218}
   - {fileID: 453352}
@@ -200,11 +199,28 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119330}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d6c40d96008b4140a8186d70823fab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 5010432}
+--- !u!114 &11407860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e797d4b22ee9742159c4ea5458a5b508, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxVelocity: {x: 15, y: 30}
+  maxFallVelocity: -30
+  jumpAngle: 50
+  jumpForce: 100
+  playerRigidBody: {fileID: 5010432}
 --- !u!114 &11419678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,8 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: 1
-  movePlayer: {fileID: 11432830}
---- !u!114 &11432830
+  movePlayer: {fileID: 11407860}
+--- !u!114 &11471424
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -226,28 +242,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 119330}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVelocity: {x: 15, y: 30}
-  maxFallVelocity: -30
-  jumpAngle: 50
-  jumpForce: 100
-  playerRigidBody: {fileID: 5010432}
---- !u!114 &11438374
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e7cb724808c322458aa4d15f5035fa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizeVelocity: 1
-  m_SynchronizeAngularVelocity: 1
---- !u!114 &11457352
+  ownerId: 0
+  group: 0
+  prefixBackup: -1
+  observed: {fileID: 0}
+  synchronization: 1
+  onSerializeTransformOption: 0
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 11406870}
+  - {fileID: 11473000}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 0
+  instantiationId: -1
+  isRuntimeInstantiated: 0
+--- !u!114 &11473000
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -263,8 +276,8 @@ MonoBehaviour:
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
     InterpolateOption: 4
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 15
+    InterpolateMoveTowardsSpeed: 40
+    InterpolateLerpSpeed: 30
     InterpolateMoveTowardsAcceleration: 2
     InterpolateMoveTowardsDeceleration: 2
     InterpolateSpeedCurve:
@@ -292,7 +305,7 @@ MonoBehaviour:
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-    ExtrapolateOption: 1
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 0
     ExtrapolateNumberOfStoredPositions: 1
@@ -307,32 +320,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &11471424
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ownerId: 0
-  group: 0
-  prefixBackup: -1
-  observed: {fileID: 0}
-  synchronization: 3
-  onSerializeTransformOption: 0
-  onSerializeRigidBodyOption: 2
-  ownershipTransfer: 0
-  ObservedComponents:
-  - {fileID: 11457352}
-  - {fileID: 11438374}
-  ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
-  isRuntimeInstantiated: 0
 --- !u!198 &19876004
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -507,10 +494,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4284088575
+        rgba: 4286454527
       minMaxState: 0
     startSize:
-      scalar: 8.5
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1457,20 +1444,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: synchronization
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ObservedComponents.Array.data[0]
       value: 
-      objectReference: {fileID: 11457352}
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: movePlayer
       value: 
-      objectReference: {fileID: 11432830}
+      objectReference: {fileID: 11407860}
     - target: {fileID: 0}
       propertyPath: m_GravityScale
       value: 15
@@ -1502,10 +1489,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: ObservedComponents.Array.data[1]
       value: 
-      objectReference: {fileID: 11438374}
+      objectReference: {fileID: 11473000}
     - target: {fileID: 0}
       propertyPath: m_PositionModel.InterpolateLerpSpeed
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_PositionModel.DrawErrorGizmo
@@ -1513,7 +1500,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_PositionModel.ExtrapolateOption
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_PositionModel.ExtrapolateIncludingRoundTripTime
@@ -1522,6 +1509,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: jumpForce
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: playerRigidBody
+      value: 
+      objectReference: {fileID: 5010432}
+    - target: {fileID: 0}
+      propertyPath: m_PositionModel.InterpolateMoveTowardsSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PositionModel.ExtrapolateSpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

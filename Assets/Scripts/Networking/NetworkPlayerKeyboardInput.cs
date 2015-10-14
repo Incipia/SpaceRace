@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 public class NetworkPlayerKeyboardInput : Photon.MonoBehaviour
 {
 	public bool player1 = true;
-	public MovePlayer movePlayer;
+	public MovePlayerPhoton movePlayer;
 
 	void Start()
 	{
