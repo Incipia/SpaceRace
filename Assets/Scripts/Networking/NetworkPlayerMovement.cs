@@ -9,20 +9,24 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 	private float syncDelay = 0f;
 	private float syncTime = 0f;
 	
-	private Vector2 syncStartPosition = Vector2.zero;
-	private Vector2 syncEndPosition = Vector2.zero;
+	private Vector3 syncLastPosition = Vector3.zero;
+	private Vector3 syncTargetPosition = Vector3.zero;
 
-	private Vector2 syncStartVelocity = Vector2.zero;
-	private Vector2 syncEndVelocity = Vector2.zero;
+	private int photonSendRate = 20;
+	private float positionInterpolationProgress = 0;
 
 	void Start()
 	{
-		PhotonNetwork.sendRate = 20;
-		PhotonNetwork.sendRateOnSerialize = 20;
+		PhotonNetwork.sendRate = photonSendRate;
+		PhotonNetwork.sendRateOnSerialize = photonSendRate;
+
+		if (!photonView.isMine)
+		{
+			rigidBody.isKinematic = true;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update()
+
+	void FixedUpdate()
 	{
 		if (!photonView.isMine)
 		{
@@ -32,32 +36,30 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 
 	private void SyncedMovement()
 	{
-		syncTime += Time.deltaTime;
+		float fixedUpdateCallsPerSecond = 1 / Time.fixedDeltaTime;
+		float photonCallsPerSecond = photonSendRate;
 
-		//		rigidBody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, syncTime / syncDelay);
-//		rigidBody.position = Vector3.Lerp(syncStartPosition, syncEndPosition, 30);
-		rigidBody.velocity = Vector2.Lerp(syncStartVelocity, syncEndVelocity, 10);
-//		rigidBody.velocity = Vector2.MoveTowards(syncStartVelocity, syncEndVelocity, 10);
+		// increment * fixedUpdateCallsPerSecond = photonCallsPerSecond
+		// increment = photonCallsPerSecond / fixedUpdateCallsPerSecond
+
+		float increment = photonCallsPerSecond / fixedUpdateCallsPerSecond;
+		positionInterpolationProgress += increment;
+
+		transform.position = Vector3.Lerp(syncLastPosition, syncTargetPosition, positionInterpolationProgress);
 	}
 	
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 	{
 		if (stream.isWriting)
 		{
-//			stream.SendNext(rigidBody.position);
-			stream.SendNext(rigidBody.velocity);
+			stream.SendNext(transform.position);
 		}
-		else
+		else if (stream.isReading && !photonView.isMine)
 		{
-//			syncEndPosition = (Vector2)stream.ReceiveNext();
-//			syncStartPosition = rigidBody.position;
+			syncTargetPosition = (Vector3)stream.ReceiveNext();
+			syncLastPosition = transform.position;
 
-			syncEndVelocity = (Vector2)stream.ReceiveNext();
-			syncStartVelocity = rigidBody.velocity;
-			
-			syncTime = 0f;
-			syncDelay = Time.time - lastSynchronizationTime;
-			lastSynchronizationTime = Time.time;
+			positionInterpolationProgress = 0;
 		}
 	}
 }

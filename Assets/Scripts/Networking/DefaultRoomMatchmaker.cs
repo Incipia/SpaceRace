@@ -8,6 +8,8 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 	private const string roomName = "Default";
 	private RoomInfo[] roomsList;
 
+	public GameObject playerPrefab;
+
 	void Start() 
 	{
 		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
@@ -51,6 +53,6 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	void OnJoinedRoom()
 	{
-		PhotonNetwork.Instantiate("NetworkPlayer", Vector3.zero, Quaternion.identity, 0);
+		PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 1, 0), Quaternion.identity, 0);
 	}
 }

@@ -15,20 +15,17 @@ public class MovePlayerPhoton : Photon.MonoBehaviour
 	private Vector2 environmentForceToAdd;
 	private Vector2 environmentImpulseToAdd;
 
+	private float initialGravityScale;
 	private float initialJumpAngle;
 	private bool maxVelocityDisabled;
 	private bool readyToEnableMaxVelocity;
 
 	void Start()
 	{
+		initialGravityScale = playerRigidBody.gravityScale;
 		initialJumpAngle = jumpAngle;
 		environmentForceToAdd = Vector2.zero;
 		environmentImpulseToAdd = Vector2.zero;
-
-//		if (!photonView.isMine)
-//		{
-//			playerRigidBody.isKinematic = true;
-//		}
 	}
 
 	void FixedUpdate()
@@ -60,6 +57,10 @@ public class MovePlayerPhoton : Photon.MonoBehaviour
 
 	public void disableMaxVelocity()
 	{
+		// this is currently a hack to maintain the same "coasting" effect
+		// that we had when the gravity scale was 15
+		playerRigidBody.gravityScale = 2;
+
 		maxVelocityDisabled = true;
 		disableAngularMovementFromTouchInput();
 	}
@@ -86,6 +87,10 @@ public class MovePlayerPhoton : Photon.MonoBehaviour
 			enableAngularMovementFromTouchInput();
 			maxVelocityDisabled = false;
 			readyToEnableMaxVelocity = false;
+
+			// this is currently a hack to maintain the same "coasting" effect
+			// that we had when the gravity scale was 15
+			playerRigidBody.gravityScale = initialGravityScale;
 		}
 	}
 
