@@ -12,8 +12,11 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 	private Vector3 syncLastPosition = Vector3.zero;
 	private Vector3 syncTargetPosition = Vector3.zero;
 
+	private Vector2 syncLastVelocity = Vector2.zero;
+	private Vector2 syncTargetVelocity = Vector2.zero;
+
 	private int photonSendRate = 20;
-	private float positionInterpolationProgress = 0;
+	private float interpolationProgress = 0;
 
 	void Start()
 	{
@@ -36,16 +39,11 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 
 	private void SyncedMovement()
 	{
-		float fixedUpdateCallsPerSecond = 1 / Time.fixedDeltaTime;
-		float photonCallsPerSecond = photonSendRate;
-
-		// increment * fixedUpdateCallsPerSecond = photonCallsPerSecond
 		// increment = photonCallsPerSecond / fixedUpdateCallsPerSecond
+		interpolationProgress += photonSendRate * Time.fixedDeltaTime;
 
-		float increment = photonCallsPerSecond / fixedUpdateCallsPerSecond;
-		positionInterpolationProgress += increment;
-
-		transform.position = Vector3.Lerp(syncLastPosition, syncTargetPosition, positionInterpolationProgress);
+		transform.position = Vector3.Lerp(syncLastPosition, syncTargetPosition, interpolationProgress);
+//		rigidBody.velocity = Vector3.Lerp(syncLastVelocity, syncTargetVelocity, interpolationProgress);
 	}
 	
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
@@ -53,13 +51,17 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 		if (stream.isWriting)
 		{
 			stream.SendNext(transform.position);
+			stream.SendNext(rigidBody.velocity);
 		}
 		else if (stream.isReading && !photonView.isMine)
 		{
 			syncTargetPosition = (Vector3)stream.ReceiveNext();
 			syncLastPosition = transform.position;
 
-			positionInterpolationProgress = 0;
+			syncTargetVelocity = (Vector2)stream.ReceiveNext();
+			syncLastVelocity = rigidBody.velocity;
+
+			interpolationProgress = 0;
 		}
 	}
 }
