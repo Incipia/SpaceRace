@@ -9,14 +9,14 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 	private Vector3 syncTargetPosition = Vector3.zero;
 
 	private int photonSendRate = 15;
-	private int photonSendOnSerializeRate = 15;
+	private int photonSendRateOnSerialize = 15;
 
 	private float interpolationProgress = 0;
 
 	void Start()
 	{
 		PhotonNetwork.sendRate = photonSendRate;
-		PhotonNetwork.sendRateOnSerialize = photonSendOnSerializeRate;
+		PhotonNetwork.sendRateOnSerialize = photonSendRateOnSerialize;
 
 		if (!photonView.isMine)
 		{
@@ -36,7 +36,7 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 	private void SyncedMovement()
 	{
 		// increment = photonCallsPerSecond / fixedUpdateCallsPerSecond
-		interpolationProgress += photonSendOnSerializeRate * Time.fixedDeltaTime;
+		interpolationProgress += photonSendRateOnSerialize * Time.fixedDeltaTime;
 		transform.position = Vector3.Lerp(syncLastPosition, syncTargetPosition, interpolationProgress);
 	}
 	
