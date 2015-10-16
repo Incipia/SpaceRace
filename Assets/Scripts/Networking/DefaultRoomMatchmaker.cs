@@ -53,6 +53,6 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	void OnJoinedRoom()
 	{
-		PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 1, 0), Quaternion.identity, 0);
+		PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 1.6f, 0), Quaternion.identity, 0);
 	}
 }
