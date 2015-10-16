@@ -26,6 +26,12 @@ public class MovePlayerPhoton : Photon.MonoBehaviour
 		initialJumpAngle = jumpAngle;
 		environmentForceToAdd = Vector2.zero;
 		environmentImpulseToAdd = Vector2.zero;
+
+		if (photonView.isMine)
+		{
+			GameObject.Find("Left Input").GetComponent<PlayerTouchInput>().photonMovePlayer = this;
+			GameObject.Find("Right Input").GetComponent<PlayerTouchInput>().photonMovePlayer = this;
+		}
 	}
 
 	void FixedUpdate()
@@ -57,8 +63,8 @@ public class MovePlayerPhoton : Photon.MonoBehaviour
 
 	public void disableMaxVelocity()
 	{
-		// this is currently a hack to maintain the same "coasting" effect
-		// that we had when the gravity scale was 15
+		// this is currently a hack to maintain the same coasting effect after
+		// exiting a speed boost area that we had when the gravity scale was 15
 		playerRigidBody.gravityScale = 2;
 
 		maxVelocityDisabled = true;
@@ -88,8 +94,8 @@ public class MovePlayerPhoton : Photon.MonoBehaviour
 			maxVelocityDisabled = false;
 			readyToEnableMaxVelocity = false;
 
-			// this is currently a hack to maintain the same "coasting" effect
-			// that we had when the gravity scale was 15
+			// this is currently a hack to maintain the same coasting effect after
+			// exiting a speed boost areathat we had when the gravity scale was 15
 			playerRigidBody.gravityScale = initialGravityScale;
 		}
 	}

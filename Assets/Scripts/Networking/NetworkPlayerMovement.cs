@@ -3,7 +3,7 @@ using System.Collections;
 
 public class NetworkPlayerMovement : Photon.MonoBehaviour 
 {
-	public Rigidbody2D rigidBody;
+	public Rigidbody2D playerRigidBody;
 	
 	private Vector3 syncLastPosition = Vector3.zero;
 	private Vector3 syncTargetPosition = Vector3.zero;
@@ -20,8 +20,8 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 
 		if (!photonView.isMine)
 		{
-			rigidBody.isKinematic = true;
-			rigidBody.interpolation = RigidbodyInterpolation2D.None;
+			playerRigidBody.isKinematic = true;
+			playerRigidBody.interpolation = RigidbodyInterpolation2D.None;
 		}
 	}
 
