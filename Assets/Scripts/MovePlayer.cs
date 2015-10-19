@@ -15,6 +15,7 @@ public class MovePlayer : MonoBehaviour
 	public float jumpAngle = 50; // the vertical offset angle
 	public float jumpForce = 100;
 	public Rigidbody2D playerRigidBody;
+	public GameObject trailParticles;
 
 	private JumpDirection jumpDirection = JumpDirection.Invalid;
 
@@ -24,17 +25,19 @@ public class MovePlayer : MonoBehaviour
 	private float initialJumpAngle;
 	private bool maxVelocityDisabled;
 	private bool readyToEnableMaxVelocity;
+	private bool controlsActive;
 
 	void Start()
 	{
 		initialJumpAngle = jumpAngle;
 		environmentForceToAdd = Vector2.zero;
 		environmentImpulseToAdd = Vector2.zero;
+		controlsActive = true;
 	}
 
 	void FixedUpdate()
 	{
-		if (jumpDirection != JumpDirection.Invalid)
+		if (jumpDirection != JumpDirection.Invalid && controlsActive)
 		{
 			applyForceWithDirection(jumpDirection);
 			resetJumpDirection();
@@ -75,6 +78,27 @@ public class MovePlayer : MonoBehaviour
 	public void jumpWithDirection(JumpDirection direction)
 	{
 		jumpDirection = direction;
+	}
+
+	public void Stun(float duration)
+	{
+		StartCoroutine(ActualStun(duration));
+	}
+
+	private IEnumerator ActualStun(float duration)
+	{
+		controlsActive = false;
+		trailParticles.SetActive(false);
+
+		float timer = 0.0f;
+		while(timer < duration)
+		{
+			timer += Time.deltaTime;
+			yield return new WaitForFixedUpdate();
+		}
+
+		controlsActive = true;
+		trailParticles.SetActive(true);
 	}
 
 	private void enableMaxVelocityIfNecessary()
