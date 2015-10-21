@@ -31,4 +31,7 @@ MonoBehaviour:
   - PunRespawn
   - RequestForPickupTimes
   - updateColorWithVector
+  - updateInnerCircleColorWithVector
+  - updateOuterRingColorWithVector
+  - updateParticleSystemColorWithVector
   DisableAutoOpenWizard: 1
