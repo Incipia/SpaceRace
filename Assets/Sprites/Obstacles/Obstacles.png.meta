@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f2b188cf2ae5f4c529fd28817c3d74f4
-timeCreated: 1444696726
+timeCreated: 1445463775
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -56,12 +56,12 @@ TextureImporter:
     - name: Obstacles_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 857
-        width: 421
-        height: 140
+        x: 31
+        y: 631
+        width: 361
+        height: 360
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Obstacles_1
       rect:
@@ -71,7 +71,7 @@ TextureImporter:
         width: 541
         height: 548
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Obstacles_2
       rect:
@@ -81,7 +81,7 @@ TextureImporter:
         width: 361
         height: 361
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: Obstacles_3
       rect:
@@ -91,7 +91,7 @@ TextureImporter:
         width: 721
         height: 181
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
