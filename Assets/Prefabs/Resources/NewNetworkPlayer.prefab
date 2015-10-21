@@ -93,6 +93,7 @@ GameObject:
   - 114: {fileID: 11428566}
   - 114: {fileID: 11449286}
   - 114: {fileID: 11463964}
+  - 114: {fileID: 11402214}
   m_Layer: 0
   m_Name: NewNetworkPlayer
   m_TagString: Untagged
@@ -234,6 +235,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .600000024
+--- !u!114 &11402214
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b57dedef9c44e029e545d55805da7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outerRingRenderer: {fileID: 21293724}
+  innerCircleRenderer: {fileID: 21253824}
 --- !u!114 &11428566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1410,7 +1424,7 @@ SpriteRenderer:
   m_SortingLayerID: -279122287
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8ba6fee1b41c14b308ef934d4253ca07, type: 3}
-  m_Color: {r: .689656794, g: .434472322, b: .720588207, a: 1}
+  m_Color: {r: .635294139, g: .376470596, b: .666666687, a: .800000012}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
