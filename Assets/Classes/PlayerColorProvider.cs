@@ -26,25 +26,25 @@ namespace AssemblyCSharp
 			Color color = new Color(1, 1, 1);
 			if (number == 1)
 			{
-				color = playerOneColorForComponent(componentType);
+				color = pinkColorForComponent(componentType);
 			}
 			else if (number == 2)
 			{
-				color = playerTwoColorForComponent(componentType);
+				color = greenColorForComponent(componentType);
 			}
 			else if (number == 3)
 			{
-				color = playerThreeColorForComponent(componentType);
+				color = blueColorForComponent(componentType);
 			}
 			else if (number == 4)
 			{
-				color = playerFourColorForComponent(componentType);
+				color = purpleColorForComponent(componentType);
 			}
 			return color;
 		}
 
 		// PINK
-		private static Color playerOneColorForComponent(PlayerColoredComponentType component)
+		private static Color pinkColorForComponent(PlayerColoredComponentType component)
 		{
 			Vector3 cv = Vector3.zero;
 			switch (component)
@@ -63,7 +63,7 @@ namespace AssemblyCSharp
 		}
 
 		// GREEN
-		private static Color playerTwoColorForComponent(PlayerColoredComponentType component)
+		private static Color greenColorForComponent(PlayerColoredComponentType component)
 		{
 			Vector3 cv = Vector3.zero;
 			switch (component)
@@ -82,7 +82,7 @@ namespace AssemblyCSharp
 		}
 	
 		// BLUE
-		private static Color playerThreeColorForComponent(PlayerColoredComponentType component)
+		private static Color blueColorForComponent(PlayerColoredComponentType component)
 		{
 			Vector3 cv = Vector3.zero;
 			switch (component)
@@ -101,7 +101,7 @@ namespace AssemblyCSharp
 		}
 
 		// PURPLE
-		private static Color playerFourColorForComponent(PlayerColoredComponentType component)
+		private static Color purpleColorForComponent(PlayerColoredComponentType component)
 		{
 			Vector3 cv = Vector3.zero;
 			switch (component)

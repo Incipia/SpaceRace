@@ -24,7 +24,7 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		else if (PhotonNetwork.room == null)
 		{
 			// Create Room
-			if (GUI.Button(new Rect(0, 0, 175, 30), "Connect to Default Room"))
+			if (GUI.Button(new Rect(0, 0, 175, 100), "Connect to Default Room"))
 			{
 				RoomOptions roomOptions = new RoomOptions() {
 					maxPlayers = 4,
