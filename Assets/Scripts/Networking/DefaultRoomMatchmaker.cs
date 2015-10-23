@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using AssemblyCSharp;
 
 public class DefaultRoomMatchmaker : Photon.PunBehaviour 
 {
 	const string GAME_VERSION = "0.0.1";
-	private const string roomName = "Default";
-	private RoomInfo[] roomsList;
-
 	public GameObject playerPrefab;
 
 	void Start() 
@@ -24,46 +23,47 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		else if (PhotonNetwork.room == null)
 		{
 			// Create Room
-			if (GUI.Button(new Rect(0, 0, 175, 100), "Connect to Default Room"))
+			if (GUI.Button(new Rect(0, 0, 175, 100), "Connect to 4 Person Room"))
 			{
 				RoomOptions roomOptions = new RoomOptions() {
 					maxPlayers = 4,
 					isVisible = false
 				};
-
-				PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
+				PhotonNetwork.JoinOrCreateRoom("default4", roomOptions, TypedLobby.Default);
 			}
-			
-			// Join Room
-			if (roomsList != null)
+			if (GUI.Button(new Rect(0, 100, 175, 100), "Connect to 3 Person Room"))
 			{
-				for (int i = 0; i < roomsList.Length; i++)
-				{
-					if (GUI.Button(new Rect(100, 250 + (110 * i), 250, 100), "Join " + roomsList[i].name))
-						PhotonNetwork.JoinRoom(roomsList[i].name);
-				}
+				RoomOptions roomOptions = new RoomOptions() {
+					maxPlayers = 3,
+					isVisible = false
+				};
+				PhotonNetwork.JoinOrCreateRoom("default3", roomOptions, TypedLobby.Default);
+			}
+			if (GUI.Button(new Rect(0, 200, 175, 100), "Connect to 2 Person Room"))
+			{
+				RoomOptions roomOptions = new RoomOptions() {
+					maxPlayers = 2,
+					isVisible = false
+				};
+				PhotonNetwork.JoinOrCreateRoom("default2", roomOptions, TypedLobby.Default);
+			}
+			if (GUI.Button(new Rect(0, 300, 175, 100), "Connect to 1 Person Room"))
+			{
+				RoomOptions roomOptions = new RoomOptions() {
+					maxPlayers = 1,
+					isVisible = false
+				};
+				PhotonNetwork.JoinOrCreateRoom("default1", roomOptions, TypedLobby.Default);
 			}
 		}
-	}
-	
-	void OnReceivedRoomListUpdate()
-	{
-		roomsList = PhotonNetwork.GetRoomList();
 	}
 
 	void OnJoinedRoom()
 	{
-		PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 1.6f, 0), Quaternion.identity, 0);
-	}
+		Room currentRoom = PhotonNetwork.room;
+		List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForMaxPlayers(currentRoom.maxPlayers);
 
-	// Should we be using this?
-//	void OnDisconnectedFromPhoton()
-//	{
-//		Destroy(gameObject);
-//	}
-
-	void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
-	{
-		PhotonNetwork.DestroyPlayerObjects(otherPlayer);
+		Vector3 position = startPositions[currentRoom.playerCount-1];
+		PhotonNetwork.Instantiate(playerPrefab.name, position, Quaternion.identity, 0);
 	}
 }
