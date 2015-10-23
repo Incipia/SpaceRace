@@ -34,4 +34,5 @@ MonoBehaviour:
   - updateInnerCircleColorWithVector
   - updateOuterRingColorWithVector
   - updateParticleSystemColorWithVector
+  - updateParticleTrailColorWithVector
   DisableAutoOpenWizard: 1

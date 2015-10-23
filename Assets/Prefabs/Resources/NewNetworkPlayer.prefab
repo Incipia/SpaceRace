@@ -248,7 +248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outerRingRenderer: {fileID: 21293724}
   innerCircleRenderer: {fileID: 21253824}
-  particleSystem: {fileID: 19882894}
+  particleTrail: {fileID: 19882894}
 --- !u!114 &11428566
 MonoBehaviour:
   m_ObjectHideFlags: 1

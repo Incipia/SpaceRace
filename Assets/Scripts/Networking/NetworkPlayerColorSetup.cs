@@ -6,7 +6,7 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 {
 	public SpriteRenderer outerRingRenderer;
 	public SpriteRenderer innerCircleRenderer;
-	public ParticleSystem particleSystem;
+	public ParticleSystem particleTrail;
 
 	void Start() 
 	{
@@ -24,9 +24,9 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 			updateInnerCircleColorWithVector(innerCircleColorVector);
 			
 			
-			Color particleSystemColor = PlayerColorProvider.colorForPlayerNumber(playerNumber, PlayerColoredComponentType.ParticleTrail);
-			Vector3 particleSystemColorVector = new Vector3(particleSystemColor.r, particleSystemColor.g, particleSystemColor.b);
-			updateParticleSystemColorWithVector(particleSystemColorVector);
+			Color particleTrailColor = PlayerColorProvider.colorForPlayerNumber(playerNumber, PlayerColoredComponentType.ParticleTrail);
+			Vector3 particleTrailColorVector = new Vector3(particleTrailColor.r, particleTrailColor.g, particleTrailColor.b);
+			updateParticleTrailColorWithVector(particleTrailColorVector);
 		}
 	}
 	
@@ -62,7 +62,7 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 		}
 	}
 	
-	[PunRPC] void updateParticleSystemColorWithVector(Vector3 colorVector)
+	[PunRPC] void updateParticleTrailColorWithVector(Vector3 colorVector)
 	{
 		float r = colorVector.x;
 		float g = colorVector.y;
@@ -70,7 +70,7 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 		
 		Color innerCircleColor = new Color(r, g, b);
 		
-		particleSystem.startColor = innerCircleColor;
+		particleTrail.startColor = innerCircleColor;
 		
 		if (photonView.isMine)
 		{

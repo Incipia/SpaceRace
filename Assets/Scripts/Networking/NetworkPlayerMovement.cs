@@ -46,7 +46,7 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 		{
 			stream.SendNext(transform.position);
 		}
-		else if (stream.isReading && !photonView.isMine)
+		else
 		{
 			syncTargetPosition = (Vector3)stream.ReceiveNext();
 			syncLastPosition = transform.position;

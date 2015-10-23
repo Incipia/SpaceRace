@@ -55,4 +55,15 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 	{
 		PhotonNetwork.Instantiate(playerPrefab.name, new Vector3(0, 1.6f, 0), Quaternion.identity, 0);
 	}
+
+	// Should we be using this?
+//	void OnDisconnectedFromPhoton()
+//	{
+//		Destroy(gameObject);
+//	}
+
+	void OnPhotonPlayerDisconnected(PhotonPlayer otherPlayer)
+	{
+		PhotonNetwork.DestroyPlayerObjects(otherPlayer);
+	}
 }
