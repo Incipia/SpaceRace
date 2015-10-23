@@ -39,7 +39,7 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 	{
 		// we do not want to lerp the position for the first copule of frames to avoid the inital
 		// starting player position glitch
-		if (updatedFrames++ <= 2)
+		if (updatedFrames++ <= 10)
 		{
 			transform.position = syncTargetPosition;
 		}
@@ -50,16 +50,17 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 			transform.position = Vector3.Lerp(syncLastPosition, syncTargetPosition, interpolationProgress);
 		}
 	}
-	
+
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
 	{
 		if (stream.isWriting)
 		{
-			stream.SendNext(transform.position);
+			Vector3 pos = transform.position;
+			stream.Serialize(ref pos);
 		}
 		else
 		{
-			syncTargetPosition = (Vector3)stream.ReceiveNext();
+			stream.Serialize(ref syncTargetPosition);
 			syncLastPosition = transform.position;
 
 			interpolationProgress = 0;
