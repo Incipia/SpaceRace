@@ -35,4 +35,6 @@ MonoBehaviour:
   - updateOuterRingColorWithVector
   - updateParticleSystemColorWithVector
   - updateParticleTrailColorWithVector
+  - activatePlayer
+  - hideSprites
   DisableAutoOpenWizard: 1
