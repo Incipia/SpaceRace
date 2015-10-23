@@ -12,7 +12,7 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 	{
 		if (photonView.isMine)
 		{
-			int playerNumber = photonView.CreatorActorNr;
+			int playerNumber = PhotonNetwork.room.playerCount;
 
 			Color outerRingColor = PlayerColorProvider.colorForPlayerNumber(playerNumber, PlayerColoredComponentType.OuterRing);
 			Vector3 outerRingColorVector = new Vector3(outerRingColor.r, outerRingColor.g, outerRingColor.b);
@@ -35,14 +35,11 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 		float r = colorVector.x;
 		float g = colorVector.y;
 		float b = colorVector.z;
-		
-		Color innerCircleColor = new Color(r, g, b);
-		
-		outerRingRenderer.color = innerCircleColor;
-		
+
+		outerRingRenderer.color = new Color(r, g, b);
 		if (photonView.isMine)
 		{
-			photonView.RPC ("updateOuterRingColorWithVector", PhotonTargets.OthersBuffered, colorVector);
+			photonView.RPC("updateOuterRingColorWithVector", PhotonTargets.OthersBuffered, colorVector);
 		}
 	}
 
@@ -52,13 +49,10 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 		float g = colorVector.y;
 		float b = colorVector.z;
 
-		Color innerCircleColor = new Color(r, g, b);
-
-		innerCircleRenderer.color = innerCircleColor;
-
+		innerCircleRenderer.color = new Color(r, g, b);
 		if (photonView.isMine)
 		{
-			photonView.RPC ("updateInnerCircleColorWithVector", PhotonTargets.OthersBuffered, colorVector);
+			photonView.RPC("updateInnerCircleColorWithVector", PhotonTargets.OthersBuffered, colorVector);
 		}
 	}
 	
@@ -67,14 +61,11 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 		float r = colorVector.x;
 		float g = colorVector.y;
 		float b = colorVector.z;
-		
-		Color innerCircleColor = new Color(r, g, b);
-		
-		particleTrail.startColor = innerCircleColor;
-		
+
+		particleTrail.startColor = new Color(r, g, b);
 		if (photonView.isMine)
 		{
-			photonView.RPC ("updateParticleSystemColorWithVector", PhotonTargets.OthersBuffered, colorVector);
+			photonView.RPC("updateParticleTrailColorWithVector", PhotonTargets.OthersBuffered, colorVector);
 		}
 	}
 }
