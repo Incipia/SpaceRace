@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using AssemblyCSharp;
 
 public class NetworkPlayerMovement : Photon.MonoBehaviour 
 {
@@ -12,6 +13,7 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 	private int photonSendRateOnSerialize = 15;
 
 	private float interpolationProgress = 0;
+	private int updatedFrames = 0;
 
 	void Start()
 	{
@@ -35,9 +37,18 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 
 	private void SyncedMovement()
 	{
-		// increment = photonCallsPerSecond / fixedUpdateCallsPerSecond
-		interpolationProgress += photonSendRateOnSerialize * Time.fixedDeltaTime;
-		transform.position = Vector3.Lerp(syncLastPosition, syncTargetPosition, interpolationProgress);
+		// we do not want to lerp the position for the first copule of frames to avoid the inital
+		// starting player position glitch
+		if (updatedFrames++ <= 2)
+		{
+			transform.position = syncTargetPosition;
+		}
+		else
+		{
+			// increment = photonCallsPerSecond / fixedUpdateCallsPerSecond
+			interpolationProgress += photonSendRateOnSerialize * Time.fixedDeltaTime;
+			transform.position = Vector3.Lerp(syncLastPosition, syncTargetPosition, interpolationProgress);
+		}
 	}
 	
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
