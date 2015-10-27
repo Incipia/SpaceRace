@@ -7,7 +7,11 @@ using AssemblyCSharp;
 public class DefaultRoomMatchmaker : Photon.PunBehaviour 
 {
 	const string GAME_VERSION = "0.0.1";
+
 	public GameObject playerPrefab;
+	public CountdownManager countdownManager;
+
+	private List<MovePlayerPhoton> movePlayerScripts = new List<MovePlayerPhoton>();
 
 	void Start() 
 	{
@@ -64,6 +68,33 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForMaxPlayers(currentRoom.maxPlayers);
 
 		Vector3 position = startPositions[currentRoom.playerCount-1];
-		PhotonNetwork.Instantiate(playerPrefab.name, position, Quaternion.identity, 0);
+		GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, position, Quaternion.identity, 0);
+
+		MovePlayerPhoton movePlayer = player.GetComponent<MovePlayerPhoton>();
+		if (movePlayer != null)
+		{
+			movePlayer.enabled = false;
+			movePlayerScripts.Add(movePlayer);
+		}
+
+		if (currentRoom.maxPlayers == currentRoom.playerCount)
+		{
+			beginCountdown();
+			photonView.RPC("beginCountdown", PhotonTargets.Others);
+		}
+	}
+
+	[PunRPC]
+	void beginCountdown()
+	{
+		countdownManager.beginCountdownWithSeconds(5, enablePlayers);
+	}
+
+	void enablePlayers()
+	{
+		foreach(MovePlayerPhoton movePlayer in movePlayerScripts)
+		{
+			movePlayer.enabled = true;
+		}
 	}
 }

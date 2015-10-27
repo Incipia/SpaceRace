@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 405898}
-  - 114: {fileID: 11402730}
+  - 114: {fileID: 11401988}
   m_Layer: 0
   m_Name: Counter Display
   m_TagString: Coin Holder Digits
@@ -172,7 +172,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 454916}
   m_RootOrder: 1
---- !u!114 &11402730
+--- !u!114 &11401988
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -180,19 +180,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 183138}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caabefae4057d47b4a5c6e51d283314f, type: 3}
+  m_Script: {fileID: 11500000, guid: c0a361fd76722487d80f190c7b996c7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zero: {fileID: 21300000, guid: e033246365c384440b2d55a6be7cd557, type: 3}
-  one: {fileID: 21300000, guid: ab7f0662031854f21b7ee4c0632b3af8, type: 3}
-  two: {fileID: 21300000, guid: 00b697300204e4f32a16bed9fa768ee4, type: 3}
-  three: {fileID: 21300000, guid: a4486497193eb481e966f849f6ff5427, type: 3}
-  four: {fileID: 21300000, guid: 87e7a4340177247aab454a0fd872143b, type: 3}
-  five: {fileID: 21300000, guid: b9207f3d28dcf4c498ed163fd88eb1b3, type: 3}
-  six: {fileID: 21300000, guid: f1f419f2396db477aa75b2181f61a11f, type: 3}
-  seven: {fileID: 21300000, guid: 7360df71516ae47f8a986977e5c0dd16, type: 3}
-  eight: {fileID: 21300000, guid: 733aa797a817143a188db5a1913a9f64, type: 3}
-  nine: {fileID: 21300000, guid: 0fb833985d2184a909b52a3a2c642203, type: 3}
+  zero: {fileID: 21300000, guid: a6684ae1a44b349e69ef98e1af4323b8, type: 3}
+  one: {fileID: 21300000, guid: c565617091de84f75bff04bad955fe11, type: 3}
+  two: {fileID: 21300000, guid: c8d1c8b8962434a0485578f275a44e8b, type: 3}
+  three: {fileID: 21300000, guid: a3b292f7a52024d02a5c42505e7f5e12, type: 3}
+  four: {fileID: 21300000, guid: 09311b65c478b4c7583116c8db1d045b, type: 3}
+  five: {fileID: 21300000, guid: a9692d0e92c2a49aea52aed72498ea3a, type: 3}
+  six: {fileID: 21300000, guid: 981d2a022656a4ca7aedb971f371743f, type: 3}
+  seven: {fileID: 21300000, guid: ed2983e00a1df435e957aced5286b146, type: 3}
+  eight: {fileID: 21300000, guid: 98f9535b13a1642a080876d58532bbc7, type: 3}
+  nine: {fileID: 21300000, guid: 4b73a7c45139b41ed97531d2cdc9ccd8, type: 3}
   onesPlace: {fileID: 126884}
   tensPlace: {fileID: 146212}
   hundredsPlace: {fileID: 184496}
@@ -307,7 +307,73 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: onesPlace
+      value: 
+      objectReference: {fileID: 126884}
+    - target: {fileID: 0}
+      propertyPath: tensPlace
+      value: 
+      objectReference: {fileID: 146212}
+    - target: {fileID: 0}
+      propertyPath: hundredsPlace
+      value: 
+      objectReference: {fileID: 184496}
+    - target: {fileID: 0}
+      propertyPath: thousandsPlace
+      value: 
+      objectReference: {fileID: 171878}
+    - target: {fileID: 0}
+      propertyPath: zero
+      value: 
+      objectReference: {fileID: 21300000, guid: a6684ae1a44b349e69ef98e1af4323b8,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: one
+      value: 
+      objectReference: {fileID: 21300000, guid: c565617091de84f75bff04bad955fe11,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: two
+      value: 
+      objectReference: {fileID: 21300000, guid: c8d1c8b8962434a0485578f275a44e8b,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: three
+      value: 
+      objectReference: {fileID: 21300000, guid: a3b292f7a52024d02a5c42505e7f5e12,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: four
+      value: 
+      objectReference: {fileID: 21300000, guid: 09311b65c478b4c7583116c8db1d045b,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: five
+      value: 
+      objectReference: {fileID: 21300000, guid: a9692d0e92c2a49aea52aed72498ea3a,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: six
+      value: 
+      objectReference: {fileID: 21300000, guid: 981d2a022656a4ca7aedb971f371743f,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: seven
+      value: 
+      objectReference: {fileID: 21300000, guid: ed2983e00a1df435e957aced5286b146,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: eight
+      value: 
+      objectReference: {fileID: 21300000, guid: 98f9535b13a1642a080876d58532bbc7,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: nine
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b73a7c45139b41ed97531d2cdc9ccd8,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173094}

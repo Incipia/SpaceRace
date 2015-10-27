@@ -37,4 +37,5 @@ MonoBehaviour:
   - updateParticleTrailColorWithVector
   - activatePlayer
   - hideSprites
+  - beginCountdown
   DisableAutoOpenWizard: 1
