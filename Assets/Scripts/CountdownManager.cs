@@ -4,7 +4,7 @@ using System.Collections;
 public class CountdownManager : MonoBehaviour 
 {
 	public delegate void CountdownCompletion();
-	public InRoomRoundTimer timer;
+	public NetworkRoomCountdownTimer timer;
 	public CounterUI counterUI;
 
 	private bool timerStarted = false;
@@ -14,12 +14,11 @@ public class CountdownManager : MonoBehaviour
 	{
 		if (timerStarted)
 		{
-			int secondsLeft = Mathf.CeilToInt((float)timer.remainingTime);
+			int secondsLeft = Mathf.CeilToInt(timer.remainingTimeInCurrentTurn());
 			counterUI.updateSpritesWithNumber(secondsLeft);
 
-			if (timer.turn != 0 && completion != null)
+			if (timer.currentTurn() != 0 && completion != null)
 			{
-				counterUI.transform.root.gameObject.SetActive(false);
 				completion();
 			}
 		}
@@ -30,10 +29,17 @@ public class CountdownManager : MonoBehaviour
 		this.completion = completion;
 		timer.SecondsPerTurn = seconds;
 
-		timer.turn = 0;
-		timer.StartRoundNow();
+		timer.startRound();
 		timerStarted = true;
+	}
 
-		counterUI.updateSpritesWithNumber(seconds);
+	public void showCountdownUI()
+	{
+		counterUI.transform.root.gameObject.SetActive(true);
+	}
+
+	public void hideCountdownUI()
+	{
+		counterUI.transform.root.gameObject.SetActive(false);
 	}
 }

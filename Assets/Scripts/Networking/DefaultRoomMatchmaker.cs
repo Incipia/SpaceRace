@@ -16,6 +16,7 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 	void Start() 
 	{
 		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
+		countdownManager.hideCountdownUI();
 	}
 
 	void OnGUI()
@@ -84,14 +85,15 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		}
 	}
 
-	[PunRPC]
-	void beginCountdown()
+	[PunRPC] void beginCountdown()
 	{
 		countdownManager.beginCountdownWithSeconds(5, enablePlayers);
+		countdownManager.showCountdownUI();
 	}
 
 	void enablePlayers()
 	{
+		countdownManager.hideCountdownUI();
 		foreach(MovePlayerPhoton movePlayer in movePlayerScripts)
 		{
 			movePlayer.enabled = true;
