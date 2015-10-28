@@ -7,14 +7,6 @@ public class NetworkPlayerKeyboardInput : Photon.MonoBehaviour
 	public bool player1 = true;
 	public MovePlayerPhoton movePlayer;
 
-	void Start()
-	{
-		if (photonView.isMine)
-		{
-			GameObject.Find("Main Camera").GetComponent<UnityStandardAssets._2D.Camera2DFollow>().assignTarget(gameObject);
-		}
-	}
-
 	void Update()
 	{
 		if (photonView.isMine)

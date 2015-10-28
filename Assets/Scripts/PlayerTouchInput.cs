@@ -27,7 +27,7 @@ public class PlayerTouchInput : MonoBehaviour
 
 				foreach (Collider2D touchingCollider in touchingColliders)
 				{
-					if (touchingCollider == touchArea)
+					if (touchingCollider == touchArea && photonMovePlayer != null)
 					{
 //						movePlayer.jumpWithDirection(jumpDirection);
 						photonMovePlayer.jumpWithDirection(jumpDirection);

@@ -24,8 +24,11 @@ public class InRoomRoundTimer : MonoBehaviour
     private bool startRoundWhenTimeIsSynced;        // used in an edge-case when we wanted to set a start time but don't know it yet.
     private const string StartTimeKey = "st";       // the name of our "start time" custom property.
 
+	public double elapsedTime;
+	public double remainingTime;
+	public int turn;
 
-    private void StartRoundNow()
+    public void StartRoundNow()
     {
         // in some cases, when you enter a room, the server time is not available immediately.
         // time should be 0.0f but to make sure we detect it correctly, check for a very low value.
@@ -55,7 +58,7 @@ public class InRoomRoundTimer : MonoBehaviour
         else
         {
             // as the creator of the room sets the start time after entering the room, we may enter a room that has no timer started yet
-            Debug.Log("StartTime already set: " + PhotonNetwork.room.customProperties.ContainsKey(StartTimeKey));
+//            Debug.Log("StartTime already set: " + PhotonNetwork.room.customProperties.ContainsKey(StartTimeKey));
         }
     }
 
@@ -89,26 +92,30 @@ public class InRoomRoundTimer : MonoBehaviour
         {
             this.StartRoundNow();   // the "time is known" check is done inside the method.
         }
+		
+		elapsedTime = (PhotonNetwork.time - StartTime);
+		remainingTime = SecondsPerTurn - (elapsedTime % SecondsPerTurn);
+		turn = (int)(elapsedTime / SecondsPerTurn);
     }
 
-    public void OnGUI()
-    {
-        // alternatively to doing this calculation here:
-        // calculate these values in Update() and make them publicly available to all other scripts
-        double elapsedTime = (PhotonNetwork.time - StartTime);
-        double remainingTime = SecondsPerTurn - (elapsedTime % SecondsPerTurn);
-        int turn = (int)(elapsedTime / SecondsPerTurn);
-
-
-        // simple gui for output
-        GUILayout.BeginArea(TextPos);
-        GUILayout.Label(string.Format("elapsed: {0:0.000}", elapsedTime));
-        GUILayout.Label(string.Format("remaining: {0:0.000}", remainingTime));
-        GUILayout.Label(string.Format("turn: {0:0}", turn));
-        if (GUILayout.Button("new round"))
-        {
-            this.StartRoundNow();
-        }
-        GUILayout.EndArea();
-    }
+//    public void OnGUI()
+//    {
+//        // alternatively to doing this calculation here:
+//        // calculate these values in Update() and make them publicly available to all other scripts
+//        int turn = (int)(elapsedTime / SecondsPerTurn);
+//
+//
+//		GUI.color = Color.black;
+//
+//        // simple gui for output
+//        GUILayout.BeginArea(TextPos);
+//        GUILayout.Label(string.Format("elapsed: {0:0.000}", elapsedTime));
+//        GUILayout.Label(string.Format("remaining: {0:0.000}", remainingTime));
+//        GUILayout.Label(string.Format("turn: {0:0}", turn));
+//        if (GUILayout.Button("new round"))
+//        {
+//            this.StartRoundNow();
+//        }
+//        GUILayout.EndArea();
+//    }
 }

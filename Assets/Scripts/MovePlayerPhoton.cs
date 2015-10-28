@@ -83,7 +83,10 @@ public class MovePlayerPhoton : Photon.MonoBehaviour
 
 	public void jumpWithDirection(JumpDirection direction)
 	{
-		jumpDirection = direction;
+		if (this.enabled)
+		{
+			jumpDirection = direction;
+		}
 	}
 
 	private void enableMaxVelocityIfNecessary()

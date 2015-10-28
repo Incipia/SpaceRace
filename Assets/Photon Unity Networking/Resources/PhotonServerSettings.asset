@@ -30,4 +30,12 @@ MonoBehaviour:
   - PunPickupSimple
   - PunRespawn
   - RequestForPickupTimes
+  - updateColorWithVector
+  - updateInnerCircleColorWithVector
+  - updateOuterRingColorWithVector
+  - updateParticleSystemColorWithVector
+  - updateParticleTrailColorWithVector
+  - activatePlayer
+  - hideSprites
+  - beginCountdown
   DisableAutoOpenWizard: 1
