@@ -681,6 +681,10 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498530, guid: 1b82afa3a1d704697a8514389919b641, type: 2}
   m_PrefabInternal: {fileID: 131411846}
+--- !u!4 &141663631 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 425566, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+  m_PrefabInternal: {fileID: 1068553784}
 --- !u!1001 &143473071
 Prefab:
   m_ObjectHideFlags: 0
@@ -720,7 +724,28 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11419206, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 141663631}
+    - target: {fileID: 11419206, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
+      propertyPath: lookAheadFactor
+      value: 3.3499999
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419206, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
+      propertyPath: lookAheadReturnSpeed
+      value: 5.78000021
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419206, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
+      propertyPath: lookAheadMoveThreshold
+      value: .810000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419206, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
+      propertyPath: damping
+      value: 4.75
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11419206, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &196718622
@@ -976,6 +1001,25 @@ Transform:
   - {fileID: 1707575067}
   m_Father: {fileID: 527223317}
   m_RootOrder: 2
+--- !u!1 &292099171 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 178262, guid: 4ce7560466a9b9143bbab41377c058c1, type: 2}
+  m_PrefabInternal: {fileID: 143473071}
+--- !u!114 &292099172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 292099171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1717218684a53dd40906145a1e930f21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToFollow: {fileID: 141663631}
+  yTrackingSpeed: .0799999982
+  xTrackingSpeed: .00999999978
+  lockXPosition: 0
 --- !u!1 &331879595
 GameObject:
   m_ObjectHideFlags: 0
