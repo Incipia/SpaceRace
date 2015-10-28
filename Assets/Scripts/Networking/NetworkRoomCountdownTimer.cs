@@ -17,7 +17,7 @@ using UnityEngine;
 /// </remarks>
 public class NetworkRoomCountdownTimer : MonoBehaviour
 {
-	public int SecondsPerTurn = 5;                  // time per round/turn
+	public int SecondsPerTurn = 3;                  // time per round/turn
 	public double StartTime;                        // this should could also be a private. i just like to see this in inspector
 	
 	private bool startRoundWhenTimeIsSynced;        // used in an edge-case when we wanted to set a start time but don't know it yet.

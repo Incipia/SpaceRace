@@ -17,6 +17,16 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 	{
 		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
 		countdownManager.hideCountdownUI();
+
+		GameObject topLevelComponent = GameObject.FindGameObjectWithTag("Level Component");
+		foreach (PlatformOscillation oscillation in topLevelComponent.transform.GetComponentsInChildren<PlatformOscillation>(true))
+		{
+			oscillation.enabled = false;
+		}
+		foreach (PlatformRotator rotator in topLevelComponent.transform.GetComponentsInChildren<PlatformRotator>(true))
+		{
+			rotator.enabled = false;
+		}
 	}
 
 	void OnGUI()
@@ -87,7 +97,7 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	[PunRPC] void beginCountdown()
 	{
-		countdownManager.beginCountdownWithSeconds(5, enablePlayers);
+		countdownManager.beginCountdownWithSeconds(3, enablePlayers);
 		countdownManager.showCountdownUI();
 	}
 
@@ -97,6 +107,16 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		foreach(MovePlayerPhoton movePlayer in movePlayerScripts)
 		{
 			movePlayer.enabled = true;
+		}
+
+		GameObject topLevelComponent = GameObject.FindGameObjectWithTag("Level Component");
+		foreach (PlatformOscillation oscillation in topLevelComponent.GetComponentsInChildren<PlatformOscillation>(true))
+		{
+			oscillation.enabled = true;
+		}
+		foreach (PlatformRotator rotator in topLevelComponent.GetComponentsInChildren<PlatformRotator>(true))
+		{
+			rotator.enabled = true;
 		}
 	}
 }
