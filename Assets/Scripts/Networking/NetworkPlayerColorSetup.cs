@@ -7,26 +7,30 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 	public SpriteRenderer outerRingRenderer;
 	public SpriteRenderer innerCircleRenderer;
 	public ParticleSystem particleTrail;
+	public CounterUI playerNumberDisplay;
+	public int playerNumber;
 
 	void Start() 
 	{
 		if (photonView.isMine)
 		{
-			int playerNumber = PhotonNetwork.room.playerCount;
+			int playerDisplayNumber = PhotonNetwork.room.playerCount;
 
-			Color outerRingColor = PlayerColorProvider.colorForPlayerNumber(playerNumber, PlayerColoredComponentType.OuterRing);
+			Color outerRingColor = PlayerColorProvider.colorForPlayerNumber(playerDisplayNumber, PlayerColoredComponentType.OuterRing);
 			Vector3 outerRingColorVector = new Vector3(outerRingColor.r, outerRingColor.g, outerRingColor.b);
 			updateOuterRingColorWithVector(outerRingColorVector);
 			
 			
-			Color innerCircleColor = PlayerColorProvider.colorForPlayerNumber(playerNumber, PlayerColoredComponentType.InnerCircle);
+			Color innerCircleColor = PlayerColorProvider.colorForPlayerNumber(playerDisplayNumber, PlayerColoredComponentType.InnerCircle);
 			Vector3 innerCircleColorVector = new Vector3(innerCircleColor.r, innerCircleColor.g, innerCircleColor.b);
 			updateInnerCircleColorWithVector(innerCircleColorVector);
 			
 			
-			Color particleTrailColor = PlayerColorProvider.colorForPlayerNumber(playerNumber, PlayerColoredComponentType.ParticleTrail);
+			Color particleTrailColor = PlayerColorProvider.colorForPlayerNumber(playerDisplayNumber, PlayerColoredComponentType.ParticleTrail);
 			Vector3 particleTrailColorVector = new Vector3(particleTrailColor.r, particleTrailColor.g, particleTrailColor.b);
 			updateParticleTrailColorWithVector(particleTrailColorVector);
+
+			updatePlayerDisplayNumber(playerDisplayNumber);
 		}
 	}
 	
@@ -66,6 +70,17 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 		if (photonView.isMine)
 		{
 			photonView.RPC("updateParticleTrailColorWithVector", PhotonTargets.OthersBuffered, colorVector);
+		}
+	}
+
+	// TODO: get this out of here!
+	[PunRPC] void updatePlayerDisplayNumber(int number)
+	{
+		playerNumber = number;
+		playerNumberDisplay.updateSpritesWithNumber(number);
+		if (photonView.isMine)
+		{
+			photonView.RPC("updatePlayerDisplayNumber", PhotonTargets.OthersBuffered, number);
 		}
 	}
 }

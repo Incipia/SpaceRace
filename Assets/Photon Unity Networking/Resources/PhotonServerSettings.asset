@@ -38,4 +38,6 @@ MonoBehaviour:
   - activatePlayer
   - hideSprites
   - beginCountdown
+  - updatePlayerDisplayNumber
+  - activateAndUpdateFinishLineText
   DisableAutoOpenWizard: 1
