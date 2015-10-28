@@ -7,6 +7,7 @@ public class CameraFollow : MonoBehaviour
 	public float yTrackingSpeed;
 	public float xTrackingSpeed;
 	public bool lockXPosition = false;
+	public float minYPosition = 0;
 
 	Transform trans;
 	float lookAheadDistance;
@@ -31,7 +32,8 @@ public class CameraFollow : MonoBehaviour
 				newXPosition = Mathf.Lerp(trans.position.x, objectToFollow.position.x, xTrackingSpeed);
 			}
 			float newYPosition = Mathf.Lerp(trans.position.y, objectToFollow.position.y + lookAheadDistance, yTrackingSpeed);
-			
+
+			newYPosition = Mathf.Max(minYPosition, newYPosition);
 			trans.position = new Vector3(newXPosition, newYPosition, trans.position.z);
 		}
 	}
