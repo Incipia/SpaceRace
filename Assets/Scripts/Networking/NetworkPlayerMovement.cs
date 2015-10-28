@@ -25,6 +25,10 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 			playerRigidBody.isKinematic = true;
 			playerRigidBody.interpolation = RigidbodyInterpolation2D.None;
 		}
+		else
+		{
+			Camera.main.GetComponent<CameraFollow>().objectToFollow = transform;
+		}
 	}
 
 	void FixedUpdate()

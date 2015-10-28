@@ -23,13 +23,16 @@ public class CameraFollow : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		float newXPosition = trans.position.x;
-		if(!lockXPosition)
+		if (objectToFollow != null)
 		{
-			newXPosition = Mathf.Lerp(trans.position.x, objectToFollow.position.x, xTrackingSpeed);
+			float newXPosition = trans.position.x;
+			if(!lockXPosition)
+			{
+				newXPosition = Mathf.Lerp(trans.position.x, objectToFollow.position.x, xTrackingSpeed);
+			}
+			float newYPosition = Mathf.Lerp(trans.position.y, objectToFollow.position.y + lookAheadDistance, yTrackingSpeed);
+			
+			trans.position = new Vector3(newXPosition, newYPosition, trans.position.z);
 		}
-		float newYPosition = Mathf.Lerp(trans.position.y, objectToFollow.position.y + lookAheadDistance, yTrackingSpeed);
-
-		trans.position = new Vector3(newXPosition, newYPosition, trans.position.z);
 	}
 }

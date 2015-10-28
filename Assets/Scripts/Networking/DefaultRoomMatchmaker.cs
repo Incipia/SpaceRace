@@ -38,15 +38,15 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		else if (PhotonNetwork.room == null)
 		{
 			// Create Room
-			if (GUI.Button(new Rect(0, 0, 175, 100), "Connect to 4 Person Room"))
+			if (GUI.Button(new Rect(0, 0, 175, 150), "Connect to 1 Person Room"))
 			{
 				RoomOptions roomOptions = new RoomOptions() {
-					maxPlayers = 4,
+					maxPlayers = 1,
 					isVisible = false
 				};
 				PhotonNetwork.JoinOrCreateRoom("default4", roomOptions, TypedLobby.Default);
 			}
-			if (GUI.Button(new Rect(0, 100, 175, 100), "Connect to 3 Person Room"))
+			if (GUI.Button(new Rect(0, 175, 175, 150), "Connect to 3 Person Room"))
 			{
 				RoomOptions roomOptions = new RoomOptions() {
 					maxPlayers = 3,
@@ -54,18 +54,18 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 				};
 				PhotonNetwork.JoinOrCreateRoom("default3", roomOptions, TypedLobby.Default);
 			}
-			if (GUI.Button(new Rect(0, 200, 175, 100), "Connect to 2 Person Room"))
-			{
+			if (GUI.Button(new Rect(200, 0, 175, 150), "Connect to 2 Person Room"))
+			{			
 				RoomOptions roomOptions = new RoomOptions() {
 					maxPlayers = 2,
 					isVisible = false
 				};
 				PhotonNetwork.JoinOrCreateRoom("default2", roomOptions, TypedLobby.Default);
 			}
-			if (GUI.Button(new Rect(0, 300, 175, 100), "Connect to 1 Person Room"))
+			if (GUI.Button(new Rect(200, 175, 175, 150), "Connect to 4 Person Room"))
 			{
 				RoomOptions roomOptions = new RoomOptions() {
-					maxPlayers = 1,
+					maxPlayers = 4,
 					isVisible = false
 				};
 				PhotonNetwork.JoinOrCreateRoom("default1", roomOptions, TypedLobby.Default);
