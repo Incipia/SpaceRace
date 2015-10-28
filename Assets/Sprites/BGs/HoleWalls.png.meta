@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 142b631a24e43644f913b5dcbe0584a0
-timeCreated: 1445994010
+guid: 49febef9d2b7a7c4cb265d421811c7fd
+timeCreated: 1445995378
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Portal_0
-    21300002: Portal_1
+    21300000: HoleWalls_0
+    21300002: HoleWalls_1
+    21300004: HoleWalls_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,23 +52,33 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: Portal_0
+    - name: HoleWalls_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 910
-        width: 569
-        height: 95
+        x: 26
+        y: 84
+        width: 524
+        height: 875
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Portal_1
+    - name: HoleWalls_1
       rect:
         serializedVersion: 2
-        x: 43
-        y: 607
-        width: 875
-        height: 294
+        x: 26
+        y: 57
+        width: 524
+        height: 941
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: HoleWalls_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 72
+        width: 524
+        height: 942
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

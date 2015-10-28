@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: 142b631a24e43644f913b5dcbe0584a0
-timeCreated: 1445994010
+guid: 41a2a1e0842da944c9207801436110ce
+timeCreated: 1445990683
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Portal_0
-    21300002: Portal_1
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -32,45 +30,25 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: 16
+    aniso: -1
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: Portal_0
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 910
-        width: 569
-        height: 95
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: Portal_1
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 607
-        width: 875
-        height: 294
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
