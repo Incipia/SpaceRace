@@ -97,7 +97,7 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	[PunRPC] void beginCountdown()
 	{
-		countdownManager.beginCountdownWithSeconds(3, enablePlayers);
+		countdownManager.beginCountdownWithSeconds(5, enablePlayers);
 		countdownManager.showCountdownUI();
 	}
 
