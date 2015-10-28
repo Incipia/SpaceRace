@@ -55,12 +55,11 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 	{
 		if (stream.isWriting)
 		{
-			Vector3 pos = transform.position;
-			stream.Serialize(ref pos);
+			stream.SendNext(transform.position);
 		}
 		else
 		{
-			stream.Serialize(ref syncTargetPosition);
+			syncTargetPosition = (Vector3)stream.ReceiveNext();
 			syncLastPosition = transform.position;
 
 			interpolationProgress = 0;
