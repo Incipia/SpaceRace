@@ -20,10 +20,10 @@ public class SpeedBoostArea : MonoBehaviour
 	// Update is called once per frame
 	private void FixedUpdate() 
 	{
-//		foreach(MovePlayer player in playersToBoost)
-//		{
-//			player.addImpulse(forceToApply);
-//		}
+		foreach(MovePlayer player in playersToBoost)
+		{
+			player.addImpulse(forceToApply);
+		}
 
 		foreach(MovePlayerPhoton player in photonPlayersToBoost)
 		{
@@ -33,12 +33,12 @@ public class SpeedBoostArea : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-//		MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
-//		if(movePlayer != null)
-//		{
-//			playersToBoost.Add(movePlayer);
-//			movePlayer.disableMaxVelocity();
-//		}
+		MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
+		if(movePlayer != null)
+		{
+			playersToBoost.Add(movePlayer);
+			movePlayer.disableMaxVelocity();
+		}
 
 		MovePlayerPhoton movePlayerPhoton = other.gameObject.transform.root.GetComponentInChildren<MovePlayerPhoton>();
 		if(movePlayerPhoton != null)
@@ -50,12 +50,12 @@ public class SpeedBoostArea : MonoBehaviour
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-//		MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
-//		if(movePlayer != null)
-//		{
-//			playersToBoost.Remove(movePlayer);
-//			movePlayer.enableMaxVelocity();
-//		}
+		MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
+		if(movePlayer != null)
+		{
+			playersToBoost.Remove(movePlayer);
+			movePlayer.enableMaxVelocity();
+		}
 
 		MovePlayerPhoton movePlayerPhoton = other.gameObject.transform.root.GetComponentInChildren<MovePlayerPhoton>();
 		if(movePlayerPhoton != null)
