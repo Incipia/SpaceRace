@@ -8,7 +8,7 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 	public SpriteRenderer innerCircleRenderer;
 	public ParticleSystem particleTrail;
 
-	void Start() 
+	void Awake() 
 	{
 		if (photonView.isMine)
 		{

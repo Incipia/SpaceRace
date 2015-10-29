@@ -6,7 +6,7 @@ public class NetworkPlayerNumberSetup : Photon.MonoBehaviour
 	public CounterUI playerNumberDisplay;
 	public int playerNumber;
 
-	void Start()
+	void Awake()
 	{
 		if (photonView.isMine)
 		{

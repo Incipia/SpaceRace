@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class NetworkRoomLevelSetup : Photon.PunBehaviour
+public class NetworkRoomLevelSetup : MonoBehaviour
 {
 	public GameObject topLevelComponent;
 	private List<PlatformOscillation> platformOscillationScripts = new List<PlatformOscillation>();

@@ -15,7 +15,7 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	private List<MovePlayerPhoton> movePlayerScripts = new List<MovePlayerPhoton>();
 
-	void Start() 
+	void Awake() 
 	{
 		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
 
