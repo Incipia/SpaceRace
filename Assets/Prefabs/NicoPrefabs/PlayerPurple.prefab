@@ -198,7 +198,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163876}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f20399f06ab8b4d18ac6e8dcf318c4ce, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -233,6 +233,7 @@ MonoBehaviour:
   jumpAngle: 50
   jumpForce: 6.65999985
   playerRigidBody: {fileID: 5088836}
+  trailParticles: {fileID: 0}
 --- !u!198 &19802762
 ParticleSystem:
   m_ObjectHideFlags: 1
