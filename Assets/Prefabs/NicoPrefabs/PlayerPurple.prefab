@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.610000014, y: 2.20000005, z: 0}
+  m_LocalPosition: {x: -.610000014, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 447894}
@@ -233,7 +233,7 @@ MonoBehaviour:
   jumpAngle: 50
   jumpForce: 6.65999985
   playerRigidBody: {fileID: 5088836}
-  trailParticles: {fileID: 0}
+  trailParticles: {fileID: 191876}
 --- !u!198 &19802762
 ParticleSystem:
   m_ObjectHideFlags: 1
