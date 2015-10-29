@@ -61,6 +61,7 @@ public class MovePlayer : MonoBehaviour
 
 	public void disableMaxVelocity()
 	{
+		playerRigidBody.gravityScale = 2;
 		maxVelocityDisabled = true;
 		disableAngularMovementFromTouchInput();
 	}
@@ -108,6 +109,8 @@ public class MovePlayer : MonoBehaviour
 			enableAngularMovementFromTouchInput();
 			maxVelocityDisabled = false;
 			readyToEnableMaxVelocity = false;
+
+			playerRigidBody.gravityScale = 1;
 		}
 	}
 
