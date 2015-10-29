@@ -18,6 +18,8 @@ public class FinishLine : Photon.MonoBehaviour
 		if (other.transform.position.y > edgeTransformY)
 		{
 			GameObject player = other.transform.root.gameObject;
+
+			// TEMPORARY! We need a better way to get this info off of the player game object
 			NetworkPlayerNumberSetup numberSetup = player.GetComponent<NetworkPlayerNumberSetup>();
 			if (numberSetup != null)
 			{
