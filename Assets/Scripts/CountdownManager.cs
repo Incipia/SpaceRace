@@ -6,9 +6,10 @@ public class CountdownManager : MonoBehaviour
 	public delegate void CountdownCompletion();
 	public NetworkRoomCountdownTimer timer;
 	public CounterUI counterUI;
+	public int countdownDuration = 5;
 
 	private bool timerStarted = false;
-	private CountdownCompletion completion;
+	public CountdownCompletion completion;
 
 	void Update()
 	{
@@ -26,11 +27,38 @@ public class CountdownManager : MonoBehaviour
 
 	public void beginCountdownWithSeconds(int seconds, CountdownCompletion completion)
 	{
-		this.completion = completion;
-		timer.SecondsPerTurn = seconds;
+		if (timerStarted == false)
+		{
+			this.completion = completion;
+			timer.SecondsPerTurn = seconds;
+			
+			timer.startRound();
+			timerStarted = true;
+		}
+	}
 
-		timer.startRound();
-		timerStarted = true;
+	public void beginCountdownWithCompletion(CountdownCompletion completion)
+	{
+		if (timerStarted == false)
+		{
+			this.completion = completion;
+			timer.SecondsPerTurn = countdownDuration;
+			
+			timer.startRound();
+			timerStarted = true;
+		}
+	}
+
+	public void beginCountdown()
+	{
+		if (timerStarted == false)
+		{
+			this.completion = completion;
+			timer.SecondsPerTurn = countdownDuration;
+			
+			timer.startRound();
+			timerStarted = true;
+		}
 	}
 
 	public void showCountdownUI()

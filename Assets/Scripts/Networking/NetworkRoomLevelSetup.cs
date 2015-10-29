@@ -8,7 +8,7 @@ public class NetworkRoomLevelSetup : MonoBehaviour
 	private List<PlatformOscillation> platformOscillationScripts = new List<PlatformOscillation>();
 	private List<PlatformRotator> platformRotatorScripts = new List<PlatformRotator>();
 
-	void Start()
+	void Awake()
 	{
 		getPlatformRotatorAndOscillationScripts();
 	}

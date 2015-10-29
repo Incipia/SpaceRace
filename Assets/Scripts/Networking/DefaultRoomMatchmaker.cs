@@ -25,18 +25,20 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		}
 	}
 
-	void Awake() 
+	void Start()
 	{
-		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
-
-		countdownManager.hideCountdownUI();
 		levelSetup.deactivateMovingLevelComponents();
+
+		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
 		playersManager.autoDisablePlayerMovementOnCreate = true;
+		setupCountdownManager();
 	}
 
 	void OnJoinedRoom()
 	{
 		List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(currentRoom.maxPlayers);
+
+		// Get the start position that corresponds to THIS player
 		Vector3 startPos = startPositions[currentRoom.playerCount-1];
 		playersManager.createAndTrackPlayer(startPos);
 
@@ -48,14 +50,15 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	[PunRPC] void beginCountdown()
 	{
-		countdownManager.beginCountdownWithSeconds(5, countdownFinished);
 		countdownManager.showCountdownUI();
+		countdownManager.beginCountdown();
 	}
 
-	private void countdownFinished()
+	private void setupCountdownManager()
 	{
 		countdownManager.hideCountdownUI();
-		levelSetup.activateMovingLevelComponents();
-		playersManager.enableTrackedPlayerMovement();
+		countdownManager.completion += countdownManager.hideCountdownUI;
+		countdownManager.completion += levelSetup.activateMovingLevelComponents;
+		countdownManager.completion += playersManager.enableTrackedPlayerMovement;
 	}
 }
