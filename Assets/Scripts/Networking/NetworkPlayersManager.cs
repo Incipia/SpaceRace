@@ -9,31 +9,29 @@ public class NetworkPlayersManager : MonoBehaviour
 	private List<MovePlayerPhoton> movePlayerScripts = new List<MovePlayerPhoton>();
 	
 	public GameObject playerPrefab;
-	public bool autoDisablePlayers;
+	public bool autoDisablePlayerMovementOnCreate;
 
-	public void createNewPlayer()
+	public GameObject createAndTrackPlayer(Vector3 startPos)
 	{
-		Room currentRoom = PhotonNetwork.room;
-		List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(currentRoom.maxPlayers);
-		
-		Vector3 position = startPositions[currentRoom.playerCount-1];
-		GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, position, Quaternion.identity, 0);
+		GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, startPos, Quaternion.identity, 0);
 		currentPlayersInRoom.Add(player);
 
 		MovePlayerPhoton movePlayer = player.GetComponent<MovePlayerPhoton>();
 		if (movePlayer != null)
 		{
-			movePlayer.enabled = !autoDisablePlayers;
+			movePlayer.enabled = !autoDisablePlayerMovementOnCreate;
 			movePlayerScripts.Add(movePlayer);
 		}
+
+		return player;
 	}
 
-	public void disableTrackedPlayers()
+	public void disableTrackedPlayerMovement()
 	{
 		setMovePlayerScriptsEnabled(false);
 	}
 
-	public void enableTrackedPlayers()
+	public void enableTrackedPlayerMovement()
 	{
 		setMovePlayerScriptsEnabled(true);
 	}

@@ -12,8 +12,18 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 	public CountdownManager countdownManager;
 	public NetworkRoomLevelSetup levelSetup;
 	public NetworkPlayersManager playersManager;
-
+	
 	private List<MovePlayerPhoton> movePlayerScripts = new List<MovePlayerPhoton>();
+	private Room currentRoom {
+		get {
+			return PhotonNetwork.room;
+		}
+	}
+	private bool roomIsFull {
+		get {
+			return currentRoom.maxPlayers == currentRoom.playerCount;
+		}
+	}
 
 	void Awake() 
 	{
@@ -21,65 +31,18 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 		countdownManager.hideCountdownUI();
 		levelSetup.deactivateMovingLevelComponents();
-	}
-
-	void OnGUI()
-	{
-		if (!PhotonNetwork.connected)
-		{
-			GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-		}
-		else if (PhotonNetwork.room == null)
-		{
-			// Create Room
-			if (GUI.Button(new Rect(0, 0, 175, 150), "Connect to 1 Person Room"))
-			{
-				RoomOptions roomOptions = new RoomOptions() {
-					maxPlayers = 1,
-					isVisible = false
-				};
-				PhotonNetwork.JoinOrCreateRoom("default4", roomOptions, TypedLobby.Default);
-			}
-			if (GUI.Button(new Rect(0, 175, 175, 150), "Connect to 3 Person Room"))
-			{
-				RoomOptions roomOptions = new RoomOptions() {
-					maxPlayers = 3,
-					isVisible = false
-				};
-				PhotonNetwork.JoinOrCreateRoom("default3", roomOptions, TypedLobby.Default);
-			}
-			if (GUI.Button(new Rect(200, 0, 175, 150), "Connect to 2 Person Room"))
-			{			
-				RoomOptions roomOptions = new RoomOptions() {
-					maxPlayers = 2,
-					isVisible = false
-				};
-				PhotonNetwork.JoinOrCreateRoom("default2", roomOptions, TypedLobby.Default);
-			}
-			if (GUI.Button(new Rect(200, 175, 175, 150), "Connect to 4 Person Room"))
-			{
-				RoomOptions roomOptions = new RoomOptions() {
-					maxPlayers = 4,
-					isVisible = false
-				};
-				PhotonNetwork.JoinOrCreateRoom("default1", roomOptions, TypedLobby.Default);
-			}
-		}
-	}
-
-	private bool roomIsFull()
-	{
-		Room currentRoom = PhotonNetwork.room;
-		return currentRoom.maxPlayers == currentRoom.playerCount;
+		playersManager.autoDisablePlayerMovementOnCreate = true;
 	}
 
 	void OnJoinedRoom()
 	{
-		playersManager.createNewPlayer();
-		if (roomIsFull())
+		List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(currentRoom.maxPlayers);
+		Vector3 startPos = startPositions[currentRoom.playerCount-1];
+		playersManager.createAndTrackPlayer(startPos);
+
+		if (roomIsFull)
 		{
-			beginCountdown();
-			photonView.RPC("beginCountdown", PhotonTargets.Others);
+			photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
 		}
 	}
 
@@ -89,10 +52,10 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		countdownManager.showCountdownUI();
 	}
 
-	void countdownFinished()
+	private void countdownFinished()
 	{
 		countdownManager.hideCountdownUI();
 		levelSetup.activateMovingLevelComponents();
-		playersManager.enableTrackedPlayers();
+		playersManager.enableTrackedPlayerMovement();
 	}
 }
