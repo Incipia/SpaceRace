@@ -723,7 +723,7 @@ Transform:
   m_Children:
   - {fileID: 594711174}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!68 &253252135
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1220,7 +1220,7 @@ Transform:
   - {fileID: 1157012173}
   - {fileID: 1353562197}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &547797126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3158,7 @@ Transform:
   - {fileID: 331879596}
   - {fileID: 1280819281}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1001 &1881063725
 Prefab:
   m_ObjectHideFlags: 0
@@ -3395,7 +3395,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2135292966}
     m_Modifications:
     - target: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_LocalPosition.x
@@ -3403,7 +3403,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.70000005
       objectReference: {fileID: 0}
     - target: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3427,7 +3427,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 21264436, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_Sprite
@@ -3455,7 +3455,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 173094, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_Name
-      value: Countdown UI
+      value: Countdown Display
       objectReference: {fileID: 0}
     - target: {fileID: 183138, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_IsActive
@@ -3624,6 +3624,10 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 2013091146}
   m_Script: {fileID: 11500000, guid: c0a361fd76722487d80f190c7b996c7e, type: 3}
+--- !u!4 &2091284858 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
+  m_PrefabInternal: {fileID: 2013091146}
 --- !u!1001 &2091578263
 Prefab:
   m_ObjectHideFlags: 0
@@ -3698,9 +3702,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2135292965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .629759669, y: 1.30912971, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2091284858}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!114 &2135292967
