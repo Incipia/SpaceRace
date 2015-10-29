@@ -18,11 +18,11 @@ public class FinishLine : Photon.MonoBehaviour
 		if (other.transform.position.y > edgeTransformY)
 		{
 			GameObject player = other.transform.root.gameObject;
-			NetworkPlayerColorSetup colorSetup = player.GetComponent<NetworkPlayerColorSetup>();
-			if (colorSetup != null)
+			NetworkPlayerNumberSetup numberSetup = player.GetComponent<NetworkPlayerNumberSetup>();
+			if (numberSetup != null)
 			{
-				activateAndUpdateFinishLineText(colorSetup.playerNumber);
-				photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, colorSetup.playerNumber);
+				activateAndUpdateFinishLineText(numberSetup.playerNumber);
+				photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, numberSetup.playerNumber);
 			}
 		}
 	}

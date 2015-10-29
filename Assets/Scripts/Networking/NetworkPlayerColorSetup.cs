@@ -7,8 +7,6 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 	public SpriteRenderer outerRingRenderer;
 	public SpriteRenderer innerCircleRenderer;
 	public ParticleSystem particleTrail;
-	public CounterUI playerNumberDisplay;
-	public int playerNumber;
 
 	void Start() 
 	{
@@ -29,8 +27,6 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 			Color particleTrailColor = PlayerColorProvider.colorForPlayerNumber(playerDisplayNumber, PlayerColoredComponentType.ParticleTrail);
 			Vector3 particleTrailColorVector = new Vector3(particleTrailColor.r, particleTrailColor.g, particleTrailColor.b);
 			updateParticleTrailColorWithVector(particleTrailColorVector);
-
-			updatePlayerDisplayNumber(playerDisplayNumber);
 		}
 	}
 	
@@ -70,17 +66,6 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 		if (photonView.isMine)
 		{
 			photonView.RPC("updateParticleTrailColorWithVector", PhotonTargets.OthersBuffered, colorVector);
-		}
-	}
-
-	// TODO: get this out of here!
-	[PunRPC] void updatePlayerDisplayNumber(int number)
-	{
-		playerNumber = number;
-		playerNumberDisplay.updateSpritesWithNumber(number);
-		if (photonView.isMine)
-		{
-			photonView.RPC("updatePlayerDisplayNumber", PhotonTargets.OthersBuffered, number);
 		}
 	}
 }

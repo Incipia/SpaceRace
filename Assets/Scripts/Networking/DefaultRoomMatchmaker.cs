@@ -10,23 +10,17 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	public GameObject playerPrefab;
 	public CountdownManager countdownManager;
+	public NetworkRoomLevelSetup levelSetup;
+	public NetworkPlayersManager playersManager;
 
 	private List<MovePlayerPhoton> movePlayerScripts = new List<MovePlayerPhoton>();
 
 	void Start() 
 	{
 		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
-		countdownManager.hideCountdownUI();
 
-		GameObject topLevelComponent = GameObject.FindGameObjectWithTag("Level Component");
-		foreach (PlatformOscillation oscillation in topLevelComponent.transform.GetComponentsInChildren<PlatformOscillation>(true))
-		{
-			oscillation.enabled = false;
-		}
-		foreach (PlatformRotator rotator in topLevelComponent.transform.GetComponentsInChildren<PlatformRotator>(true))
-		{
-			rotator.enabled = false;
-		}
+		countdownManager.hideCountdownUI();
+		levelSetup.deactivateMovingLevelComponents();
 	}
 
 	void OnGUI()
@@ -73,22 +67,16 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 		}
 	}
 
-	void OnJoinedRoom()
+	private bool roomIsFull()
 	{
 		Room currentRoom = PhotonNetwork.room;
-		List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForMaxPlayers(currentRoom.maxPlayers);
+		return currentRoom.maxPlayers == currentRoom.playerCount;
+	}
 
-		Vector3 position = startPositions[currentRoom.playerCount-1];
-		GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, position, Quaternion.identity, 0);
-
-		MovePlayerPhoton movePlayer = player.GetComponent<MovePlayerPhoton>();
-		if (movePlayer != null)
-		{
-			movePlayer.enabled = false;
-			movePlayerScripts.Add(movePlayer);
-		}
-
-		if (currentRoom.maxPlayers == currentRoom.playerCount)
+	void OnJoinedRoom()
+	{
+		playersManager.createNewPlayer();
+		if (roomIsFull())
 		{
 			beginCountdown();
 			photonView.RPC("beginCountdown", PhotonTargets.Others);
@@ -97,26 +85,14 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	[PunRPC] void beginCountdown()
 	{
-		countdownManager.beginCountdownWithSeconds(5, enablePlayers);
+		countdownManager.beginCountdownWithSeconds(5, countdownFinished);
 		countdownManager.showCountdownUI();
 	}
 
-	void enablePlayers()
+	void countdownFinished()
 	{
 		countdownManager.hideCountdownUI();
-		foreach(MovePlayerPhoton movePlayer in movePlayerScripts)
-		{
-			movePlayer.enabled = true;
-		}
-
-		GameObject topLevelComponent = GameObject.FindGameObjectWithTag("Level Component");
-		foreach (PlatformOscillation oscillation in topLevelComponent.GetComponentsInChildren<PlatformOscillation>(true))
-		{
-			oscillation.enabled = true;
-		}
-		foreach (PlatformRotator rotator in topLevelComponent.GetComponentsInChildren<PlatformRotator>(true))
-		{
-			rotator.enabled = true;
-		}
+		levelSetup.activateMovingLevelComponents();
+		playersManager.enableTrackedPlayers();
 	}
 }

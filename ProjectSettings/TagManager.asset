@@ -7,7 +7,8 @@ TagManager:
   - Parallax
   - TouchInput
   - Touch Input
-  - Level Component
+  - Level Components
+  - Coin Holder Digits
   layers:
   - Default
   - TransparentFX
