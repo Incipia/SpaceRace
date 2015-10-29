@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 143902, guid: 3953d3a48543e40b08e01612b2c4d7c3, type: 2}
-  autoDisablePlayerMovementOnCreate: 0
+  autoDisablePlayerMovementOnCreate: 1
 --- !u!4 &107662339 stripped
 Transform:
   m_PrefabParentObject: {fileID: 498530, guid: 1b82afa3a1d704697a8514389919b641, type: 2}
@@ -718,12 +718,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 253252132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.88999999, z: 0}
+  m_LocalPosition: {x: 0, y: 3.29999995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 594711174}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!68 &253252135
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1220,7 +1220,7 @@ Transform:
   - {fileID: 1157012173}
   - {fileID: 1353562197}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
 --- !u!1 &547797126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3158,7 +3158,7 @@ Transform:
   - {fileID: 331879596}
   - {fileID: 1280819281}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
 --- !u!1001 &1881063725
 Prefab:
   m_ObjectHideFlags: 0
@@ -3702,7 +3702,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!114 &2135292967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3716,6 +3716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 2135292968}
   counterUI: {fileID: 2059923522}
+  countdownDuration: 5
 --- !u!114 &2135292968
 MonoBehaviour:
   m_ObjectHideFlags: 0
