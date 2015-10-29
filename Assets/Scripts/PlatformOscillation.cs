@@ -18,17 +18,21 @@ public class PlatformOscillation : MonoBehaviour
 	public bool loop = true;
 	public bool shouldReverse;
 	public float movementDuration = 1.0f;
+	public float initialWaitDuration = 0;
+
 	public List<OscillationPoint> oscillationPoints;
 
 	private List<OscillationPoint> currentOscillationPoints;
 	private List<Vector3> worldPoints = new List<Vector3>();
 	private int currentIndex = 0;
 
-	void Start()
+	IEnumerator Start()
 	{
 		currentOscillationPoints = new List<OscillationPoint>(oscillationPoints);
 
 		setObjectToFirstPoint();
+		
+		yield return new WaitForSeconds(initialWaitDuration);
 		advanceToNextPosition();
 	}
 
