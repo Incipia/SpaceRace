@@ -20,11 +20,11 @@ TagManager:
   - 
   - Parallax
   - TouchInput
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Obstacles
+  - Portal
+  - Player
+  - Walls
+  - Speed Boost
   - 
   - 
   - 

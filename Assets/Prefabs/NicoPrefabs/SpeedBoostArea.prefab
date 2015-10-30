@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21225340}
   - 114: {fileID: 11421018}
   - 61: {fileID: 6188056}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: SpeedBoostArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,6 +115,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

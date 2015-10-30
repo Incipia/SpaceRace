@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 181780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11, y: 11, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -65,10 +65,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: .5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 693791871
+  m_SortingLayerID: -211097725
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300008, guid: b4928f1f698f89f418c2849d52bb5829, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: .266000003}
+  m_Color: {r: .548940957, g: .0353589803, b: .801470578, a: .497000009}
 --- !u!250 &25080348
 PointEffector2D:
   m_ObjectHideFlags: 1
@@ -80,14 +80,14 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -10
+  m_ForceMagnitude: -1
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_Drag: 0
   m_AngularDrag: 0
   m_ForceSource: 1
   m_ForceTarget: 0
-  m_ForceMode: 0
+  m_ForceMode: 2
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -97,11 +97,39 @@ Prefab:
     m_Modifications:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ForceMagnitude
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ForceMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.r
+      value: .548940957
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.g
+      value: .0353589803
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.b
+      value: .801470578
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Color.a
+      value: .497000009
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
