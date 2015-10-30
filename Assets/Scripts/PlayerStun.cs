@@ -5,6 +5,7 @@ public class PlayerStun : MonoBehaviour
 {
 	public float stunDuration = 0.3f;
 	public float stunStrength = 2.0f;
+	public bool deactivateParticlesOnStun;
 
 	Transform trans;
 
@@ -31,7 +32,7 @@ public class PlayerStun : MonoBehaviour
 			Vector2 flingDirection = (Vector2)(other.transform.position - trans.position);
 			flingDirection.Normalize();
 			movePlayer.addImpulse(flingDirection * stunStrength);
-			movePlayer.Stun(stunDuration);
+			movePlayer.Stun(stunDuration, deactivateParticlesOnStun);
 		}
 		else
 		{
