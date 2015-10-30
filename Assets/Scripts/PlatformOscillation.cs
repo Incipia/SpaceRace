@@ -103,6 +103,31 @@ public class PlatformOscillation : MonoBehaviour
 		}
 	}
 	
+	public void invertXPositions()
+	{
+		foreach (OscillationPoint oscPoint in oscillationPoints)
+		{
+			Vector3 position = oscPoint.position;
+			position.x *= -1;
+			oscPoint.position = position;
+		}
+	}
+	
+	public void reverseAllPositions()
+	{
+		if (oscillationPoints.Count > 0)
+		{
+			List<OscillationPoint> tempOscillationPoints = new List<OscillationPoint>(oscillationPoints);
+			
+			OscillationPoint lastItem = tempOscillationPoints[tempOscillationPoints.Count - 1];
+			tempOscillationPoints.Remove(lastItem);
+			tempOscillationPoints.Reverse();
+			
+			oscillationPoints = tempOscillationPoints;
+			closePath();
+		}
+	}
+	
 //	void OnDrawGizmos() 
 //	{
 //		Gizmos.color = Color.yellow;
