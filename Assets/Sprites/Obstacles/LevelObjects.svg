@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="256"
+   id="svg2989"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="LevelObjects.svg"
+   inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\Obstacles\LevelObjects.png"
+   inkscape:export-xdpi="360"
+   inkscape:export-ydpi="360">
+  <defs
+     id="defs2991">
+    <linearGradient
+       y2="201.52809"
+       x2="121.69761"
+       y1="122.37656"
+       x1="121.69761"
+       gradientTransform="matrix(0.25953141,0,0,0.25953141,132.40238,946.85403)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4821"
+       xlink:href="#linearGradient3756"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient3756">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.54054052;"
+         offset="0"
+         id="stop3758" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop3760" />
+    </linearGradient>
+    <linearGradient
+       y2="201.52809"
+       x2="121.69761"
+       y1="122.37656"
+       x1="121.69761"
+       gradientTransform="matrix(0.11972486,0,0,0.11972486,103.46251,792.25466)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient6492"
+       xlink:href="#linearGradient3756"
+       inkscape:collect="always" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.882384"
+     inkscape:cx="154.57223"
+     inkscape:cy="118.9873"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1600"
+     inkscape:window-height="837"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-nodes="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:object-nodes="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-global="true" />
+  <metadata
+     id="metadata2994">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-796.3598)">
+    <path
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="1.7250494"
+       inkscape:original="M -222 1066.75 L -222 1069.3438 L -222 1123.0625 L -150.8125 1123.0625 L -9 1123.0625 L -9 1069.3438 L -9 1066.75 L -80.1875 1066.75 L -80.1875 1069.3438 L -150.8125 1069.3438 L -150.8125 1066.75 L -222 1066.75 z "
+       style="fill:#ff005a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6875"
+       d="m -222.1875,1065.0312 a 1.7252219,1.7252219 0 0 0 -1.53125,1.7188 l 0,2.5938 0,53.7187 a 1.7252219,1.7252219 0 0 0 1.71875,1.7187 l 71.1875,0 141.8125,0 a 1.7252219,1.7252219 0 0 0 1.71875,-1.7187 l 0,-53.7187 0,-2.5938 A 1.7252219,1.7252219 0 0 0 -9,1065.0312 l -71.1875,0 a 1.7252219,1.7252219 0 0 0 -1.71875,1.7188 l 0,0.875 -67.1875,0 0,-0.875 a 1.7252219,1.7252219 0 0 0 -1.71875,-1.7188 l -71.1875,0 a 1.7252219,1.7252219 0 0 0 -0.1875,0 z"
+       transform="translate(385.7924,-7.5666504)" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 9.5199453,798.6217 0,252.168 71.1924497,0 0,-252.168 -71.1924497,0 z m 55.9484797,20.71885 c 5.72126,0 10.35942,4.62864 10.35942,10.3499 0,5.72126 -4.63816,10.35942 -10.35942,10.35942 -5.72125,0 -10.35941,-4.63816 -10.35941,-10.35942 0,-5.72126 4.63816,-10.3499 10.35941,-10.3499 z m 0,41.42816 c 5.72126,0 10.35942,4.63817 10.35942,10.35943 0,5.72125 -4.63816,10.35942 -10.35942,10.35942 -5.72125,0 -10.35941,-4.63817 -10.35941,-10.35942 0,-5.72126 4.63816,-10.35943 10.35941,-10.35943 z m 0,41.43769 c 5.72126,0 10.35942,4.63817 10.35942,10.35942 0,5.72126 -4.63816,10.35943 -10.35942,10.35943 -5.72125,0 -10.35941,-4.63817 -10.35941,-10.35943 0,-5.72125 4.63816,-10.35942 10.35941,-10.35942 z m 0,41.43769 c 5.72126,0 10.35942,4.63816 10.35942,10.35942 0,5.72126 -4.63816,10.35943 -10.35942,10.35943 -5.72125,0 -10.35941,-4.63817 -10.35941,-10.35943 0,-5.72126 4.63816,-10.35942 10.35941,-10.35942 z m 0,41.43769 c 5.72126,0 10.35942,4.63816 10.35942,10.35942 0,5.7212 -4.63816,10.3594 -10.35942,10.3594 -5.72125,0 -10.35941,-4.6382 -10.35941,-10.3594 0,-5.72126 4.63816,-10.35942 10.35941,-10.35942 z m 0,41.43762 c 5.72126,0 10.35942,4.6381 10.35942,10.3594 0,5.7212 -4.63816,10.3594 -10.35942,10.3594 -5.72125,0 -10.35941,-4.6382 -10.35941,-10.3594 0,-5.7213 4.63816,-10.3594 10.35941,-10.3594 z"
+       id="rect6316"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Wall.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#2cdc7c;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6192"
+       sodipodi:cx="-233.36668"
+       sodipodi:cy="76.895813"
+       sodipodi:rx="8.7275343"
+       sodipodi:ry="8.7275343"
+       d="m -224.63915,76.895813 c 0,4.820084 -3.90745,8.727534 -8.72753,8.727534 -4.82009,0 -8.72754,-3.90745 -8.72754,-8.727534 0,-4.820084 3.90745,-8.727534 8.72754,-8.727534 4.82008,0 8.72753,3.90745 8.72753,8.727534 z"
+       transform="matrix(0.30468888,0,0,0.30468888,191.14082,1041.8316)" />
+    <path
+       transform="matrix(0.30468888,0,0,0.30468888,201.90025,1042.2516)"
+       sodipodi:type="arc"
+       style="fill:#ff005a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6192-8"
+       sodipodi:cx="-233.36668"
+       sodipodi:cy="76.895813"
+       sodipodi:rx="8.7275343"
+       sodipodi:ry="8.7275343"
+       d="m -224.63915,76.895813 c 0,4.820084 -3.90745,8.727534 -8.72753,8.727534 -4.82009,0 -8.72754,-3.90745 -8.72754,-8.727534 0,-4.820084 3.90745,-8.727534 8.72754,-8.727534 4.82008,0 8.72753,3.90745 8.72753,8.727534 z" />
+    <path
+       transform="matrix(0.30468888,0,0,0.30468888,210.06864,1042.2855)"
+       sodipodi:type="arc"
+       style="fill:#eec469;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6192-1"
+       sodipodi:cx="-233.36668"
+       sodipodi:cy="76.895813"
+       sodipodi:rx="8.7275343"
+       sodipodi:ry="8.7275343"
+       d="m -224.63915,76.895813 c 0,4.820084 -3.90745,8.727534 -8.72753,8.727534 -4.82009,0 -8.72754,-3.90745 -8.72754,-8.727534 0,-4.820084 3.90745,-8.727534 8.72754,-8.727534 4.82008,0 8.72753,3.90745 8.72753,8.727534 z" />
+    <path
+       transform="matrix(0.30468888,0,0,0.30468888,182.72913,1042.0747)"
+       sodipodi:type="arc"
+       style="fill:#a260aa;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6192-2"
+       sodipodi:cx="-233.36668"
+       sodipodi:cy="76.895813"
+       sodipodi:rx="8.7275343"
+       sodipodi:ry="8.7275343"
+       d="m -224.63915,76.895813 c 0,4.820084 -3.90745,8.727534 -8.72753,8.727534 -4.82009,0 -8.72754,-3.90745 -8.72754,-8.727534 0,-4.820084 3.90745,-8.727534 8.72754,-8.727534 4.82008,0 8.72753,3.90745 8.72753,8.727534 z" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#ff005a;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6226-866"
+       sodipodi:cx="-334.68198"
+       sodipodi:cy="11.629032"
+       sodipodi:rx="33.999439"
+       sodipodi:ry="33.999439"
+       d="m -300.68254,11.629032 c 0,18.777372 -15.22206,33.999439 -33.99944,33.999439 -18.77737,0 -33.99944,-15.222067 -33.99944,-33.999439 0,-18.7773717 15.22207,-33.999439 33.99944,-33.999439 18.77738,0 33.99944,15.2220673 33.99944,33.999439 z"
+       transform="matrix(0.30468888,0,0,0.30468888,163.35238,1069.496)" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6382"
+       sodipodi:sides="6"
+       sodipodi:cx="-40.161839"
+       sodipodi:cy="-118.84382"
+       sodipodi:r1="56.977299"
+       sodipodi:r2="28.032831"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="false"
+       inkscape:rounded="0.49"
+       inkscape:randomized="0"
+       d="m 9.1819495,-90.355169 c -8.71649374,15.097408 -20.2299645,-12.928001 -35.3273735,-4.211505 -15.097408,8.716492 3.41657,32.700155 -14.016415,32.700154 -17.432986,-10e-7 1.080992,-23.983662 -14.016416,-32.700155 -15.097408,-8.716495 -26.61088,19.308914 -35.327372,4.211505 -8.716492,-15.09741 21.310957,-11.05566 21.310957,-28.48865 0,-17.43299 -30.02745,-13.39124 -21.310957,-28.48865 8.716494,-15.09741 20.229965,12.928 35.327374,4.21151 15.097408,-8.7165 -3.41657,-32.70016 14.016415,-32.70016 17.432986,0 -1.080992,23.98367 14.016416,32.70016 15.097408,8.71649 26.61087998,-19.30892 35.3273717,-4.21151 8.7164923,15.09741 -21.3109567,11.05567 -21.3109567,28.48865 0,17.43299 30.02745,13.39124 21.3109565,28.488651 z"
+       transform="matrix(0.30468888,0,0,0.30468888,189.7198,857.77219)"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\GearSix.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6384"
+       sodipodi:sides="5"
+       sodipodi:cx="-252.12709"
+       sodipodi:cy="-134.46231"
+       sodipodi:r1="57.406975"
+       sodipodi:r2="25.373882"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.1519173"
+       inkscape:flatsided="false"
+       inkscape:rounded="0.56"
+       inkscape:randomized="0"
+       d="m -202.41119,-105.75882 c -11.1386,19.292617 -19.04418,-14.58425 -39.39541,-5.5233 -20.35124,9.06096 -0.46568,37.603994 -22.25607,32.972304 -21.79039,-4.63169 7.98547,-22.618864 -6.92089,-39.174054 -14.90636,-16.55519 -35.90742,11.17738 -38.23602,-10.97778 -2.32861,-22.15516 23.97946,0.60502 35.11806,-18.6876 11.1386,-19.29262 -21.72632,-30.69599 -1.37509,-39.75694 20.35123,-9.06096 6.83466,22.99279 28.62505,27.62448 21.79039,4.63169 22.47981,-30.14855 37.38617,-13.59336 14.90635,16.55518 -19.75542,13.6053 -17.42682,35.76047 2.3286,22.15516 35.61962,12.06316 24.48102,31.35578 z"
+       transform="matrix(0.30468888,0,0,0.30468888,299.26013,862.78349)"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\GearFive.png" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6386"
+       sodipodi:sides="4"
+       sodipodi:cx="-251.38335"
+       sodipodi:cy="-135.20605"
+       sodipodi:r1="57.139378"
+       sodipodi:r2="20.684456"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.3089969"
+       inkscape:flatsided="false"
+       inkscape:rounded="0.52"
+       inkscape:randomized="0"
+       d="m -201.89919,-106.63637 c -11.68931,20.246479 -21.54862,-14.64087 -44.13062,-8.59003 -22.58201,6.05083 -13.67675,41.193805 -33.92323,29.504498 -20.24647,-11.689307 14.64087,-21.548608 8.59004,-44.130618 -6.05083,-22.58201 -41.19381,-13.67675 -29.5045,-33.92322 11.68931,-20.24648 21.54861,14.64087 44.13062,8.59004 22.58201,-6.05084 13.67675,-41.19381 33.92322,-29.50451 20.24648,11.68931 -14.64087,21.54862 -8.59004,44.13062 6.05083,22.58201 41.19381,13.67675 29.50451,33.92322 z"
+       transform="matrix(0.30468888,0,0,0.30468888,301.18464,903.65569)"
+       inkscape:transform-center-x="0.85232636"
+       inkscape:transform-center-y="0.42526299"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\GearFour.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6388"
+       sodipodi:sides="3"
+       sodipodi:cx="72.886299"
+       sodipodi:cy="-136.54477"
+       sodipodi:r1="54.513287"
+       sodipodi:r2="15.91788"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:flatsided="false"
+       inkscape:rounded="0.49"
+       inkscape:randomized="0"
+       d="m 120.09619,-109.28813 c -11.89535,20.60336 -23.419185,-11.33876 -47.20989,-11.33876 -23.790706,0 -35.314539,31.942119 -47.209892,11.33876 -11.895353,-20.60335 21.52925,-14.61222 33.424602,-35.21558 11.895353,-20.60335 -10.005416,-46.55435 13.785289,-46.55435 23.790705,0 1.889936,25.951 13.785288,46.55435 11.895353,20.60336 45.319953,14.61223 33.424603,35.21558 z"
+       transform="matrix(0.35151725,0,0,0.35151725,154.16247,914.47589)"
+       inkscape:transform-center-x="0.61292919"
+       inkscape:transform-center-y="0.29860816"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\GearThree.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <rect
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="rect6390"
+       width="19.776598"
+       height="19.776598"
+       x="103.51138"
+       y="862.90833"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Square.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <rect
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="rect6392"
+       width="9.8883038"
+       height="9.8882923"
+       x="132.76697"
+       y="870.64447" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6396"
+       sodipodi:cx="-365.0386"
+       sodipodi:cy="-410.32828"
+       sodipodi:rx="23.526413"
+       sodipodi:ry="2.1387649"
+       d="m -341.51219,-410.32828 c 0,1.18121 -10.53314,2.13877 -23.52641,2.13877 -12.99328,0 -23.52642,-0.95756 -23.52642,-2.13877 0,-1.1812 10.53314,-2.13876 23.52642,-2.13876 12.99327,0 23.52641,0.95756 23.52641,2.13876 z"
+       transform="matrix(0.42030652,0,0,4.548799,268.09897,2708.3234)"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Circle.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6400"
+       sodipodi:cx="-313.9744"
+       sodipodi:cy="-397.91461"
+       sodipodi:rx="11.763206"
+       sodipodi:ry="11.763191"
+       d="m -302.21119,-397.91461 c 0,6.49663 -5.26657,11.76319 -11.76321,11.76319 -6.49663,0 -11.7632,-5.26656 -11.7632,-11.76319 0,-6.49663 5.26657,-11.76319 11.7632,-11.76319 6.49664,0 11.76321,5.26656 11.76321,11.76319 z"
+       transform="matrix(0.42030652,0,0,0.42030652,267.41544,1012.9875)" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 96.534753,893.89806 0,19.77622 19.776207,0 19.77621,0 0,-19.77622 -19.77621,0 -19.776207,0 z"
+       id="rect6390-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Rectangle.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 145.17997,896.84052 0,9.89287 9.88334,0 9.89287,0 0,-9.89287 -9.89287,0 -9.88334,0 z"
+       id="rect6392-6"
+       inkscape:connector-curvature="0" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6456"
+       sodipodi:sides="3"
+       sodipodi:cx="-11.156066"
+       sodipodi:cy="-624.26672"
+       sodipodi:r1="49.288193"
+       sodipodi:r2="24.644096"
+       sodipodi:arg1="-1.5707963"
+       sodipodi:arg2="-0.52359878"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -11.156065,-673.55492 21.342413,36.96615 21.342412,36.96614 -42.684826,0 -42.684828,0 21.342414,-36.96614 z"
+       transform="matrix(0.25517806,0,0,0.25517806,190.2658,1059.8487)"
+       inkscape:transform-center-y="-3.1443086"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Triangle.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       sodipodi:type="star"
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path6456-7"
+       sodipodi:sides="3"
+       sodipodi:cx="-11.156066"
+       sodipodi:cy="-624.26672"
+       sodipodi:r1="49.288193"
+       sodipodi:r2="24.644096"
+       sodipodi:arg1="-1.5707963"
+       sodipodi:arg2="-0.52359878"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m -11.156065,-673.55492 21.342413,36.96615 21.342412,36.96614 -42.684826,0 -42.684828,0 21.342414,-36.96614 z"
+       transform="matrix(0.14369159,0,0,0.14369159,216.50419,991.96313)"
+       inkscape:transform-center-y="-1.7705774" />
+    <path
+       style="fill:url(#linearGradient6492);fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 109.41391,807.27612 -6.34081,9.72213 29.36762,0 -4.67286,-10.131 -3.9914,1.07735 -2.88809,-1.3629 -1.71987,0.55164 -1.49272,-0.55164 -1.65497,0.94103 -2.79073,-0.84369 z"
+       id="path3754"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Portal.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       style="fill:#fffffb;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 109.41391,807.27612 3.81617,-1.27206 2.45325,1.13577 2.13523,-1.59008 1.22663,0.7269 1.99895,-0.31802 2.63497,1.68093 4.08874,-0.77232 -3.99788,1.45378 -2.58955,-1.18119 -1.90808,0.5906 -1.40835,-0.49974 -1.6355,0.95404 -2.95298,-1.1812 z"
+       id="path3752-3-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Portal.png"
+       inkscape:export-xdpi="2048"
+       inkscape:export-ydpi="2048" />
+    <path
+       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 163.7924,1059.1834 0,2.5937 0,53.7187 71.1875,0 141.8125,0 0,-53.7187 0,-2.5937 -71.1875,0 0,2.5937 -70.625,0 0,-2.5937 -71.1875,0 z"
+       id="rect6830"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

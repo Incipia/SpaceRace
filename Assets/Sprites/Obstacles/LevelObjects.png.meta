@@ -1,0 +1,209 @@
+fileFormatVersion: 2
+guid: ad6bac07ed237f743a4d835a51dcf47a
+timeCreated: 1446509223
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: LevelObjects_0
+    21300002: LevelObjects_1
+    21300004: LevelObjects_2
+    21300006: LevelObjects_3
+    21300008: LevelObjects_4
+    21300010: LevelObjects_5
+    21300012: LevelObjects_6
+    21300014: LevelObjects_7
+    21300016: LevelObjects_8
+    21300018: LevelObjects_9
+    21300020: LevelObjects_10
+    21300022: LevelObjects_11
+    21300024: LevelObjects_12
+    21300026: LevelObjects_13
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 128
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: LevelObjects_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 6
+        width: 285
+        height: 1009
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_1
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 948
+        width: 109
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_2
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 853
+        width: 125
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_3
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 853
+        width: 133
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_4
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 803
+        width: 80
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_5
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 806
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_6
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 695
+        width: 140
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_7
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 696
+        width: 127
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_8
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 678
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_9
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 687
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_10
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 554
+        width: 159
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_11
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 582
+        width: 80
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_12
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 582
+        width: 87
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LevelObjects_13
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 586
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
