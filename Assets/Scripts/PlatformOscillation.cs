@@ -18,17 +18,21 @@ public class PlatformOscillation : MonoBehaviour
 	public bool loop = true;
 	public bool shouldReverse;
 	public float movementDuration = 1.0f;
+	public float initialWaitDuration = 0;
+
 	public List<OscillationPoint> oscillationPoints;
 
 	private List<OscillationPoint> currentOscillationPoints;
 	private List<Vector3> worldPoints = new List<Vector3>();
 	private int currentIndex = 0;
 
-	void Start()
+	IEnumerator Start()
 	{
 		currentOscillationPoints = new List<OscillationPoint>(oscillationPoints);
 
 		setObjectToFirstPoint();
+		
+		yield return new WaitForSeconds(initialWaitDuration);
 		advanceToNextPosition();
 	}
 
@@ -96,6 +100,31 @@ public class PlatformOscillation : MonoBehaviour
 		if (oscillationPoints.Count >= 1)
 		{
 			transform.localPosition = oscillationPoints[0].position;
+		}
+	}
+	
+	public void invertXPositions()
+	{
+		foreach (OscillationPoint oscPoint in oscillationPoints)
+		{
+			Vector3 position = oscPoint.position;
+			position.x *= -1;
+			oscPoint.position = position;
+		}
+	}
+	
+	public void reverseAllPositions()
+	{
+		if (oscillationPoints.Count > 0)
+		{
+			List<OscillationPoint> tempOscillationPoints = new List<OscillationPoint>(oscillationPoints);
+			
+			OscillationPoint lastItem = tempOscillationPoints[tempOscillationPoints.Count - 1];
+			tempOscillationPoints.Remove(lastItem);
+			tempOscillationPoints.Reverse();
+			
+			oscillationPoints = tempOscillationPoints;
+			closePath();
 		}
 	}
 	

@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6197414}
   - 114: {fileID: 11407432}
   - 114: {fileID: 11409896}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Block (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 498530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BlockMove
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +118,7 @@ MonoBehaviour:
   loop: 1
   shouldReverse: 0
   movementDuration: 1
+  initialWaitDuration: 0
   oscillationPoints: []
 --- !u!212 &21219490
 SpriteRenderer:
@@ -143,7 +144,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -211097725
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: f2b188cf2ae5f4c529fd28817c3d74f4, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 88dd1350618a642aba43128df42b1329, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: .509803951}
 --- !u!1001 &100100000
 Prefab:
@@ -155,6 +156,15 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 88dd1350618a642aba43128df42b1329,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

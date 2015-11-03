@@ -21,15 +21,15 @@ namespace AssemblyCSharp
 
 	public class PlayerStartPositionProvider
 	{
-		public static List<Vector3> startPositionsForMaxPlayers(int maxPlayers)
+		public static List<Vector3> startPositionsForRoomSize(int roomSize)
 		{
 			List<Vector3> positions = new List<Vector3>();
 
 			float levelWidth = 2;
-			float spacing = levelWidth / (maxPlayers + 1);
+			float spacing = levelWidth / (roomSize + 1);
 			int leftXEdge = -1;
 
-			for (int i = 1; i <= maxPlayers; ++i)
+			for (int i = 1; i <= roomSize; ++i)
 			{
 				float xPostiion = leftXEdge + spacing * i;
 				Vector3 position = new Vector3(xPostiion, 1);

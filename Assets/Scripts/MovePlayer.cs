@@ -61,6 +61,7 @@ public class MovePlayer : MonoBehaviour
 
 	public void disableMaxVelocity()
 	{
+		playerRigidBody.gravityScale = 2;
 		maxVelocityDisabled = true;
 		disableAngularMovementFromTouchInput();
 	}
@@ -80,15 +81,18 @@ public class MovePlayer : MonoBehaviour
 		jumpDirection = direction;
 	}
 
-	public void Stun(float duration)
+	public void Stun(float duration, bool deactivateParticles)
 	{
-		StartCoroutine(ActualStun(duration));
+		StartCoroutine(ActualStun(duration, deactivateParticles));
 	}
 
-	private IEnumerator ActualStun(float duration)
+	private IEnumerator ActualStun(float duration, bool deactivateParticles)
 	{
 		controlsActive = false;
-		trailParticles.SetActive(false);
+		if (deactivateParticles)
+		{
+			trailParticles.SetActive(false);
+		}
 
 		float timer = 0.0f;
 		while(timer < duration)
@@ -98,7 +102,10 @@ public class MovePlayer : MonoBehaviour
 		}
 
 		controlsActive = true;
-		trailParticles.SetActive(true);
+		if (deactivateParticles)
+		{
+			trailParticles.SetActive(true);
+		}
 	}
 
 	private void enableMaxVelocityIfNecessary()
@@ -108,6 +115,8 @@ public class MovePlayer : MonoBehaviour
 			enableAngularMovementFromTouchInput();
 			maxVelocityDisabled = false;
 			readyToEnableMaxVelocity = false;
+
+			playerRigidBody.gravityScale = 1;
 		}
 	}
 

@@ -7,7 +7,8 @@ TagManager:
   - Parallax
   - TouchInput
   - Touch Input
-  - Level Component
+  - Level Components
+  - Coin Holder Digits
   layers:
   - Default
   - TransparentFX
@@ -19,11 +20,11 @@ TagManager:
   - 
   - Parallax
   - TouchInput
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Obstacles
+  - Portal
+  - Player
+  - Walls
+  - Speed Boost
   - 
   - 
   - 
@@ -44,9 +45,6 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Top
-    uniqueID: 693791871
     locked: 0
   - name: Player
     uniqueID: 4015845009

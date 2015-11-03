@@ -23,6 +23,14 @@ public class CustomPlatformOscillationEditor : Editor
 		{
 			myScript.setObjectToFirstPoint();
 		}
+		if (GUILayout.Button ("Invert X Positions"))
+		{
+			myScript.invertXPositions();
+		}
+		if (GUILayout.Button ("Reverse All Positions"))
+		{
+			myScript.reverseAllPositions();
+		}
 		if (GUILayout.Button("Reset"))
 		{
 			myScript.reset();
