@@ -50,6 +50,9 @@ TagManager:
   - name: Player
     uniqueID: 4015845009
     locked: 0
-  - name: Walls
+  - name: Shadow
+    uniqueID: 1008444409
+    locked: 0
+  - name: Obstacles
     uniqueID: 4083869571
     locked: 0
