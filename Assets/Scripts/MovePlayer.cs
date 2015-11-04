@@ -10,7 +10,8 @@ public enum JumpDirection {
 
 public class MovePlayer : MonoBehaviour 
 {
-	public Vector2 maxVelocity = new Vector2(15, 30);
+	public Vector2 baseMaxVelocity = new Vector2(1, 2);
+	public float returnToMaxVelocitySpeed = 0.08f;
 	public float maxFallVelocity = -30.0f;
 	public float jumpAngle = 50; // the vertical offset angle
 	public float jumpForce = 100;
@@ -21,10 +22,9 @@ public class MovePlayer : MonoBehaviour
 
 	private Vector2 environmentForceToAdd;
 	private Vector2 environmentImpulseToAdd;
+	private Vector2 maxVelocity;
 
 	private float initialJumpAngle;
-	private bool maxVelocityDisabled;
-	private bool readyToEnableMaxVelocity;
 	private bool controlsActive;
 
 	void Start()
@@ -32,6 +32,7 @@ public class MovePlayer : MonoBehaviour
 		initialJumpAngle = jumpAngle;
 		environmentForceToAdd = Vector2.zero;
 		environmentImpulseToAdd = Vector2.zero;
+		maxVelocity = baseMaxVelocity;
 		controlsActive = true;
 	}
 
@@ -41,29 +42,14 @@ public class MovePlayer : MonoBehaviour
 		{
 			applyForceWithDirection(jumpDirection);
 			resetJumpDirection();
-			capVelocity();
 		}
 
 		addEnvironmentalForces();
 		resetEnvironmentalForces();
+
+		capVelocity();
 		capFallSpeed();
-
-		if (maxVelocityDisabled && readyToEnableMaxVelocity)
-		{
-			enableMaxVelocityIfNecessary();
-		}
-	}
-
-	public void enableMaxVelocity()
-	{
-		readyToEnableMaxVelocity = true;
-	}
-
-	public void disableMaxVelocity()
-	{
-		playerRigidBody.gravityScale = 2;
-		maxVelocityDisabled = true;
-		disableAngularMovementFromTouchInput();
+		ReturnToMaxVelocity();
 	}
 
 	public void addForce(Vector2 forceVector)
@@ -86,6 +72,17 @@ public class MovePlayer : MonoBehaviour
 		StartCoroutine(ActualStun(duration, deactivateParticles));
 	}
 
+	public void SetMaxVelocity(Vector2 newMaxVelocity)
+	{
+		maxVelocity = newMaxVelocity;
+	}
+
+	public void ReturnToMaxVelocity()
+	{
+		maxVelocity = Vector2.Lerp(maxVelocity, baseMaxVelocity, returnToMaxVelocitySpeed);
+		Debug.Log(maxVelocity);
+	}
+
 	private IEnumerator ActualStun(float duration, bool deactivateParticles)
 	{
 		controlsActive = false;
@@ -105,18 +102,6 @@ public class MovePlayer : MonoBehaviour
 		if (deactivateParticles)
 		{
 			trailParticles.SetActive(true);
-		}
-	}
-
-	private void enableMaxVelocityIfNecessary()
-	{
-		if (playerRigidBody.velocity.y <= maxVelocity.y)
-		{
-			enableAngularMovementFromTouchInput();
-			maxVelocityDisabled = false;
-			readyToEnableMaxVelocity = false;
-
-			playerRigidBody.gravityScale = 1;
 		}
 	}
 
@@ -166,10 +151,10 @@ public class MovePlayer : MonoBehaviour
 	{
 		Vector2 velocity = playerRigidBody.velocity;
 
-		float xVelocityMultiplier = velocity.x < 1 ? -1 : 1;
+		float xVelocityMultiplier = velocity.x < 0.0f ? -1.0f : 1.0f;
 
 		float xVelocity = Mathf.Min(maxVelocity.x, Mathf.Abs(velocity.x)) * xVelocityMultiplier;
-		float yVelocity = maxVelocityDisabled ? velocity.y : Mathf.Min(maxVelocity.y, velocity.y);
+		float yVelocity = Mathf.Min(maxVelocity.y, velocity.y);
 
 		playerRigidBody.velocity = new Vector2(xVelocity, yVelocity);
 	}
@@ -182,7 +167,7 @@ public class MovePlayer : MonoBehaviour
 			playerRigidBody.velocity = new Vector2(velocity.x, Mathf.Max(velocity.y, maxFallVelocity));
 		}
 	}
-	
+
 	private float angleForDirection(JumpDirection direction)
 	{
 		float angle = 0;
