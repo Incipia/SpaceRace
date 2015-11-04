@@ -7,6 +7,11 @@ public class ObjectScaleOscillation : MonoBehaviour
 	public Vector2 targetScale = new Vector2(1, 1);
 	public float scaleDuration = 2;
 
+	void Start()
+	{
+		LeanTween.scale(gameObject, targetScale, scaleDuration).setLoopPingPong();
+	}
+	
 	private void scaleWithDuration(float duration, Action completion)
 	{
 		LeanTween.scale(gameObject, targetScale, scaleDuration).setLoopPingPong();
