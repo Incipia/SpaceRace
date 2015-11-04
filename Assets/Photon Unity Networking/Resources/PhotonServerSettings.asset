@@ -47,4 +47,5 @@ MonoBehaviour:
   - makeOuterRingVisible
   - makeParticleTrailVisible
   - makePlayerNumberVisible
+  - loadFirstLevel
   DisableAutoOpenWizard: 1

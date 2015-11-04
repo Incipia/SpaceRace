@@ -12,23 +12,22 @@ public class LevelRoomSetup : Photon.PunBehaviour
 	private Room currentRoom { get { return PhotonNetwork.room; } }
 	private bool roomIsFull { get { return currentRoom.maxPlayers == currentRoom.playerCount; }}
 
+	void OnLevelWasLoaded(int level)
+	{
+		if (level == 1 && PhotonNetwork.connectedAndReady)
+		{
+			List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(currentRoom.maxPlayers);
+			
+			// Get the start position that corresponds to THIS player
+			Vector3 startPos = startPositions[PhotonNetwork.player.ID-1];
+			playersManager.createPlayerAtPosition(startPos);
+		}
+	}
+
 	void Start()
 	{
 		setupCountdownManager();
-	}
-
-	void OnJoinedRoom()
-	{
-		List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(currentRoom.maxPlayers);
-
-		// Get the start position that corresponds to THIS player
-		Vector3 startPos = startPositions[currentRoom.playerCount-1];
-		playersManager.createPlayerAtPosition(startPos);
-
-		if (roomIsFull)
-		{
-			photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
-		}
+//		photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
 	}
 
 	[PunRPC] void beginCountdown()

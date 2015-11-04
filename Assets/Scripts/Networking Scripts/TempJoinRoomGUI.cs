@@ -1,15 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TempJoinRoomGUI : MonoBehaviour 
-{	
-	const string GAME_VERSION = "0.0.1";
-
-	void Start()
-	{
-		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
-	}
-
+public class TempJoinRoomGUI : MonoBehaviour
+{
 	void OnGUI()
 	{
 		if (!PhotonNetwork.connected)

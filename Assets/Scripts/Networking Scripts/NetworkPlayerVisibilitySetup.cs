@@ -11,10 +11,10 @@ public class NetworkPlayerVisibilitySetup : Photon.MonoBehaviour
 	// Use this for initialization
 	void Start() 
 	{
-//		if (photonView.isMine)
-//		{
-//			makeEverythingVisible(false);
-//		}
+		if (photonView.isMine)
+		{
+			makeEverythingVisible(false);
+		}
 	}
 
 	public void makeEverythingVisible(bool visible)

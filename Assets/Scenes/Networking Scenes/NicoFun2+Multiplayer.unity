@@ -415,7 +415,6 @@ GameObject:
   - 114: {fileID: 67816804}
   - 114: {fileID: 67816808}
   - 114: {fileID: 67816807}
-  - 114: {fileID: 67816809}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -499,20 +498,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 143902, guid: 3953d3a48543e40b08e01612b2c4d7c3, type: 2}
   autoDisablePlayerMovementOnCreate: 1
---- !u!114 &67816809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 67816803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b57dedef9c44e029e545d55805da7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outerRingRenderer: {fileID: 0}
-  innerCircleRenderer: {fileID: 0}
-  particleTrail: {fileID: 0}
 --- !u!4 &107662339 stripped
 Transform:
   m_PrefabParentObject: {fileID: 498530, guid: 1b82afa3a1d704697a8514389919b641, type: 2}
