@@ -50,15 +50,21 @@ public class DefaultRoomMatchmaker : Photon.PunBehaviour
 
 	[PunRPC] void beginCountdown()
 	{
-		countdownManager.showCountdownUI();
-		countdownManager.beginCountdown();
+		if (countdownManager != null)
+		{
+			countdownManager.showCountdownUI();
+			countdownManager.beginCountdown();
+		}
 	}
 
 	private void setupCountdownManager()
 	{
-		countdownManager.hideCountdownUI();
-		countdownManager.completion += countdownManager.hideCountdownUI;
-		countdownManager.completion += levelSetup.activateMovingLevelComponents;
-		countdownManager.completion += playersManager.enableTrackedPlayerMovement;
+		if (countdownManager != null)
+		{
+			countdownManager.hideCountdownUI();
+			countdownManager.completion += countdownManager.hideCountdownUI;
+			countdownManager.completion += levelSetup.activateMovingLevelComponents;
+			countdownManager.completion += playersManager.enableTrackedPlayerMovement;
+		}
 	}
 }

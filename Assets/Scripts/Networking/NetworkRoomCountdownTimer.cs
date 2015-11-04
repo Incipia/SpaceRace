@@ -15,7 +15,7 @@ using UnityEngine;
 /// 
 /// Based on this, you should be able to implement a synchronized timer for turns between players.
 /// </remarks>
-public class NetworkRoomCountdownTimer : MonoBehaviour
+public class NetworkRoomCountdownTimer : Photon.PunBehaviour
 {
 	public int SecondsPerTurn = 3;                  // time per round/turn
 	public double StartTime;                        // this should could also be a private. i just like to see this in inspector
@@ -39,9 +39,7 @@ public class NetworkRoomCountdownTimer : MonoBehaviour
 			return;
 		}
 		startRoundWhenTimeIsSynced = false;
-		
-		
-		
+
 		ExitGames.Client.Photon.Hashtable startTimeProp = new Hashtable();  // only use ExitGames.Client.Photon.Hashtable for Photon
 		startTimeProp[StartTimeKey] = PhotonNetwork.time;
 		PhotonNetwork.room.SetCustomProperties(startTimeProp);              // implement OnPhotonCustomRoomPropertiesChanged(Hashtable propertiesThatChanged) to get this change everywhere
@@ -53,6 +51,7 @@ public class NetworkRoomCountdownTimer : MonoBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
+			Debug.Log("starting timer");
 			this.startRound();
 		}
 		else

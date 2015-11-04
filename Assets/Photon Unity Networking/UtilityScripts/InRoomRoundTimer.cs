@@ -51,6 +51,7 @@ public class InRoomRoundTimer : MonoBehaviour
     /// <summary>Called by PUN when this client entered a room (no matter if joined or created).</summary>
     public void OnJoinedRoom()
     {
+		Debug.Log("OnJoinedRoom in InRoomRoundTimer");
         if (PhotonNetwork.isMasterClient)
         {
             this.StartRoundNow();

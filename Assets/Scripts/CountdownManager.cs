@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CountdownManager : MonoBehaviour 
+public class CountdownManager : MonoBehaviour
 {
 	public delegate void CountdownCompletion();
 	public NetworkRoomCountdownTimer timer;

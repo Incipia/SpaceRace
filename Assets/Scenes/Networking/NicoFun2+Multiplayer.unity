@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 143902, guid: 3953d3a48543e40b08e01612b2c4d7c3, type: 2}
-  countdownManager: {fileID: 2135292967}
+  countdownManager: {fileID: 1251435341}
   levelSetup: {fileID: 67816807}
   playersManager: {fileID: 67816808}
 --- !u!4 &67816805
@@ -723,7 +723,7 @@ Transform:
   m_Children:
   - {fileID: 594711174}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!68 &253252135
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -977,6 +977,7 @@ MonoBehaviour:
   loop: 1
   shouldReverse: 0
   movementDuration: 1.20000005
+  initialWaitDuration: 0
   oscillationPoints:
   - position: {x: 0, y: .5, z: 0}
     waitDuration: 1
@@ -1220,7 +1221,7 @@ Transform:
   - {fileID: 1157012173}
   - {fileID: 1353562197}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &547797126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,6 +1599,62 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498070, guid: cfc62a893eb774cc08fad624fef45025, type: 2}
   m_PrefabInternal: {fileID: 817752171}
+--- !u!1 &856197999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 856198001}
+  - 114: {fileID: 856198000}
+  - 114: {fileID: 856198002}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &856198000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856197999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3622d6562b44d9892ac0e9ee45afce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsPerTurn: 3
+  StartTime: 0
+--- !u!4 &856198001
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856197999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.800000012, y: 14.3193817, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+--- !u!114 &856198002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 856197999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0ec30a162ea4fa3ad7395364930f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 0}
+  counterUI: {fileID: 0}
+  countdownDuration: 5
 --- !u!1001 &886654310
 Prefab:
   m_ObjectHideFlags: 0
@@ -1677,6 +1734,7 @@ MonoBehaviour:
   loop: 1
   shouldReverse: 0
   movementDuration: 1.20000005
+  initialWaitDuration: 0
   oscillationPoints:
   - position: {x: 0, y: .5, z: 0}
     waitDuration: 1
@@ -1841,6 +1899,7 @@ MonoBehaviour:
   loop: 1
   shouldReverse: 0
   movementDuration: 1.20000005
+  initialWaitDuration: 0
   oscillationPoints:
   - position: {x: 0, y: .5, z: 0}
     waitDuration: 1
@@ -2047,6 +2106,7 @@ MonoBehaviour:
   loop: 1
   shouldReverse: 0
   movementDuration: 1.20000005
+  initialWaitDuration: 0
   oscillationPoints:
   - position: {x: 0, y: 0, z: 0}
     waitDuration: 1
@@ -2343,6 +2403,63 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 498070, guid: cfc62a893eb774cc08fad624fef45025, type: 2}
   m_PrefabInternal: {fileID: 1244317577}
+--- !u!1 &1251435340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1251435342}
+  - 114: {fileID: 1251435343}
+  - 114: {fileID: 1251435341}
+  m_Layer: 0
+  m_Name: CountdownManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1251435341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1251435340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a0ec30a162ea4fa3ad7395364930f30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 1251435343}
+  counterUI: {fileID: 2059923522}
+  countdownDuration: 5
+--- !u!4 &1251435342
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1251435340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.800000012, y: 14.3193817, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2091284858}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+--- !u!114 &1251435343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1251435340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed3622d6562b44d9892ac0e9ee45afce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SecondsPerTurn: 3
+  StartTime: 0
 --- !u!1 &1280819280
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2699,7 @@ MonoBehaviour:
   loop: 1
   shouldReverse: 0
   movementDuration: 1.20000005
+  initialWaitDuration: 0
   oscillationPoints:
   - position: {x: 0, y: 0, z: 0}
     waitDuration: 1
@@ -2720,6 +2838,7 @@ MonoBehaviour:
   loop: 1
   shouldReverse: 0
   movementDuration: 1.20000005
+  initialWaitDuration: 0
   oscillationPoints:
   - position: {x: 0, y: 0, z: 0}
     waitDuration: 1
@@ -3158,7 +3277,7 @@ Transform:
   - {fileID: 331879596}
   - {fileID: 1280819281}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1001 &1881063725
 Prefab:
   m_ObjectHideFlags: 0
@@ -3395,15 +3514,15 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2135292966}
+    m_TransformParent: {fileID: 1251435342}
     m_Modifications:
     - target: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -.199999988
       objectReference: {fileID: 0}
     - target: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -12.6193819
       objectReference: {fileID: 0}
     - target: {fileID: 454916, guid: 76255aa8136e149cd9f0e4ba3bb6796f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3678,63 +3797,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1b82afa3a1d704697a8514389919b641, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2135292965
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2135292966}
-  - 114: {fileID: 2135292967}
-  - 114: {fileID: 2135292968}
-  m_Layer: 0
-  m_Name: CountdownManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2135292966
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2135292965}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.70000005, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2091284858}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
---- !u!114 &2135292967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2135292965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a0ec30a162ea4fa3ad7395364930f30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: {fileID: 2135292968}
-  counterUI: {fileID: 2059923522}
-  countdownDuration: 5
---- !u!114 &2135292968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2135292965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed3622d6562b44d9892ac0e9ee45afce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SecondsPerTurn: 5
-  StartTime: 0
 --- !u!1001 &2145743438
 Prefab:
   m_ObjectHideFlags: 0

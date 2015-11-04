@@ -9,6 +9,7 @@ TagManager:
   - Touch Input
   - Level Components
   - Coin Holder Digits
+  - BounceParticles
   layers:
   - Default
   - TransparentFX
