@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class SpeedBoostArea : MonoBehaviour 
 {
 	public Vector2 forceToApply;
+	public Vector2 newPlayerMaxVelocity = new Vector2(1, 10);
 
 	private List<MovePlayer> playersToBoost;
 	private List<MovePlayerPhoton> photonPlayersToBoost;
@@ -22,6 +23,7 @@ public class SpeedBoostArea : MonoBehaviour
 	{
 		foreach(MovePlayer player in playersToBoost)
 		{
+			player.SetMaxVelocity(newPlayerMaxVelocity);
 			player.addImpulse(forceToApply);
 		}
 
@@ -37,14 +39,12 @@ public class SpeedBoostArea : MonoBehaviour
 		if(movePlayer != null)
 		{
 			playersToBoost.Add(movePlayer);
-			movePlayer.disableMaxVelocity();
 		}
 
 		MovePlayerPhoton movePlayerPhoton = other.gameObject.transform.root.GetComponentInChildren<MovePlayerPhoton>();
 		if(movePlayerPhoton != null)
 		{
 			photonPlayersToBoost.Add(movePlayerPhoton);
-			movePlayerPhoton.disableMaxVelocity();
 		}
 	}
 
@@ -54,14 +54,12 @@ public class SpeedBoostArea : MonoBehaviour
 		if(movePlayer != null)
 		{
 			playersToBoost.Remove(movePlayer);
-			movePlayer.enableMaxVelocity();
 		}
 
 		MovePlayerPhoton movePlayerPhoton = other.gameObject.transform.root.GetComponentInChildren<MovePlayerPhoton>();
 		if(movePlayerPhoton != null)
 		{
 			photonPlayersToBoost.Remove(movePlayerPhoton);
-			movePlayerPhoton.enableMaxVelocity();
 		}
 	}
 }
