@@ -11,13 +11,18 @@ public class CountdownManager : MonoBehaviour
 	private bool timerStarted = false;
 	public CountdownCompletion completion;
 
+	void Start()
+	{
+		timer.SecondsPerTurn = 5;
+	}
+
 	void Update()
 	{
+		int secondsLeft = Mathf.CeilToInt(timer.remainingTimeInCurrentTurn());
+		counterUI.updateSpritesWithNumber(secondsLeft);
+
 		if (timerStarted)
 		{
-			int secondsLeft = Mathf.CeilToInt(timer.remainingTimeInCurrentTurn());
-			counterUI.updateSpritesWithNumber(secondsLeft);
-
 			if (timer.currentTurn() != 0 && completion != null)
 			{
 				completion();

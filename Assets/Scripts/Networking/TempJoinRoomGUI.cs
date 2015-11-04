@@ -3,6 +3,13 @@ using System.Collections;
 
 public class TempJoinRoomGUI : MonoBehaviour 
 {	
+	const string GAME_VERSION = "0.0.1";
+
+	void Start()
+	{
+		PhotonNetwork.ConnectUsingSettings(GAME_VERSION);
+	}
+
 	void OnGUI()
 	{
 		if (!PhotonNetwork.connected)

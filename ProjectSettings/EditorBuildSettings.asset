@@ -5,15 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Gameplay.unity
-  - enabled: 0
-    path: Assets/Scenes/LevelTemplate.unity
-  - enabled: 0
-    path: Assets/Scenes/MultiplayerTest.unity
-  - enabled: 0
-    path: Assets/Scenes/NicoLevelIdeaOneMultiplayer.unity
-  - enabled: 0
-    path: Assets/Scenes/Testing/NewGraphicsWithPhoton.unity
   - enabled: 1
     path: Assets/Scenes/Networking/NicoFun2+Multiplayer.unity
+  - enabled: 1
+    path: Assets/Scenes/Networking/NicoFun2+Multiplayer2.unity

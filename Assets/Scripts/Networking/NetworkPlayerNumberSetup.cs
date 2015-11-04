@@ -19,6 +19,7 @@ public class NetworkPlayerNumberSetup : Photon.MonoBehaviour
 	{
 		playerNumber = number;
 		playerNumberDisplay.updateSpritesWithNumber(number);
+
 		if (photonView.isMine)
 		{
 			photonView.RPC("updatePlayerDisplayNumber", PhotonTargets.OthersBuffered, number);
