@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: a87e19afa0f8141bdb010f7d594b7122
-timeCreated: 1446682474
+guid: 21cf4aa3b23864b38bfcc6378d888ac8
+timeCreated: 1446719180
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: WallSplit_0
-    21300002: WallSplit_1
-    21300004: WallSplit_2
-    21300006: WallSplit_3
+    21300000: WallOne
+    21300002: WallTwo
+    21300004: WallThree
+    21300006: WallSlant
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,49 +48,49 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 955
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: WallSplit_0
+    - name: WallOne
       rect:
         serializedVersion: 2
         x: 0
-        y: 4557
+        y: 4766
         width: 1620
-        height: 1181
+        height: 960
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WallSplit_1
-      rect:
-        serializedVersion: 2
-        x: 995
-        y: 2438
-        width: 625
-        height: 472
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WallSplit_2
+    - name: WallTwo
       rect:
         serializedVersion: 2
         x: 0
-        y: 2672
+        y: 2881
         width: 1620
-        height: 1883
+        height: 1887
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: WallSplit_3
+    - name: WallThree
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 1620
-        height: 2675
+        height: 2884
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: WallSlant
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2885
+        width: 1620
+        height: 1465
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
