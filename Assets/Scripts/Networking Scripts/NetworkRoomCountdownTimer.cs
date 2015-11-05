@@ -51,7 +51,6 @@ public class NetworkRoomCountdownTimer : Photon.PunBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			Debug.Log("starting timer");
 			this.startRound();
 		}
 		else

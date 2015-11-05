@@ -1,14 +1,13 @@
 fileFormatVersion: 2
-guid: bf5f7c03b598ecf4fb4a2de20b10b65c
-timeCreated: 1446674825
+guid: 820c9390b1ee74850894f7c7c45f1b5a
+timeCreated: 1446663535
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: RectangleShadow_0
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -28,9 +27,9 @@ TextureImporter:
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -3
-  maxTextureSize: 2048
+  maxTextureSize: 512
   textureSettings:
-    filterMode: 2
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -50,17 +49,7 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: RectangleShadow_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 979
-        height: 529
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 30, y: 30, z: 30, w: 30}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 

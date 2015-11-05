@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class NetworkRoomLevelSetup : MonoBehaviour
+public class LevelComponentsManager : MonoBehaviour
 {
 	public GameObject topLevelComponent;
 	private List<PlatformOscillation> platformOscillationScripts = new List<PlatformOscillation>();
@@ -11,6 +11,7 @@ public class NetworkRoomLevelSetup : MonoBehaviour
 	void Awake()
 	{
 		getPlatformRotatorAndOscillationScripts();
+		deactivateMovingLevelComponents();
 	}
 
 	private void getPlatformRotatorAndOscillationScripts()

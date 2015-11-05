@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TempJoinRoomGUI : MonoBehaviour 
-{	
+public class TempJoinRoomGUI : MonoBehaviour
+{
 	void OnGUI()
 	{
 		if (!PhotonNetwork.connected)
