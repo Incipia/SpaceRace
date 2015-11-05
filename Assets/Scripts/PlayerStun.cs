@@ -26,17 +26,20 @@ public class PlayerStun : MonoBehaviour
 
 	void StunPlayer(GameObject other)
 	{
-		MovePlayer movePlayer = other.GetComponent<MovePlayer>();
-		if(movePlayer != null)
+		if (isActiveAndEnabled)
 		{
-			Vector2 flingDirection = (Vector2)(other.transform.position - trans.position);
-			flingDirection.Normalize();
-			movePlayer.addImpulse(flingDirection * stunStrength);
-			movePlayer.Stun(stunDuration, deactivateParticlesOnStun);
-		}
-		else
-		{
-			Debug.Log("Colliding object doesn't have a MovePlayer script");
+			MovePlayer movePlayer = other.GetComponent<MovePlayer>();
+			if(movePlayer != null)
+			{
+				Vector2 flingDirection = (Vector2)(other.transform.position - trans.position);
+				flingDirection.Normalize();
+				movePlayer.addImpulse(flingDirection * stunStrength);
+				movePlayer.Stun(stunDuration, deactivateParticlesOnStun);
+			}
+			else
+			{
+				Debug.Log("Colliding object doesn't have a MovePlayer script");
+			}
 		}
 	}
 }

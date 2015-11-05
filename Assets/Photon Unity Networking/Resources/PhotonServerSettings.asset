@@ -40,4 +40,12 @@ MonoBehaviour:
   - beginCountdown
   - updatePlayerDisplayNumber
   - activateAndUpdateFinishLineText
+  - loadNextLevel
+  - makeSurePlayersDontGetDestroyed
+  - enablePlayer
+  - makeInnerCircleVisible
+  - makeOuterRingVisible
+  - makeParticleTrailVisible
+  - makePlayerNumberVisible
+  - loadFirstLevel
   DisableAutoOpenWizard: 1

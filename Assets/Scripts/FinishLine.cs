@@ -10,6 +10,7 @@ public class FinishLine : Photon.MonoBehaviour
 	void Start()
 	{
 		finishLineText.SetActive(false);
+		PhotonNetwork.automaticallySyncScene = true;
 	}
 	
 	private void OnTriggerExit2D(Collider2D other)
@@ -28,7 +29,6 @@ public class FinishLine : Photon.MonoBehaviour
 			}
 		}
 	}
-
 	[PunRPC] void activateAndUpdateFinishLineText(int playerNumber)
 	{
 		finishLineText.SetActive(true);
