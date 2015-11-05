@@ -34,7 +34,7 @@ public class LevelRoomSetup : Photon.PunBehaviour
 			List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(_currentRoom.maxPlayers);
 			
 			// Get the start position that corresponds to THIS player
-			Vector3 startPos = startPositions[PhotonNetwork.player.ID-1];
+			Vector3 startPos = startPositions[PhotonNetwork.player.playerNumber()-1];
 			playerManager.createPlayerAtPosition(startPos);
 
 			setupCountdownManager();

@@ -38,6 +38,7 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		_localPlayer.setPlayerNumber(_currentRoom.playerCount);
 		_localPlayer.setReadyToRace(false);
+
 		if (_roomIsFull)
 		{
 			Debug.Log("Room is full!  Loading the next level...");
