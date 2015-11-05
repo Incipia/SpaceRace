@@ -85,6 +85,7 @@ public class MovePlayer : MonoBehaviour
 
 	private IEnumerator ActualStun(float duration, bool deactivateParticles)
 	{
+		playerRigidBody.gravityScale = 0;
 		controlsActive = false;
 		if (deactivateParticles)
 		{
@@ -98,6 +99,7 @@ public class MovePlayer : MonoBehaviour
 			yield return new WaitForFixedUpdate();
 		}
 
+		playerRigidBody.gravityScale = 1;
 		controlsActive = true;
 		if (deactivateParticles)
 		{

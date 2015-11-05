@@ -42,16 +42,6 @@
          offset="1"
          id="stop3760" />
     </linearGradient>
-    <linearGradient
-       y2="201.52809"
-       x2="121.69761"
-       y1="122.37656"
-       x1="121.69761"
-       gradientTransform="matrix(0.11972486,0,0,0.11972486,103.46251,792.25466)"
-       gradientUnits="userSpaceOnUse"
-       id="linearGradient6492"
-       xlink:href="#linearGradient3756"
-       inkscape:collect="always" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -61,7 +51,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.882384"
-     inkscape:cx="154.57223"
+     inkscape:cx="71.698597"
      inkscape:cy="118.9873"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -108,7 +98,7 @@
        d="m -222.1875,1065.0312 a 1.7252219,1.7252219 0 0 0 -1.53125,1.7188 l 0,2.5938 0,53.7187 a 1.7252219,1.7252219 0 0 0 1.71875,1.7187 l 71.1875,0 141.8125,0 a 1.7252219,1.7252219 0 0 0 1.71875,-1.7187 l 0,-53.7187 0,-2.5938 A 1.7252219,1.7252219 0 0 0 -9,1065.0312 l -71.1875,0 a 1.7252219,1.7252219 0 0 0 -1.71875,1.7188 l 0,0.875 -67.1875,0 0,-0.875 a 1.7252219,1.7252219 0 0 0 -1.71875,-1.7188 l -71.1875,0 a 1.7252219,1.7252219 0 0 0 -0.1875,0 z"
        transform="translate(385.7924,-7.5666504)" />
     <path
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        d="m 9.5199453,798.6217 0,252.168 71.1924497,0 0,-252.168 -71.1924497,0 z m 55.9484797,20.71885 c 5.72126,0 10.35942,4.62864 10.35942,10.3499 0,5.72126 -4.63816,10.35942 -10.35942,10.35942 -5.72125,0 -10.35941,-4.63816 -10.35941,-10.35942 0,-5.72126 4.63816,-10.3499 10.35941,-10.3499 z m 0,41.42816 c 5.72126,0 10.35942,4.63817 10.35942,10.35943 0,5.72125 -4.63816,10.35942 -10.35942,10.35942 -5.72125,0 -10.35941,-4.63817 -10.35941,-10.35942 0,-5.72126 4.63816,-10.35943 10.35941,-10.35943 z m 0,41.43769 c 5.72126,0 10.35942,4.63817 10.35942,10.35942 0,5.72126 -4.63816,10.35943 -10.35942,10.35943 -5.72125,0 -10.35941,-4.63817 -10.35941,-10.35943 0,-5.72125 4.63816,-10.35942 10.35941,-10.35942 z m 0,41.43769 c 5.72126,0 10.35942,4.63816 10.35942,10.35942 0,5.72126 -4.63816,10.35943 -10.35942,10.35943 -5.72125,0 -10.35941,-4.63817 -10.35941,-10.35943 0,-5.72126 4.63816,-10.35942 10.35941,-10.35942 z m 0,41.43769 c 5.72126,0 10.35942,4.63816 10.35942,10.35942 0,5.7212 -4.63816,10.3594 -10.35942,10.3594 -5.72125,0 -10.35941,-4.6382 -10.35941,-10.3594 0,-5.72126 4.63816,-10.35942 10.35941,-10.35942 z m 0,41.43762 c 5.72126,0 10.35942,4.6381 10.35942,10.3594 0,5.7212 -4.63816,10.3594 -10.35942,10.3594 -5.72125,0 -10.35941,-4.6382 -10.35941,-10.3594 0,-5.7213 4.63816,-10.3594 10.35941,-10.3594 z"
        id="rect6316"
        inkscape:connector-curvature="0"
@@ -167,7 +157,7 @@
        transform="matrix(0.30468888,0,0,0.30468888,163.35238,1069.496)" />
     <path
        sodipodi:type="star"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path6382"
        sodipodi:sides="6"
        sodipodi:cx="-40.161839"
@@ -186,7 +176,7 @@
        inkscape:export-ydpi="2048" />
     <path
        sodipodi:type="star"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path6384"
        sodipodi:sides="5"
        sodipodi:cx="-252.12709"
@@ -205,7 +195,7 @@
        inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\GearFive.png" />
     <path
        sodipodi:type="star"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path6386"
        sodipodi:sides="4"
        sodipodi:cx="-251.38335"
@@ -226,7 +216,7 @@
        inkscape:export-ydpi="2048" />
     <path
        sodipodi:type="star"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path6388"
        sodipodi:sides="3"
        sodipodi:cx="72.886299"
@@ -246,7 +236,7 @@
        inkscape:export-xdpi="2048"
        inkscape:export-ydpi="2048" />
     <rect
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="rect6390"
        width="19.776598"
        height="19.776598"
@@ -255,16 +245,9 @@
        inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Square.png"
        inkscape:export-xdpi="2048"
        inkscape:export-ydpi="2048" />
-    <rect
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="rect6392"
-       width="9.8883038"
-       height="9.8882923"
-       x="132.76697"
-       y="870.64447" />
     <path
        sodipodi:type="arc"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path6396"
        sodipodi:cx="-365.0386"
        sodipodi:cy="-410.32828"
@@ -276,17 +259,7 @@
        inkscape:export-xdpi="2048"
        inkscape:export-ydpi="2048" />
     <path
-       sodipodi:type="arc"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="path6400"
-       sodipodi:cx="-313.9744"
-       sodipodi:cy="-397.91461"
-       sodipodi:rx="11.763206"
-       sodipodi:ry="11.763191"
-       d="m -302.21119,-397.91461 c 0,6.49663 -5.26657,11.76319 -11.76321,11.76319 -6.49663,0 -11.7632,-5.26656 -11.7632,-11.76319 0,-6.49663 5.26657,-11.76319 11.7632,-11.76319 6.49664,0 11.76321,5.26656 11.76321,11.76319 z"
-       transform="matrix(0.42030652,0,0,0.42030652,267.41544,1012.9875)" />
-    <path
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        d="m 96.534753,893.89806 0,19.77622 19.776207,0 19.77621,0 0,-19.77622 -19.77621,0 -19.776207,0 z"
        id="rect6390-8"
        inkscape:connector-curvature="0"
@@ -294,13 +267,8 @@
        inkscape:export-xdpi="2048"
        inkscape:export-ydpi="2048" />
     <path
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 145.17997,896.84052 0,9.89287 9.88334,0 9.89287,0 0,-9.89287 -9.89287,0 -9.88334,0 z"
-       id="rect6392-6"
-       inkscape:connector-curvature="0" />
-    <path
        sodipodi:type="star"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path6456"
        sodipodi:sides="3"
        sodipodi:cx="-11.156066"
@@ -316,39 +284,6 @@
        transform="matrix(0.25517806,0,0,0.25517806,190.2658,1059.8487)"
        inkscape:transform-center-y="-3.1443086"
        inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Triangle.png"
-       inkscape:export-xdpi="2048"
-       inkscape:export-ydpi="2048" />
-    <path
-       sodipodi:type="star"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="path6456-7"
-       sodipodi:sides="3"
-       sodipodi:cx="-11.156066"
-       sodipodi:cy="-624.26672"
-       sodipodi:r1="49.288193"
-       sodipodi:r2="24.644096"
-       sodipodi:arg1="-1.5707963"
-       sodipodi:arg2="-0.52359878"
-       inkscape:flatsided="false"
-       inkscape:rounded="0"
-       inkscape:randomized="0"
-       d="m -11.156065,-673.55492 21.342413,36.96615 21.342412,36.96614 -42.684826,0 -42.684828,0 21.342414,-36.96614 z"
-       transform="matrix(0.14369159,0,0,0.14369159,216.50419,991.96313)"
-       inkscape:transform-center-y="-1.7705774" />
-    <path
-       style="fill:url(#linearGradient6492);fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 109.41391,807.27612 -6.34081,9.72213 29.36762,0 -4.67286,-10.131 -3.9914,1.07735 -2.88809,-1.3629 -1.71987,0.55164 -1.49272,-0.55164 -1.65497,0.94103 -2.79073,-0.84369 z"
-       id="path3754"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Portal.png"
-       inkscape:export-xdpi="2048"
-       inkscape:export-ydpi="2048" />
-    <path
-       style="fill:#fffffb;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 109.41391,807.27612 3.81617,-1.27206 2.45325,1.13577 2.13523,-1.59008 1.22663,0.7269 1.99895,-0.31802 2.63497,1.68093 4.08874,-0.77232 -3.99788,1.45378 -2.58955,-1.18119 -1.90808,0.5906 -1.40835,-0.49974 -1.6355,0.95404 -2.95298,-1.1812 z"
-       id="path3752-3-8"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="C:\Users\Anthony\Desktop\Projects\SparkHouse\SpaceRace\Assets\Sprites\NewSprites\Portal.png"
        inkscape:export-xdpi="2048"
        inkscape:export-ydpi="2048" />
     <path
