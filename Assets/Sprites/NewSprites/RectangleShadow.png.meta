@@ -1,9 +1,10 @@
 fileFormatVersion: 2
 guid: bf5f7c03b598ecf4fb4a2de20b10b65c
-timeCreated: 1446512237
-licenseType: Free
+timeCreated: 1446674825
+licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: RectangleShadow_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -37,6 +38,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
@@ -48,7 +50,17 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: RectangleShadow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 979
+        height: 529
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 30, y: 30, z: 30, w: 30}
   spritePackingTag: 
   userData: 
   assetBundleName: 
