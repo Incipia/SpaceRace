@@ -48,4 +48,5 @@ MonoBehaviour:
   - makeParticleTrailVisible
   - makePlayerNumberVisible
   - loadFirstLevel
+  - makeAllSpritesVisible
   DisableAutoOpenWizard: 1

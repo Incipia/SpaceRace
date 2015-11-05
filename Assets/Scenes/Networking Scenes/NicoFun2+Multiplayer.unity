@@ -416,7 +416,7 @@ GameObject:
   - 114: {fileID: 67816808}
   - 114: {fileID: 67816807}
   m_Layer: 0
-  m_Name: NetworkManager
+  m_Name: First Level Setup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownManager: {fileID: 856198002}
   levelSetup: {fileID: 67816807}
-  playersManager: {fileID: 67816808}
+  playerManager: {fileID: 67816808}
 --- !u!4 &67816805
 Transform:
   m_ObjectHideFlags: 0

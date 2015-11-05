@@ -12,7 +12,9 @@ public class NetworkPlayerColorSetup : Photon.MonoBehaviour
 	{
 		if (photonView.isMine)
 		{
-			int playerDisplayNumber = PhotonNetwork.room.playerCount;
+			int playerDisplayNumber = PhotonNetwork.player.playerNumber();
+
+			// TODO: Make all of this color setup happen in one method (take in three color vectors)
 
 			Color outerRingColor = PlayerColorProvider.colorForPlayerNumber(playerDisplayNumber, PlayerColoredComponentType.OuterRing);
 			Vector3 outerRingColorVector = new Vector3(outerRingColor.r, outerRingColor.g, outerRingColor.b);
