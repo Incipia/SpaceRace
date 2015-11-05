@@ -12,14 +12,12 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	private Room _currentRoom { get { return PhotonNetwork.room; } }
 	private bool _roomIsFull { get { return _currentRoom.maxPlayers == _currentRoom.playerCount; }}
 
-	// Use this for initialization
 	void Start() 
 	{	
 		Debug.Log("Connecting to Photon...");
 		PhotonNetwork.ConnectUsingSettings(_gameVersion);
 	}
-	
-	// Update is called once per frame
+
 	void Update() 
 	{
 		if (PhotonNetwork.connectedAndReady && _requestedToJoinRoom == false)
@@ -38,13 +36,11 @@ public class NetworkRoomManager : Photon.PunBehaviour
 
 	void OnJoinedRoom()
 	{
-		Debug.Log("OnJoinedRoom()");
-
 		_localPlayer.setPlayerNumber(_currentRoom.playerCount);
 		_localPlayer.setReadyToRace(false);
 		if (_roomIsFull)
 		{
-			Debug.Log("Room is full!  Loading the next level");
+			Debug.Log("Room is full!  Loading the next level...");
 			photonView.RPC("loadFirstLevel", PhotonTargets.MasterClient);
 		}
 	}

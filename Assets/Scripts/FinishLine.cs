@@ -37,10 +37,8 @@ public class FinishLine : Photon.MonoBehaviour
 
 	[PunRPC] void loadNextLevel()
 	{
-		Debug.Log("loadNextLevel()");
 		if (PhotonNetwork.isMasterClient)
 		{
-			Debug.Log("PhotonNetwork.LoadLevel(2)");
 			PhotonNetwork.LoadLevel(2);
 		}
 	}
