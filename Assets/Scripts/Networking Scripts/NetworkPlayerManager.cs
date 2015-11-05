@@ -31,14 +31,6 @@ public class NetworkPlayerManager : Photon.PunBehaviour
 		}
 	}
 
-	void OnPhotonPlayerPropertiesChanged (object[] playerAndUpdatedProps)
-	{
-		foreach (object obj in playerAndUpdatedProps)
-		{
-			Debug.Log("Player properties changed: " + obj);
-		}
-	}
-
 	public void makePlayerVisible()
 	{
 		visibilitySetup.makeEverythingVisible(true);

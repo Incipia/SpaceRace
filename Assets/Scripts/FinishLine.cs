@@ -18,17 +18,33 @@ public class FinishLine : Photon.MonoBehaviour
 		float edgeTransformY = edgeCollider.transform.position.y + edgeCollider.offset.y;
 		if (other.transform.position.y > edgeTransformY)
 		{
-			GameObject player = other.transform.root.gameObject;
-
-			// TEMPORARY! We need a better way to get this info off of the player game object
-			NetworkPlayerNumberSetup numberSetup = player.GetComponent<NetworkPlayerNumberSetup>();
-			if (numberSetup != null)
+			PhotonView playerPhotonView = PhotonView.Get(other.transform.root.gameObject);
+			if (playerPhotonView != null)
 			{
-				activateAndUpdateFinishLineText(numberSetup.playerNumber);
-				photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, numberSetup.playerNumber);
+				int playerNumber = playerPhotonView.owner.playerNumber();
+				photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, playerNumber);
+				
+				StartCoroutine(loadNextLevelAfterDuration(1));
 			}
 		}
 	}
+
+	private IEnumerator loadNextLevelAfterDuration(float duration)
+	{
+		yield return new WaitForSeconds(duration);
+		photonView.RPC("loadNextLevel", PhotonTargets.MasterClient);
+	}
+
+	[PunRPC] void loadNextLevel()
+	{
+		Debug.Log("loadNextLevel()");
+		if (PhotonNetwork.isMasterClient)
+		{
+			Debug.Log("PhotonNetwork.LoadLevel(2)");
+			PhotonNetwork.LoadLevel(2);
+		}
+	}
+
 	[PunRPC] void activateAndUpdateFinishLineText(int playerNumber)
 	{
 		finishLineText.SetActive(true);

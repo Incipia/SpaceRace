@@ -13,16 +13,30 @@ public class NetworkPlayerVisibilitySetup : Photon.MonoBehaviour
 	{
 		if (photonView.isMine)
 		{
-			makeEverythingVisible(false);
+//			makeEverythingVisible(false);
 		}
+		DontDestroyOnLoad(gameObject);
 	}
 
 	public void makeEverythingVisible(bool visible)
 	{
-		makeOuterRingVisible(visible);
-		makeInnerCircleVisible(visible);
-		makePlayerNumberVisible(visible);
-		makeParticleTrailVisible(visible);
+		makeAllSpritesVisible(visible);
+//		makeOuterRingVisible(visible);
+//		makeInnerCircleVisible(visible);
+//		makePlayerNumberVisible(visible);
+//		makeParticleTrailVisible(visible);
+	}
+
+	[PunRPC] void makeAllSpritesVisible(bool visible)
+	{
+		outerRingRenderer.enabled = visible;
+		innerCircleRenderer.enabled = visible;
+		playerNumberSpriteRenderer.enabled = visible;
+		particleTrail.GetComponent<ParticleSystem>().enableEmission = visible;
+		if (photonView.isMine)
+		{
+			photonView.RPC("makeAllSpritesVisible", PhotonTargets.OthersBuffered, visible);
+		}
 	}
 	
 	[PunRPC] void makeOuterRingVisible(bool visible)

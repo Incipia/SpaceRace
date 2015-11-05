@@ -10,7 +10,7 @@ public class NetworkPlayerNumberSetup : Photon.MonoBehaviour
 	{
 		if (photonView.isMine)
 		{
-			int playerNumber = PhotonNetwork.room.playerCount;
+			int playerNumber = PhotonNetwork.player.playerNumber();
 			updatePlayerDisplayNumber(playerNumber);
 		}
 	}

@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
+using AssemblyCSharp;
 
 public class NetworkRoomManager : Photon.PunBehaviour
 {
 	private string _gameVersion = "0.1.1";
 	private bool _requestedToJoinRoom = false;
 	
+	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private Room _currentRoom { get { return PhotonNetwork.room; } }
 	private bool _roomIsFull { get { return _currentRoom.maxPlayers == _currentRoom.playerCount; }}
 
@@ -33,18 +36,15 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		}
 	}
 
-	void OnPhotonPlayerConnected (PhotonPlayer newPlayer)
-	{
-		Debug.Log("Player joined the room!");
-	}
-
 	void OnJoinedRoom()
 	{
 		Debug.Log("OnJoinedRoom()");
+
+		_localPlayer.setPlayerNumber(_currentRoom.playerCount);
+		_localPlayer.setReadyToRace(false);
 		if (_roomIsFull)
 		{
 			Debug.Log("Room is full!  Loading the next level");
-
 			photonView.RPC("loadFirstLevel", PhotonTargets.MasterClient);
 		}
 	}
