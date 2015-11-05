@@ -22,6 +22,7 @@ public class FinishLine : Photon.MonoBehaviour
 			if (playerPhotonView != null)
 			{
 				int playerNumber = playerPhotonView.owner.playerNumber();
+				activateAndUpdateFinishLineText(playerNumber);
 				photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, playerNumber);
 				
 				StartCoroutine(loadNextLevelAfterDuration(1));
@@ -39,12 +40,13 @@ public class FinishLine : Photon.MonoBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			PhotonNetwork.LoadLevel(2);
+//			PhotonNetwork.LoadLevel(2);
 		}
 	}
 
 	[PunRPC] void activateAndUpdateFinishLineText(int playerNumber)
 	{
+		Debug.Log("updating finish line!");
 		finishLineText.SetActive(true);
 		finishLineCounter.updateSpritesWithNumber(playerNumber);
 	}

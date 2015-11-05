@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 75031518}
+  - 114: {fileID: 75031519}
   m_Layer: 0
   m_Name: Room Size Selector
   m_TagString: Untagged
@@ -107,7 +108,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 75031517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .0500000007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1608819728}
@@ -117,6 +118,24 @@ Transform:
   - {fileID: 1334853418}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &75031519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 75031517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c767e0259efa4930a265a0cdf69044e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  one: {fileID: 2136256578}
+  two: {fileID: 1856808030}
+  three: {fileID: 289647014}
+  four: {fileID: 1334853417}
+  selectedRing: {fileID: 1608819727}
+  selectedColor: {r: 1, g: 0, b: 1, a: 1}
+  currentRoomSize: 1
 --- !u!1 &289647013
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +145,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 289647015}
   - 212: {fileID: 289647014}
+  - 114: {fileID: 289647016}
+  - 61: {fileID: 289647017}
   m_Layer: 0
   m_Name: 3
   m_TagString: Untagged
@@ -171,6 +192,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 75031518}
   m_RootOrder: 3
+--- !u!114 &289647016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289647013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0deb931e55d6645d99648bbf6a89e516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSizeSelector: {fileID: 75031519}
+  number: 3
+--- !u!61 &289647017
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289647013}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 3.9000001, y: 3.9000001}
 --- !u!1 &440822172
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +443,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1334853418}
   - 212: {fileID: 1334853417}
+  - 114: {fileID: 1334853419}
+  - 61: {fileID: 1334853420}
   m_Layer: 0
   m_Name: 4
   m_TagString: Untagged
@@ -441,6 +490,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 75031518}
   m_RootOrder: 4
+--- !u!114 &1334853419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1334853416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0deb931e55d6645d99648bbf6a89e516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSizeSelector: {fileID: 75031519}
+  number: 4
+--- !u!61 &1334853420
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1334853416}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 3.9000001, y: 3.9000001}
 --- !u!1 &1407313606
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +643,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1856808031}
   - 212: {fileID: 1856808030}
+  - 114: {fileID: 1856808032}
+  - 61: {fileID: 1856808033}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -613,6 +690,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 75031518}
   m_RootOrder: 2
+--- !u!114 &1856808032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856808029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0deb931e55d6645d99648bbf6a89e516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSizeSelector: {fileID: 75031519}
+  number: 2
+--- !u!61 &1856808033
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1856808029}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 3.9000001, y: 3.9000001}
 --- !u!1 &1917503349
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +815,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 2136256579}
   - 212: {fileID: 2136256578}
+  - 114: {fileID: 2136256580}
+  - 61: {fileID: 2136256581}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -757,3 +862,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 75031518}
   m_RootOrder: 1
+--- !u!114 &2136256580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136256577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0deb931e55d6645d99648bbf6a89e516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomSizeSelector: {fileID: 75031519}
+  number: 1
+--- !u!61 &2136256581
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136256577}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 3.9000001, y: 3.9000001}

@@ -26,7 +26,7 @@ public class NetworkRoomManager : Photon.PunBehaviour
 
 			PhotonNetwork.automaticallySyncScene = true;
 			RoomOptions roomOptions = new RoomOptions() {
-				maxPlayers = 2,
+				maxPlayers = 1,
 				isVisible = false
 			};
 			PhotonNetwork.JoinOrCreateRoom("default2", roomOptions, TypedLobby.Default);
