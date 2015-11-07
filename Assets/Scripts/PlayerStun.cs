@@ -6,6 +6,7 @@ public class PlayerStun : MonoBehaviour
 	public float stunDuration = 0.3f;
 	public float stunStrength = 2.0f;
 	public bool deactivateParticlesOnStun;
+	public Vector2 newPlayerMaxVelocity = new Vector2(1, 10);
 
 	Transform trans;
 
@@ -35,6 +36,7 @@ public class PlayerStun : MonoBehaviour
 				flingDirection.Normalize();
 				movePlayer.addImpulse(flingDirection * stunStrength);
 				movePlayer.Stun(stunDuration, deactivateParticlesOnStun);
+				movePlayer.SetMaxVelocity(newPlayerMaxVelocity);
 			}
 			else
 			{
