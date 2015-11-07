@@ -10,22 +10,28 @@ public class RoomSizeSelector : MonoBehaviour
 	public SpriteRenderer four;
 	public SpriteRenderer selectedRing;
 	public Color selectedColor = Color.magenta;
-	public int currentRoomSize = 1;
+
+	public int currentRoomSize { get { return _currentRoomSize; }}
+	private int _currentRoomSize = 1;
 
 	void Start()
 	{
 		selectedRing.color = selectedColor;
 		resetAllRenderers();
-		selectedRoomSize(3);
+		selectedRoomSize(_currentRoomSize);
 	}
 
 	public void selectedRoomSize(int size)
 	{
+		_currentRoomSize = size;
 		resetAllRenderers();
 
 		SpriteRenderer renderer = rendererForRoomSize(size);
-		renderer.color = selectedColor;
-		selectedRing.transform.position = renderer.transform.position;
+		if (renderer != null)
+		{
+			renderer.color = selectedColor;
+			selectedRing.transform.position = renderer.transform.position;
+		}
 	}
 
 	private SpriteRenderer rendererForRoomSize(int size)

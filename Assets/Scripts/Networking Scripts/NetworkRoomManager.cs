@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
-using Hashtable = ExitGames.Client.Photon.Hashtable;
 using AssemblyCSharp;
+using System.Collections;
+using System.Collections.Generic;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class NetworkRoomManager : Photon.PunBehaviour
 {
-	private string _gameVersion = "0.1.1";
+	public ConnectButton connectButton;
+	public NetworkRoomConnectionInfo roomConnectionInfo;
+	public GameObject timeToPlayText;
+	public GameObject roomSelector;
+
+	public List<GameObject> objectsToHideBeforePlaying = new List<GameObject>();
+
+	private string _gameVersion = "0.0.1";
 	private bool _requestedToJoinRoom = false;
 	
 	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
@@ -14,24 +22,31 @@ public class NetworkRoomManager : Photon.PunBehaviour
 
 	void Start() 
 	{	
+		timeToPlayText.SetActive(false);
+		setObjectActive(roomConnectionInfo, false);
+		connectButton.setReadyToConnect(false);
+		
 		Debug.Log("Connecting to Photon...");
 		PhotonNetwork.ConnectUsingSettings(_gameVersion);
 	}
 
-	void Update() 
+	void OnConnectedToPhoton()
 	{
-		if (PhotonNetwork.connectedAndReady && _requestedToJoinRoom == false)
-		{
-			Debug.Log("Connected! Trying to create/join a room...");
+		Debug.Log("Connected! Ready to create/join a room...");
+		connectButton.setReadyToConnect(true);
+	}
+	
+	void OnFailedToConnectToPhoton(DisconnectCause cause)
+	{
+		Debug.LogError("Failed to connect to Photon: " + cause);
+	}
 
-			PhotonNetwork.automaticallySyncScene = true;
-			RoomOptions roomOptions = new RoomOptions() {
-				maxPlayers = 1,
-				isVisible = false
-			};
-			PhotonNetwork.JoinOrCreateRoom("default2", roomOptions, TypedLobby.Default);
-			_requestedToJoinRoom = true;
-		}
+	void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
+	{	
+		updateConnectionInfoText();
+
+		setObjectActive(connectButton, false);
+		setObjectActive(roomConnectionInfo, true);
 	}
 
 	void OnJoinedRoom()
@@ -39,13 +54,74 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		_localPlayer.setPlayerNumber(_currentRoom.playerCount);
 		_localPlayer.setReadyToRace(false);
 
+		updateConnectionInfoText();
+
+		setObjectActive(connectButton, false);
+		roomSelector.SetActive(false);
+		setObjectActive(roomConnectionInfo, true);
+
+		Debug.Log("Player " + _localPlayer.playerNumber() + " joined room: " + PhotonNetwork.room.name);
 		if (_roomIsFull)
-		{
-			Debug.Log("Room is full!  Loading the next level...");
-			photonView.RPC("loadFirstLevel", PhotonTargets.MasterClient);
+		{	
+			Debug.Log("Room is full!  Loading the first level.");
+			StartCoroutine(startSequenceBeforeMatch());
 		}
 	}
 
+	private void updateConnectionInfoText()
+	{
+		int spotsLeft = _currentRoom.maxPlayers - _currentRoom.playerCount;
+		roomConnectionInfo.updateOpenSpotsLeft(spotsLeft);
+		roomConnectionInfo.updatePlayerNumber(_localPlayer.playerNumber());
+
+		if (spotsLeft == 0)
+		{
+			roomConnectionInfo.hideOpenSpotsLeftText();
+		}
+	}
+
+	private IEnumerator startSequenceBeforeMatch()
+	{
+		yield return new WaitForSeconds(1.5f);
+		photonView.RPC("showTimeToPlayText", PhotonTargets.AllViaServer);
+		
+		yield return new WaitForSeconds(1f);
+		photonView.RPC("loadFirstLevel", PhotonTargets.MasterClient);
+	}
+
+	private void hideObjectsBeforePlaying()
+	{
+		foreach (GameObject obj in objectsToHideBeforePlaying)
+		{
+			obj.SetActive(false);
+		}
+	}
+
+	private void setObjectActive(MonoBehaviour script, bool hidden)
+	{
+		script.transform.root.gameObject.SetActive(hidden);
+	}
+
+	public void connectToRoomWithSize(int size)
+	{
+		if (PhotonNetwork.connectedAndReady)
+		{
+			Debug.Log("Trying to connect to a room with size: " + size + "...");
+			PhotonNetwork.automaticallySyncScene = true;
+			RoomOptions roomOptions = new RoomOptions() {
+				maxPlayers = (byte)size,
+				isVisible = false
+			};
+			PhotonNetwork.JoinOrCreateRoom("default" + size, roomOptions, TypedLobby.Default);
+		}
+	}
+
+	[PunRPC] void showTimeToPlayText()
+	{
+		hideObjectsBeforePlaying();
+		timeToPlayText.SetActive(true);
+	}
+	
 	[PunRPC] void loadFirstLevel()
 	{
 		if (PhotonNetwork.isMasterClient)

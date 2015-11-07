@@ -166,4 +166,12 @@ public class CounterUI : MonoBehaviour
 			setSpriteRendererAlphaValue(rendererForIndex(i), alphaValue);
 		}
 	}
+
+	public void updateColor(Color color)
+	{
+		for (int i = 0; i < 4; ++i)
+		{
+			rendererForIndex(i).color = color;
+		}
+	}
 }
