@@ -67,6 +67,15 @@ public class NetworkRoomManager : Photon.PunBehaviour
 			StartCoroutine(startSequenceBeforeMatch());
 		}
 	}
+	
+	private IEnumerator startSequenceBeforeMatch()
+	{
+		yield return new WaitForSeconds(1.5f);
+		photonView.RPC("showTimeToPlayText", PhotonTargets.AllViaServer);
+		
+		yield return new WaitForSeconds(1f);
+		photonView.RPC("loadFirstLevel", PhotonTargets.MasterClient);
+	}
 
 	private void updateConnectionInfoText()
 	{
@@ -78,15 +87,6 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		{
 			roomConnectionInfo.hideOpenSpotsLeftText();
 		}
-	}
-
-	private IEnumerator startSequenceBeforeMatch()
-	{
-		yield return new WaitForSeconds(1.5f);
-		photonView.RPC("showTimeToPlayText", PhotonTargets.AllViaServer);
-		
-		yield return new WaitForSeconds(1f);
-		photonView.RPC("loadFirstLevel", PhotonTargets.MasterClient);
 	}
 
 	private void hideObjectsBeforePlaying()
