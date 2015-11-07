@@ -42,11 +42,8 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	}
 
 	void OnPhotonPlayerConnected(PhotonPlayer newPlayer)
-	{
-		int spotsLeft = _currentRoom.maxPlayers - _currentRoom.playerCount;
-		
-		roomConnectionInfo.updatePlayerNumber(_localPlayer.playerNumber());
-		roomConnectionInfo.updateOpenSpotsLeft(spotsLeft);
+	{	
+		updateConnectionInfoText();
 
 		setObjectActive(connectButton, false);
 		setObjectActive(roomConnectionInfo, true);
@@ -56,11 +53,8 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		_localPlayer.setPlayerNumber(_currentRoom.playerCount);
 		_localPlayer.setReadyToRace(false);
-		
-		int spotsLeft = _currentRoom.maxPlayers - _currentRoom.playerCount;
 
-		roomConnectionInfo.updatePlayerNumber(_localPlayer.playerNumber());
-		roomConnectionInfo.updateOpenSpotsLeft(spotsLeft);
+		updateConnectionInfoText();
 
 		setObjectActive(connectButton, false);
 		roomSelector.SetActive(false);
@@ -74,12 +68,24 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		}
 	}
 
+	private void updateConnectionInfoText()
+	{
+		int spotsLeft = _currentRoom.maxPlayers - _currentRoom.playerCount;
+		roomConnectionInfo.updateOpenSpotsLeft(spotsLeft);
+		roomConnectionInfo.updatePlayerNumber(_localPlayer.playerNumber());
+
+		if (spotsLeft == 0)
+		{
+			roomConnectionInfo.hideOpenSpotsLeftText();
+		}
+	}
+
 	private IEnumerator startSequenceBeforeMatch()
 	{
 		yield return new WaitForSeconds(1.5f);
 		photonView.RPC("showTimeToPlayText", PhotonTargets.AllViaServer);
 		
-		yield return new WaitForSeconds(1.5f);
+		yield return new WaitForSeconds(1f);
 		photonView.RPC("loadFirstLevel", PhotonTargets.MasterClient);
 	}
 
@@ -122,11 +128,5 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		{
 			PhotonNetwork.LoadLevel(1);
 		}
-	}
-
-	[PunRPC] void updateSpotsLeftInRoomText()
-	{
-		int spotsLeft = _currentRoom.maxPlayers - _currentRoom.playerCount;
-		roomConnectionInfo.updateOpenSpotsLeft(spotsLeft);
 	}
 }

@@ -18,4 +18,10 @@ public class NetworkRoomConnectionInfo : MonoBehaviour
 	{
 		openSpotsLeftCounter.updateSpritesWithNumber(number);
 	}
+
+	public void hideOpenSpotsLeftText()
+	{
+		// TODO: add more .transform.parent calls if necessary
+		openSpotsLeftCounter.transform.parent.transform.parent.gameObject.SetActive(false);
+	}
 }
