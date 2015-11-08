@@ -212,12 +212,14 @@ public class MovePlayer : Photon.MonoBehaviour
 				enabled = enableMovement;
 				Debug.Log("set movement enabled: " + enableMovement);
 
-				if (player.needsToResetPosition())
+				if (player.needsToResetPosition() && photonView.isMine)
 				{
 					List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(PhotonNetwork.room.maxPlayers);
 					Vector3 startPos = startPositions[PhotonNetwork.player.playerNumber()-1];
 
+					playerRigidBody.isKinematic = true;
 					transform.position = startPos;
+					playerRigidBody.isKinematic = false;
 					PhotonNetwork.player.setNeedsToResetPosition(false);
 				}
 				break;

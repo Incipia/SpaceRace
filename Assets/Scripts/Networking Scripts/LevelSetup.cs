@@ -26,6 +26,7 @@ public class LevelSetup : Photon.PunBehaviour
 			return allPlayersAreReady;
 		}
 	}
+	private bool _countdownStarted = false;
 
 	void Start()
 	{
@@ -53,10 +54,16 @@ public class LevelSetup : Photon.PunBehaviour
 
 	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
-		if (PhotonNetwork.isMasterClient && _allPlayersAreReadyToRace)
+		Debug.Log("properties changed!");
+		if (PhotonNetwork.isMasterClient && _allPlayersAreReadyToRace && !_countdownStarted)
 		{
 			Debug.Log("players are ready! starting countdown...");
+
+			_countdownStarted = true;
 			photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
+
+			// reset player ready status for next race
+			playerManager.setPlayerReadyToRace(false);
 		}
 	}
 
@@ -73,6 +80,7 @@ public class LevelSetup : Photon.PunBehaviour
 	{
 		if (countdownManager != null)
 		{
+			countdownManager.hideCountdownUI();
 			countdownManager.completion += countdownManager.hideCountdownUI;
 			countdownManager.completion += levelSetup.activateMovingLevelComponents;
 			countdownManager.completion += playerManager.enablePlayerMovement;
