@@ -32,7 +32,7 @@ namespace AssemblyCSharp
 			for (int i = 1; i <= roomSize; ++i)
 			{
 				float xPostiion = leftXEdge + spacing * i;
-				Vector3 position = new Vector3(xPostiion, 1);
+				Vector3 position = new Vector3(xPostiion, 0.5f);
 				positions.Add(position);
 			}
 

@@ -4,13 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 using AssemblyCSharp;
 
-public class LevelRoomSetup : Photon.PunBehaviour 
+public class LevelSetup : Photon.PunBehaviour 
 {
 	public CountdownManager countdownManager;
 	public LevelComponentsManager levelSetup;
 	public NetworkPlayerManager playerManager;
+	public bool createPlayerOnStart = false;
 
-	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private Room _currentRoom { get { return PhotonNetwork.room; }}
 	private bool _allPlayersAreReadyToRace { 
 		get {
@@ -31,16 +31,23 @@ public class LevelRoomSetup : Photon.PunBehaviour
 	{
 		if (PhotonNetwork.connectedAndReady)
 		{
-			List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(_currentRoom.maxPlayers);
-			
-			// Get the start position that corresponds to THIS player
-			Vector3 startPos = startPositions[PhotonNetwork.player.playerNumber()-1];
-			playerManager.createPlayerAtPosition(startPos);
-
 			setupCountdownManager();
+			if (createPlayerOnStart)
+			{
+				// Get the start position that corresponds to THIS player
+				List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(_currentRoom.maxPlayers);
+				Vector3 startPos = startPositions[PhotonNetwork.player.playerNumber()-1];
+				playerManager.createPlayerAtPosition(startPos);
+			}
+			else
+			{
+				playerManager.movePlayerToStart();
+			}
 
 			// This will trigger OnPhotonPlayerPropertiesChanged()
-			_localPlayer.setReadyToRace(true);
+			playerManager.disablePlayerMovement();
+			playerManager.attachPlayerToCamera();
+			playerManager.setPlayerReadyToRace(true);
 		}
 	}
 
@@ -66,8 +73,6 @@ public class LevelRoomSetup : Photon.PunBehaviour
 	{
 		if (countdownManager != null)
 		{
-			countdownManager.hideCountdownUI();
-
 			countdownManager.completion += countdownManager.hideCountdownUI;
 			countdownManager.completion += levelSetup.activateMovingLevelComponents;
 			countdownManager.completion += playerManager.enablePlayerMovement;

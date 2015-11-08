@@ -9,13 +9,11 @@ public class SpeedBoostArea : MonoBehaviour
 	public Vector2 newPlayerMaxVelocity = new Vector2(1, 10);
 
 	private List<MovePlayer> playersToBoost;
-	private List<MovePlayerPhoton> photonPlayersToBoost;
 
 	// Use this for initialization
 	private void Start() 
 	{
 		playersToBoost = new List<MovePlayer>();
-		photonPlayersToBoost = new List<MovePlayerPhoton>();
 	}
 	
 	// Update is called once per frame
@@ -23,43 +21,34 @@ public class SpeedBoostArea : MonoBehaviour
 	{
 		foreach(MovePlayer player in playersToBoost)
 		{
+			Debug.Log("in for loop in speed boost");
 			player.SetMaxVelocity(newPlayerMaxVelocity);
-			player.addImpulse(forceToApply);
-		}
-
-		foreach(MovePlayerPhoton player in photonPlayersToBoost)
-		{
 			player.addImpulse(forceToApply);
 		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
+		MovePlayer movePlayer = other.transform.root.gameObject.GetComponent<MovePlayer>();
+
+		Debug.Log("on trigger enter:");
 		if(movePlayer != null)
 		{
+			Debug.Log("adding to players to boost...");
 			playersToBoost.Add(movePlayer);
 		}
-
-		MovePlayerPhoton movePlayerPhoton = other.gameObject.transform.root.GetComponentInChildren<MovePlayerPhoton>();
-		if(movePlayerPhoton != null)
+		else
 		{
-			photonPlayersToBoost.Add(movePlayerPhoton);
+			Debug.Log("move player not found!");
 		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
 	{
-		MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
+		MovePlayer movePlayer = other.transform.root.gameObject.GetComponent<MovePlayer>();
 		if(movePlayer != null)
 		{
 			playersToBoost.Remove(movePlayer);
-		}
-
-		MovePlayerPhoton movePlayerPhoton = other.gameObject.transform.root.GetComponentInChildren<MovePlayerPhoton>();
-		if(movePlayerPhoton != null)
-		{
-			photonPlayersToBoost.Remove(movePlayerPhoton);
 		}
 	}
 }

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using System.Collections.Generic;
+using AssemblyCSharp;
 
 public enum JumpDirection {
 	Left,
@@ -8,7 +10,7 @@ public enum JumpDirection {
 	Invalid
 }
 
-public class MovePlayer : MonoBehaviour 
+public class MovePlayer : Photon.MonoBehaviour
 {
 	public Vector2 baseMaxVelocity = new Vector2(1, 2);
 	public float returnToMaxVelocitySpeed = 0.08f;
@@ -34,22 +36,31 @@ public class MovePlayer : MonoBehaviour
 		environmentImpulseToAdd = Vector2.zero;
 		maxVelocity = baseMaxVelocity;
 		controlsActive = true;
+		
+		if (photonView == null || photonView.isMine)
+		{
+			GameObject.Find("Left Input").GetComponent<PlayerTouchInput>().movePlayer = this;
+			GameObject.Find("Right Input").GetComponent<PlayerTouchInput>().movePlayer = this;
+		}
 	}
 
 	void FixedUpdate()
 	{
-		if (jumpDirection != JumpDirection.Invalid && controlsActive)
+		if (photonView == null || photonView.isMine)
 		{
-			applyForceWithDirection(jumpDirection);
-			resetJumpDirection();
+			if (jumpDirection != JumpDirection.Invalid && controlsActive)
+			{
+				applyForceWithDirection(jumpDirection);
+				resetJumpDirection();
+			}
+			
+			addEnvironmentalForces();
+			resetEnvironmentalForces();
+			
+			capVelocity();
+			capFallSpeed();
+			ReturnToMaxVelocity();
 		}
-
-		addEnvironmentalForces();
-		resetEnvironmentalForces();
-
-		capVelocity();
-		capFallSpeed();
-		ReturnToMaxVelocity();
 	}
 
 	public void addForce(Vector2 forceVector)
@@ -64,7 +75,10 @@ public class MovePlayer : MonoBehaviour
 
 	public void jumpWithDirection(JumpDirection direction)
 	{
-		jumpDirection = direction;
+		if (enabled)
+		{
+			jumpDirection = direction;
+		}
 	}
 
 	public void Stun(float duration, bool deactivateParticles)
@@ -185,5 +199,29 @@ public class MovePlayer : MonoBehaviour
 			break;
 		}
 		return angle;
+	}
+
+	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
+	{
+		foreach(PhotonPlayer player in PhotonNetwork.playerList)
+		{
+			// check if the player is this one
+			if (player == photonView.owner)
+			{
+				bool enableMovement = player.movementEnabled();
+				enabled = enableMovement;
+				Debug.Log("set movement enabled: " + enableMovement);
+
+				if (player.needsToResetPosition())
+				{
+					List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(PhotonNetwork.room.maxPlayers);
+					Vector3 startPos = startPositions[PhotonNetwork.player.playerNumber()-1];
+
+					transform.position = startPos;
+					PhotonNetwork.player.setNeedsToResetPosition(false);
+				}
+				break;
+			}
+		}
 	}
 }

@@ -5,8 +5,7 @@ public class PlayerTouchInput : MonoBehaviour
 {
 	public TouchInputSide side;
 	public Collider2D touchArea;	
-//	public MovePlayer movePlayer;
-	public MovePlayerPhoton photonMovePlayer;
+	public MovePlayer movePlayer;
 
 	private JumpDirection jumpDirection;
 
@@ -27,10 +26,9 @@ public class PlayerTouchInput : MonoBehaviour
 
 				foreach (Collider2D touchingCollider in touchingColliders)
 				{
-					if (touchingCollider == touchArea && photonMovePlayer != null)
+					if (touchingCollider == touchArea && movePlayer != null)
 					{
-//						movePlayer.jumpWithDirection(jumpDirection);
-						photonMovePlayer.jumpWithDirection(jumpDirection);
+						movePlayer.jumpWithDirection(jumpDirection);
 						break;
 					}
 				}

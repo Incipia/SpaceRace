@@ -52,4 +52,5 @@ MonoBehaviour:
   - updateUIBeforeMatch
   - updateSpotsLeftInRoomText
   - showTimeToPlayText
+  - attachCamera
   DisableAutoOpenWizard: 1

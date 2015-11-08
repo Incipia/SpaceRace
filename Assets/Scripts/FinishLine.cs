@@ -47,6 +47,7 @@ public class FinishLine : Photon.MonoBehaviour
 	[PunRPC] void activateAndUpdateFinishLineText(int playerNumber)
 	{
 		Debug.Log("updating finish line!");
+		PhotonNetwork.player.setReadyToRace(false);
 		finishLineText.SetActive(true);
 		finishLineCounter.updateSpritesWithNumber(playerNumber);
 	}

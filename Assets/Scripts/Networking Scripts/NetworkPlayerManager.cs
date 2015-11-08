@@ -6,33 +6,47 @@ using AssemblyCSharp;
 public class NetworkPlayerManager : Photon.PunBehaviour
 {
 	public GameObject playerPrefab;
-	public bool autoDisablePlayerMovementOnCreate;
-	private MovePlayerPhoton movePlayer;
 	private NetworkPlayerVisibilitySetup visibilitySetup;
+	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 
 	public void createPlayerAtPosition(Vector3 startPos)
 	{
 		GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, startPos, Quaternion.identity, 0);
-
-		movePlayer = player.GetComponent<MovePlayerPhoton>();
-		if (movePlayer != null)
-		{
-			movePlayer.enabled = !autoDisablePlayerMovementOnCreate;
-		}
-
 		visibilitySetup = player.GetComponent<NetworkPlayerVisibilitySetup>();
+	}
+	
+	public void setPlayerReadyToRace(bool ready)
+	{
+		_localPlayer.setReadyToRace(ready);
+	}
+	
+	public void makePlayerVisible()
+	{
+		visibilitySetup.makeEverythingVisible(true);
 	}
 
 	public void enablePlayerMovement()
 	{
-		if (movePlayer != null)
-		{
-			movePlayer.enabled = true;
-		}
+		setEnablePlayerMovement(true);
 	}
 
-	public void makePlayerVisible()
+	public void disablePlayerMovement()
 	{
-		visibilitySetup.makeEverythingVisible(true);
+		setEnablePlayerMovement(false);
+	}
+	
+	private void setEnablePlayerMovement(bool enable)
+	{
+		_localPlayer.setMovementEnabled(enable);
+	}
+
+	public void attachPlayerToCamera()
+	{
+		_localPlayer.setNeedsToAttachCamera(true);
+	}
+
+	public void movePlayerToStart()
+	{
+		_localPlayer.setNeedsToResetPosition(true);
 	}
 }

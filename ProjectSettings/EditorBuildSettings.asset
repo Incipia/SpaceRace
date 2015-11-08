@@ -7,7 +7,9 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Networking Scenes/Lobby.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Networking Scenes/NicoFun2+Multiplayer.unity
   - enabled: 1
-    path: Assets/Scenes/Networking Scenes/NicoFun2+Multiplayer2.unity
+    path: Assets/Scenes/Networking Scenes/NewLevelOne-Multiplayer.unity
+  - enabled: 1
+    path: Assets/Scenes/Networking Scenes/NewLevelTwo-Multiplayer.unity
