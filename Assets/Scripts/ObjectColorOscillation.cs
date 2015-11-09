@@ -18,8 +18,7 @@ public class ObjectColorOscillation : MonoBehaviour
 	public Color targetColor = new Color(1, 0, 0.8f, 0.6f);
 	public float duration = 2;
 	public float initialWaitDuration = 0;
-	
-	
+
 	public bool loop = true;
 	public bool shouldReverse;
 	

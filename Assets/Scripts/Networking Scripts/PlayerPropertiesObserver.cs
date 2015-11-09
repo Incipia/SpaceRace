@@ -10,6 +10,7 @@ public class PlayerPropertiesObserver : Photon.PunBehaviour
 
 	void Start()
 	{
+		// This probably isn't the best place to do this, but for now it's OK
 		DontDestroyOnLoad(gameObject);
 	}
 
