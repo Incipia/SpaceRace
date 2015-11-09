@@ -1029,8 +1029,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &116917932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,8 +2000,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &179065453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2171,15 +2177,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_SortingLayerID
@@ -2589,9 +2595,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &199736745
 GameObject:
   m_ObjectHideFlags: 0
@@ -3022,8 +3031,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &234047074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,8 +3347,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: .503448486, b: 1, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .125
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1001 &254712236
 Prefab:
   m_ObjectHideFlags: 0
@@ -3423,8 +3438,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &254712240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3621,7 +3639,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21224720, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 125010, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
       propertyPath: m_Name
@@ -3638,6 +3656,14 @@ Prefab:
     - target: {fileID: 6193634, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21224720, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
+      propertyPath: m_Color.g
+      value: .0549019612
+      objectReference: {fileID: 0}
+    - target: {fileID: 21224720, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
+      propertyPath: m_Color.b
+      value: .20784314
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6193634, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
@@ -3658,9 +3684,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .200000003
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &274326054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3970,8 +3999,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &293990069 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 159646, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
@@ -4002,9 +4034,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &293990072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4109,19 +4144,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
-      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.r
+      value: .992156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_SortingLayerID
@@ -4551,15 +4586,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 139958, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Name
@@ -4960,9 +4995,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &325161634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5114,8 +5152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: .897058845, b: .22890453, a: 1}
-  scaleDuration: .300000012
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &336089050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5296,8 +5337,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &359463704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,8 +5582,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &364420604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,8 +5676,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &376565908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5899,11 +5949,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 467658, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 21224720, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 125010, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
       propertyPath: m_Name
@@ -5920,6 +5970,14 @@ Prefab:
     - target: {fileID: 6193634, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21224720, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
+      propertyPath: m_Color.g
+      value: .0549019612
+      objectReference: {fileID: 0}
+    - target: {fileID: 21224720, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
+      propertyPath: m_Color.b
+      value: .20784314
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6193634, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
@@ -5940,9 +5998,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .200000003
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &403633163
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,15 +6157,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 139958, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Name
@@ -6503,9 +6564,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &407063639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6850,8 +6914,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .690999985, g: .934000015, b: 0, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &439057402
 GameObject:
   m_ObjectHideFlags: 0
@@ -7195,8 +7262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &458160326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7477,8 +7547,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1001 &475318618
 Prefab:
   m_ObjectHideFlags: 0
@@ -7557,8 +7630,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &475318622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7721,8 +7797,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &480940882
 GameObject:
   m_ObjectHideFlags: 0
@@ -8215,6 +8294,7 @@ MonoBehaviour:
   edgeCollider: {fileID: 499558540}
   finishLineText: {fileID: 1097981887}
   finishLineCounter: {fileID: 52905290}
+  nextLevel: 1
 --- !u!212 &499558543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8586,8 +8666,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &524966602
 GameObject:
   m_ObjectHideFlags: 0
@@ -8669,8 +8752,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .655172348, g: 0, b: 1, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .25
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &532355216
 GameObject:
   m_ObjectHideFlags: 0
@@ -9383,8 +9469,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &577457323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9481,8 +9570,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .862069011, g: 1, b: 0, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &587168052
 GameObject:
   m_ObjectHideFlags: 0
@@ -9683,8 +9775,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &590244632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10377,8 +10472,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &645339861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10777,8 +10875,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &679060982
 GameObject:
   m_ObjectHideFlags: 0
@@ -12032,8 +12133,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &752724745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12117,8 +12221,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &756663769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12266,8 +12373,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &764242476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12991,8 +13101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &832555368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13823,8 +13936,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &894549876
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14249,8 +14365,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &934418402 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 124538, guid: a11618f4f090c4db5b526b9e7020a2c4, type: 2}
@@ -14267,8 +14386,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &936202501
 GameObject:
   m_ObjectHideFlags: 0
@@ -15030,8 +15152,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: 0, b: .724137783, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &969994806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15280,8 +15405,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &978671426
 GameObject:
   m_ObjectHideFlags: 0
@@ -15414,8 +15542,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &980855980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15652,15 +15783,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 139958, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Name
@@ -16061,9 +16192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &1009283807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16447,8 +16581,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1028415477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16604,8 +16741,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1035938784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16680,6 +16820,70 @@ Prefab:
       propertyPath: newPlayerMaxVelocity.x
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
   m_IsPrefabParent: 0
@@ -16703,8 +16907,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1046877926
 GameObject:
   m_ObjectHideFlags: 0
@@ -17096,8 +17303,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1070290159
 GameObject:
   m_ObjectHideFlags: 0
@@ -17411,8 +17621,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1085105588
 GameObject:
   m_ObjectHideFlags: 0
@@ -17622,8 +17835,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1097197504
 GameObject:
   m_ObjectHideFlags: 0
@@ -18259,8 +18475,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: .897058845, b: .22890453, a: 1}
-  scaleDuration: .300000012
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1105640895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18367,15 +18586,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_SortingLayerID
@@ -18428,9 +18647,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1106238889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18593,8 +18815,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1121774286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18630,8 +18855,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1126668249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19675,15 +19903,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 139958, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Name
@@ -20082,9 +20310,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1203734724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20320,6 +20551,102 @@ Prefab:
     - target: {fileID: 11467604, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
       propertyPath: newPlayerMaxVelocity.x
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
@@ -20593,15 +20920,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_SortingLayerID
@@ -20983,9 +21310,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1220142100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21113,15 +21443,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 139958, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Name
@@ -21520,9 +21850,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1239309808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21608,8 +21941,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1242699882
 GameObject:
   m_ObjectHideFlags: 0
@@ -21745,8 +22081,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .862069011, g: 1, b: 0, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1245549406 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 125010, guid: 3987f44b4477f4e2ea9d4759568681ed, type: 2}
@@ -21767,8 +22106,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1245549409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21870,8 +22212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1248522227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22076,8 +22421,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .690999985, g: .934000015, b: 0, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1260177294
 GameObject:
   m_ObjectHideFlags: 0
@@ -22166,8 +22514,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .054901965, b: .678431392, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1278707485
 GameObject:
   m_ObjectHideFlags: 0
@@ -22537,8 +22888,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1297272953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23154,8 +23508,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1361586294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23191,8 +23548,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1362847457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23309,8 +23669,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1364293229
 GameObject:
   m_ObjectHideFlags: 0
@@ -23667,8 +24030,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1381277871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23826,8 +24192,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1389201499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24064,6 +24433,102 @@ Prefab:
       propertyPath: newPlayerMaxVelocity.x
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .600000024
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.g
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.g
+      value: .588235259
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
   m_IsPrefabParent: 0
@@ -24211,8 +24676,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1414911530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24645,8 +25113,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1451522881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24838,8 +25309,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: 1, b: .379310131, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .125
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &1459957176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25000,7 +25474,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425566, guid: 3808bf53d175b40af90067134b79104e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 13.6400003
       objectReference: {fileID: 0}
     - target: {fileID: 425566, guid: 3808bf53d175b40af90067134b79104e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -25024,7 +25498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 425566, guid: 3808bf53d175b40af90067134b79104e, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 447894, guid: 3808bf53d175b40af90067134b79104e, type: 2}
       propertyPath: m_LocalScale.x
@@ -25033,6 +25507,66 @@ Prefab:
     - target: {fileID: 447894, guid: 3808bf53d175b40af90067134b79104e, type: 2}
       propertyPath: m_LocalScale.y
       value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: ShapeModule.radius
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 191876, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: InitialModule.maxNumParticles
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 1689533100
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19802762, guid: 3808bf53d175b40af90067134b79104e, type: 2}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3808bf53d175b40af90067134b79104e, type: 2}
@@ -25678,8 +26212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1513699103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25715,8 +26252,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1521996655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26045,8 +26585,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1540883878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27216,8 +27759,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1599485951
 GameObject:
   m_ObjectHideFlags: 0
@@ -27611,8 +28157,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1625213226
 GameObject:
   m_ObjectHideFlags: 0
@@ -27763,8 +28312,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: 0, b: .724137783, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &1633180421
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28111,8 +28663,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: 1, b: .379310131, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .125
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &1642635559
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28230,8 +28785,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1643907486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28483,8 +29041,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1670001646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28644,8 +29205,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .054901965, b: .678431392, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1680791873
 GameObject:
   m_ObjectHideFlags: 0
@@ -29131,8 +29695,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1699833983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29276,8 +29843,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1710504718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29601,8 +30171,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1717857212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29638,8 +30211,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: .897058845, b: .22890453, a: 1}
-  scaleDuration: .300000012
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1721810792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30009,8 +30585,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .0363321677, g: .823529422, b: .655942857, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1745395774
 GameObject:
   m_ObjectHideFlags: 0
@@ -30666,8 +31245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1753521348
 GameObject:
   m_ObjectHideFlags: 0
@@ -31287,6 +31869,70 @@ Prefab:
       propertyPath: newPlayerMaxVelocity.x
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
   m_IsPrefabParent: 0
@@ -31372,8 +32018,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1792022077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32227,8 +32876,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .655172348, g: 0, b: 1, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .25
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1851625504
 GameObject:
   m_ObjectHideFlags: 0
@@ -32418,8 +33070,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: .503448486, b: 1, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .125
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1859721539
 GameObject:
   m_ObjectHideFlags: 0
@@ -32609,8 +33264,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .703999996, g: 1, b: .0220588446, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .200000003
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1866396475
 GameObject:
   m_ObjectHideFlags: 0
@@ -33267,15 +33925,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21285966, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 139958, guid: c61592e173271477fbb953a1a32ac830, type: 2}
       propertyPath: m_Name
@@ -33676,9 +34334,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &1943055618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33712,8 +34373,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1944685219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33878,15 +34542,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: .992156863
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.g
-      value: 0
+      value: .0549019612
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_Color.b
-      value: 0
+      value: .20784314
       objectReference: {fileID: 0}
     - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
       propertyPath: m_SortingLayerID
@@ -33941,9 +34605,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &1959682040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34104,8 +34771,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .192156911, b: .71029079, a: 1}
-  scaleDuration: 1
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1 &1967835735
 GameObject:
   m_ObjectHideFlags: 0
@@ -35884,8 +36554,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: .703999996, g: 1, b: .0220588446, a: 1}
-  scaleDuration: .5
+  duration: 2
   initialWaitDuration: .200000003
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!1001 &2061161148
 Prefab:
   m_ObjectHideFlags: 0
@@ -36470,8 +37143,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: .897058845, b: .22890453, a: 1}
-  scaleDuration: .300000012
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!61 &2066630375
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38015,8 +38691,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 0, g: .897058845, b: .22890453, a: 1}
-  scaleDuration: .300000012
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &2105633025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38195,6 +38874,70 @@ Prefab:
       propertyPath: newPlayerMaxVelocity.x
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21268928, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21240002, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237274, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.r
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 21222388, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: m_Color.b
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488950, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453458, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415260, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.r
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417218, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
+      propertyPath: targetColor.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eaa224692aba24cdcb5acf511f602366, type: 2}
   m_IsPrefabParent: 0
@@ -38272,8 +39015,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetColor: {r: 1, g: .357144833, b: 0, a: 1}
-  scaleDuration: .300000012
+  duration: 2
   initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
 --- !u!114 &2113239302
 MonoBehaviour:
   m_ObjectHideFlags: 0
