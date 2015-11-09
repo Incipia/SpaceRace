@@ -1,0 +1,16 @@
+Players:
+	Green - Inchworm (#AFE313)
+	Blue - Blizzard Blue (#50BFE6)
+	Red - Radical Red (#FF355E)
+	Purple - Fuchsia (#C154C1)
+
+Level:
+	Black - Outer Space (#2D383A)
+
+	Stun red - Scarlet (#FD0E35)
+	Stun orange - Neon Carrot (#FF9933)
+
+	Speed boost Yellowish-green - Electric Lime (#CCFF00)
+	Speed boost Blueish-green - Screamin' Green (#66FF66)
+	Speed boost Redish-pink - Wild Strawberry (#FF3399)
+	Speed boost PINK - Hot Magenta (#FF00CC)
