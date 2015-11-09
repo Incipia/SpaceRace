@@ -43,6 +43,12 @@ namespace AssemblyCSharp
 			return color;
 		}
 
+		public static Vector3 colorVectorForPlayer(PhotonPlayer player, PlayerColoredComponentType componentType)
+		{
+			Color color = colorForPlayerNumber(player.playerNumber(), componentType);
+			return new Vector3(color.r, color.g, color.b);
+		}
+
 		// PINK
 		private static Color pinkColorForComponent(PlayerColoredComponentType component)
 		{

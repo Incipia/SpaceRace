@@ -6,6 +6,7 @@ public class FinishLine : Photon.MonoBehaviour
 	public EdgeCollider2D edgeCollider;
 	public GameObject finishLineText;
 	public CounterUI finishLineCounter;
+	public int nextLevel = 1;
 
 	void Start()
 	{
@@ -40,14 +41,12 @@ public class FinishLine : Photon.MonoBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			PhotonNetwork.LoadLevel(2);
+			PhotonNetwork.LoadLevel(nextLevel);
 		}
 	}
 
 	[PunRPC] void activateAndUpdateFinishLineText(int playerNumber)
 	{
-		Debug.Log("updating finish line!");
-		PhotonNetwork.player.setReadyToRace(false);
 		finishLineText.SetActive(true);
 		finishLineCounter.updateSpritesWithNumber(playerNumber);
 	}

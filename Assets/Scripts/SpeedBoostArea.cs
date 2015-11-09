@@ -21,7 +21,6 @@ public class SpeedBoostArea : MonoBehaviour
 	{
 		foreach(MovePlayer player in playersToBoost)
 		{
-			Debug.Log("in for loop in speed boost");
 			player.SetMaxVelocity(newPlayerMaxVelocity);
 			player.addImpulse(forceToApply);
 		}
@@ -30,11 +29,8 @@ public class SpeedBoostArea : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		MovePlayer movePlayer = other.transform.root.gameObject.GetComponent<MovePlayer>();
-
-		Debug.Log("on trigger enter:");
 		if(movePlayer != null)
 		{
-			Debug.Log("adding to players to boost...");
 			playersToBoost.Add(movePlayer);
 		}
 		else

@@ -172,10 +172,12 @@ GameObject:
   - 114: {fileID: 11449286}
   - 114: {fileID: 11463964}
   - 114: {fileID: 11402214}
-  - 114: {fileID: 11453326}
   - 114: {fileID: 11420906}
   - 114: {fileID: 11445884}
   - 114: {fileID: 11472836}
+  - 114: {fileID: 11467946}
+  - 114: {fileID: 11441160}
+  - 114: {fileID: 11423940}
   m_Layer: 0
   m_Name: NewNetworkPlayer
   m_TagString: Untagged
@@ -418,12 +420,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 143902}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b57dedef9c44e029e545d55805da7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 54ae91e72447d4a4b8934c7ebe9c938c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outerRingRenderer: {fileID: 21293724}
-  innerCircleRenderer: {fileID: 21253824}
-  particleTrail: {fileID: 19882894}
 --- !u!114 &11420906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -438,6 +437,32 @@ MonoBehaviour:
   outerRingRenderer: {fileID: 21293724}
   innerCircleRenderer: {fileID: 21253824}
   playerNumberSpriteRenderer: {fileID: 21299436}
+  particleTrail: {fileID: 19882894}
+--- !u!114 &11423940
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbabf403602d44099b1c39f529a00cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNumberDisplay: {fileID: 11449852}
+--- !u!114 &11441160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72885daacd4ac4a62b490759d5d5eee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outerRingRenderer: {fileID: 21293724}
+  innerCircleRenderer: {fileID: 21253824}
   particleTrail: {fileID: 19882894}
 --- !u!114 &11445884
 MonoBehaviour:
@@ -507,19 +532,6 @@ MonoBehaviour:
   tensPlace: {fileID: 141918}
   hundredsPlace: {fileID: 100952}
   thousandsPlace: {fileID: 129726}
---- !u!114 &11453326
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbabf403602d44099b1c39f529a00cdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNumberDisplay: {fileID: 11449852}
-  playerNumber: 0
 --- !u!114 &11463964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -532,6 +544,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerRigidBody: {fileID: 5014668}
+--- !u!114 &11467946
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eda0239812bd444cac954eb106fafc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movePlayer: {fileID: 11445884}
 --- !u!114 &11472836
 MonoBehaviour:
   m_ObjectHideFlags: 1

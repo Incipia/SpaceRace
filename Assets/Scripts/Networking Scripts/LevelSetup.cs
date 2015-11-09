@@ -26,25 +26,23 @@ public class LevelSetup : Photon.PunBehaviour
 			return allPlayersAreReady;
 		}
 	}
+	private bool _countdownStarted = false;
 
 	void Start()
 	{
+		setupCountdownManager();
 		if (PhotonNetwork.connectedAndReady)
 		{
-			setupCountdownManager();
 			if (createPlayerOnStart)
 			{
-				// Get the start position that corresponds to THIS player
-				List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(_currentRoom.maxPlayers);
-				Vector3 startPos = startPositions[PhotonNetwork.player.playerNumber()-1];
-				playerManager.createPlayerAtPosition(startPos);
+				Vector3 startPosition = PlayerStartPositionProvider.startPositionForPlayer(PhotonNetwork.player);
+				playerManager.createPlayerAtPosition(startPosition);
 			}
 			else
 			{
 				playerManager.movePlayerToStart();
 			}
 
-			// This will trigger OnPhotonPlayerPropertiesChanged()
 			playerManager.disablePlayerMovement();
 			playerManager.attachPlayerToCamera();
 			playerManager.setPlayerReadyToRace(true);
@@ -55,6 +53,9 @@ public class LevelSetup : Photon.PunBehaviour
 	{
 		if (PhotonNetwork.isMasterClient && _allPlayersAreReadyToRace)
 		{
+			// reset player ready status for next race
+			playerManager.setPlayerReadyToRace(false);
+
 			Debug.Log("players are ready! starting countdown...");
 			photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
 		}
@@ -64,8 +65,8 @@ public class LevelSetup : Photon.PunBehaviour
 	{
 		if (countdownManager != null)
 		{
-			countdownManager.showCountdownUI();
 			countdownManager.beginCountdown();
+			countdownManager.showCountdownUI();
 		}
 	}
 
@@ -73,6 +74,7 @@ public class LevelSetup : Photon.PunBehaviour
 	{
 		if (countdownManager != null)
 		{
+			countdownManager.hideCountdownUI();
 			countdownManager.completion += countdownManager.hideCountdownUI;
 			countdownManager.completion += levelSetup.activateMovingLevelComponents;
 			countdownManager.completion += playerManager.enablePlayerMovement;
