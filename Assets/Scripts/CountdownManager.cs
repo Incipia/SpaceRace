@@ -18,13 +18,14 @@ public class CountdownManager : MonoBehaviour
 
 	void Update()
 	{
-		int secondsLeft = Mathf.CeilToInt(timer.remainingTimeInCurrentTurn());
-		counterUI.updateSpritesWithNumber(secondsLeft);
-
 		if (timerStarted)
 		{
+			int secondsLeft = Mathf.CeilToInt(timer.remainingTimeInCurrentTurn());
+			counterUI.updateSpritesWithNumber(secondsLeft);
+
 			if (timer.currentTurn() != 0 && completion != null)
 			{
+				timerStarted = false;
 				completion();
 			}
 		}
@@ -68,11 +69,11 @@ public class CountdownManager : MonoBehaviour
 
 	public void showCountdownUI()
 	{
-		counterUI.transform.root.gameObject.SetActive(true);
+		counterUI.setDigitAlpha(1);
 	}
 
 	public void hideCountdownUI()
 	{
-		counterUI.transform.root.gameObject.SetActive(false);
+		counterUI.setDigitAlpha(0);
 	}
 }

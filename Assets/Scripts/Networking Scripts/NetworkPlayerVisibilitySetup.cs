@@ -8,23 +8,9 @@ public class NetworkPlayerVisibilitySetup : Photon.MonoBehaviour
 	public SpriteRenderer playerNumberSpriteRenderer;
 	public ParticleSystem particleTrail;
 
-	// Use this for initialization
-	void Start() 
-	{
-		if (photonView.isMine)
-		{
-//			makeEverythingVisible(false);
-		}
-		DontDestroyOnLoad(gameObject);
-	}
-
 	public void makeEverythingVisible(bool visible)
 	{
 		makeAllSpritesVisible(visible);
-//		makeOuterRingVisible(visible);
-//		makeInnerCircleVisible(visible);
-//		makePlayerNumberVisible(visible);
-//		makeParticleTrailVisible(visible);
 	}
 
 	[PunRPC] void makeAllSpritesVisible(bool visible)

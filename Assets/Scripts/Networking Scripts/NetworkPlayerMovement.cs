@@ -58,24 +58,4 @@ public class NetworkPlayerMovement : Photon.MonoBehaviour
 			interpolationProgress = 0;
 		}
 	}
-
-	void attachCamera()
-	{
-		if (photonView.isMine)
-		{
-			Camera.main.GetComponent<CameraFollow>().objectToFollow = transform;
-		}
-	}
-	
-	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
-	{
-		foreach(PhotonPlayer player in PhotonNetwork.playerList)
-		{
-			if (player == photonView.owner && player.needsToAttachCamera())
-			{
-				attachCamera();
-				break;
-			}
-      	}
-   	}
 }

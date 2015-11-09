@@ -53,4 +53,6 @@ MonoBehaviour:
   - updateSpotsLeftInRoomText
   - showTimeToPlayText
   - attachCamera
+  - updateColorsWithVector
+  - updateColors
   DisableAutoOpenWizard: 1

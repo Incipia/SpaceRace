@@ -94,7 +94,12 @@ public class MovePlayer : Photon.MonoBehaviour
 	public void ReturnToMaxVelocity()
 	{
 		maxVelocity = Vector2.Lerp(maxVelocity, baseMaxVelocity, returnToMaxVelocitySpeed);
-		Debug.Log(maxVelocity);
+	}
+
+	public void resetToPosition(Vector3 position)
+	{
+		playerRigidBody.velocity = Vector3.zero;
+		transform.position = position;
 	}
 
 	private IEnumerator ActualStun(float duration, bool deactivateParticles)
@@ -199,31 +204,5 @@ public class MovePlayer : Photon.MonoBehaviour
 			break;
 		}
 		return angle;
-	}
-
-	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
-	{
-		foreach(PhotonPlayer player in PhotonNetwork.playerList)
-		{
-			// check if the player is this one
-			if (player == photonView.owner)
-			{
-				bool enableMovement = player.movementEnabled();
-				enabled = enableMovement;
-				Debug.Log("set movement enabled: " + enableMovement);
-
-				if (player.needsToResetPosition() && photonView.isMine)
-				{
-					List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(PhotonNetwork.room.maxPlayers);
-					Vector3 startPos = startPositions[PhotonNetwork.player.playerNumber()-1];
-
-					playerRigidBody.isKinematic = true;
-					transform.position = startPos;
-					playerRigidBody.isKinematic = false;
-					PhotonNetwork.player.setNeedsToResetPosition(false);
-				}
-				break;
-			}
-		}
 	}
 }

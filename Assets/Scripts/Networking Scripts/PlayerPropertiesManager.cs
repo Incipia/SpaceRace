@@ -30,14 +30,10 @@ static class PlayerExtensions
 		{
 			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
 		}
-		
-		bool needsToReset = PhotonNetwork.player.needsToResetPosition();
-		if (resetPos != needsToReset)
-		{
-			Hashtable properties = new Hashtable();
-			properties.Add(PlayerPropertiesManager.needsToResetPositionKey, resetPos);
-			PhotonNetwork.player.SetCustomProperties(properties);
-		}
+
+		Hashtable properties = new Hashtable();
+		properties.Add(PlayerPropertiesManager.needsToResetPositionKey, resetPos);
+		PhotonNetwork.player.SetCustomProperties(properties);
 	}
 
 	public static bool movementEnabled(this PhotonPlayer player)
@@ -57,14 +53,10 @@ static class PlayerExtensions
 		{
 			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
 		}
-		
-		bool movementEnabled = PhotonNetwork.player.movementEnabled();
-		if (enabled != movementEnabled)
-		{
-			Hashtable properties = new Hashtable();
-			properties.Add(PlayerPropertiesManager.movementEnabledKey, enabled);
-			PhotonNetwork.player.SetCustomProperties(properties);
-		}
+
+		Hashtable properties = new Hashtable();
+		properties.Add(PlayerPropertiesManager.movementEnabledKey, enabled);
+		PhotonNetwork.player.SetCustomProperties(properties);
 	}
 
 	public static bool needsToAttachCamera(this PhotonPlayer player)
@@ -86,12 +78,9 @@ static class PlayerExtensions
 		}
 		
 		bool needsToAttachCamera = PhotonNetwork.player.needsToAttachCamera();
-		if (attachCamera != needsToAttachCamera)
-		{
-			Hashtable properties = new Hashtable();
-			properties.Add(PlayerPropertiesManager.needsToAttachCameraKey, attachCamera);
-			PhotonNetwork.player.SetCustomProperties(properties);
-		}
+		Hashtable properties = new Hashtable();
+		properties.Add(PlayerPropertiesManager.needsToAttachCameraKey, attachCamera);
+		PhotonNetwork.player.SetCustomProperties(properties);
 	}
 
 	public static bool readyToRace(this PhotonPlayer player)

@@ -25,18 +25,31 @@ namespace AssemblyCSharp
 		{
 			List<Vector3> positions = new List<Vector3>();
 
-			float levelWidth = 2;
+			float levelWidth = 4;
 			float spacing = levelWidth / (roomSize + 1);
-			int leftXEdge = -1;
+			int leftXEdge = -2;
 
 			for (int i = 1; i <= roomSize; ++i)
 			{
 				float xPostiion = leftXEdge + spacing * i;
-				Vector3 position = new Vector3(xPostiion, 0.5f);
+				Vector3 position = new Vector3(xPostiion, 0.13f);
 				positions.Add(position);
 			}
 
 			return positions;
+		}
+
+		public static Vector3 startPositionForPlayer(PhotonPlayer player)
+		{
+			List<Vector3> startPositions = PlayerStartPositionProvider.startPositionsForRoomSize(PhotonNetwork.room.maxPlayers);
+			int positionIndex = player.playerNumber() - 1;
+
+			Vector3 startPosition = startPositions[0];
+			if (startPositions.Count > positionIndex)
+			{
+				startPosition = startPositions[positionIndex];
+			}
+			return startPosition;
 		}
 	}
 }

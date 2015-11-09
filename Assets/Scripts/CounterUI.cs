@@ -155,7 +155,11 @@ public class CounterUI : MonoBehaviour
 
 	private void setSpriteRendererAlphaValue(SpriteRenderer spriteRenderer, float alphaValue)
 	{
-		Color newColor = new Color(1f, 1f, 1f, alphaValue);
+		float r = spriteRenderer.color.r;
+		float g = spriteRenderer.color.g;
+		float b = spriteRenderer.color.b;
+
+		Color newColor = new Color(r, g, b, alphaValue);
 		spriteRenderer.color = newColor;
 	}
 
