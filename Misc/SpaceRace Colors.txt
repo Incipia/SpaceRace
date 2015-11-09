@@ -1,3 +1,6 @@
+
+https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors
+
 Players:
 	Green - Inchworm (#AFE313)
 	Blue - Blizzard Blue (#50BFE6)
@@ -7,8 +10,8 @@ Players:
 Level:
 	Black - Outer Space (#2D383A)
 
-	Stun red - Scarlet (#FD0E35)
-	Stun orange - Neon Carrot (#FF9933)
+	Disable red - Maximum Red (#D92121)
+	Stun orange 1 - Neon Carrot (#FF9933)
 
 	Speed boost Yellowish-green - Electric Lime (#CCFF00)
 	Speed boost Blueish-green - Screamin' Green (#66FF66)
