@@ -8,7 +8,7 @@ public class PlayerPropertiesObserver : Photon.PunBehaviour
 {
 	public MovePlayer movePlayer;
 
-	void OnStart()
+	void Start()
 	{
 		DontDestroyOnLoad(gameObject);
 	}
