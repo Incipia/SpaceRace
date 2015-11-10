@@ -104,9 +104,11 @@ public class NetworkRoomManager : Photon.PunBehaviour
 
 	public void connectToRoomWithSize(int size)
 	{
-		if (PhotonNetwork.connectedAndReady)
+		if (PhotonNetwork.connectedAndReady && _requestedToJoinRoom == false)
 		{
 			Debug.Log("Trying to connect to a room with size: " + size + "...");
+
+			_requestedToJoinRoom = true;
 			PhotonNetwork.automaticallySyncScene = true;
 			RoomOptions roomOptions = new RoomOptions() {
 				maxPlayers = (byte)size,
@@ -114,6 +116,16 @@ public class NetworkRoomManager : Photon.PunBehaviour
 			};
 			PhotonNetwork.JoinOrCreateRoom("default" + size, roomOptions, TypedLobby.Default);
 		}
+	}
+
+	void OnPhotonJoinRoomFailed(object[] codeAndMsg)
+	{
+		Debug.Log("Failed to join room: " + codeAndMsg[1] + "(" + codeAndMsg[0] + ")");
+	}
+
+	void OnPhotonCreateRoomFailed(object[] codeAndMsg)
+	{
+		Debug.Log("Failed to create room: " + codeAndMsg[1] + "(" + codeAndMsg[0] + ")");
 	}
 
 	[PunRPC] void showTimeToPlayText()

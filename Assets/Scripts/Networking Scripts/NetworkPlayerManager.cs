@@ -10,7 +10,10 @@ public class NetworkPlayerManager : Photon.PunBehaviour
 
 	public void createPlayerAtPosition(Vector3 startPos)
 	{
-		PhotonNetwork.Instantiate(playerPrefab.name, startPos, Quaternion.identity, 0);
+		Debug.Log("creating player!");
+		GameObject player = PhotonNetwork.Instantiate(playerPrefab.name, startPos, Quaternion.identity, 0);
+		Debug.Log("Player: " + player);
+
 	}
 	
 	public void setPlayerReadyToRace(bool ready)

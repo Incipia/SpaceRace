@@ -10,6 +10,7 @@ public class RoomSizeSelector : MonoBehaviour
 	public SpriteRenderer four;
 	public SpriteRenderer selectedRing;
 	public Color selectedColor = Color.magenta;
+	public Color unselectedColor = Color.black;
 
 	public int currentRoomSize { get { return _currentRoomSize; }}
 	private int _currentRoomSize = 1;
@@ -61,7 +62,7 @@ public class RoomSizeSelector : MonoBehaviour
 		List<SpriteRenderer> rendererArray = new List<SpriteRenderer>(new SpriteRenderer[] { one, two, three, four });
 		foreach (SpriteRenderer renderer in rendererArray)
 		{
-			renderer.color = Color.white;
+			renderer.color = unselectedColor;
 		}
 	}
 }

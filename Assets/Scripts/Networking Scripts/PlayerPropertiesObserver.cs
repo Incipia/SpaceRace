@@ -28,6 +28,9 @@ public class PlayerPropertiesObserver : Photon.PunBehaviour
 					if (photonView.isMine && player.needsToAttachCamera())
 					{
 						Camera.main.GetComponent<CameraFollow>().objectToFollow = transform;
+						
+						GameObject.Find("Left Input").GetComponent<PlayerTouchInput>().movePlayer = movePlayer;
+						GameObject.Find("Right Input").GetComponent<PlayerTouchInput>().movePlayer = movePlayer;
 					}
 				}
 				if (propertyKey == PlayerPropertiesManager.movementEnabledKey)
