@@ -6,7 +6,6 @@ public class FinishLine : Photon.MonoBehaviour
 	public EdgeCollider2D edgeCollider;
 	public GameObject finishLineText;
 	public CounterUI finishLineCounter;
-	public int nextLevel = 1;
 
 	void Start()
 	{
@@ -41,7 +40,11 @@ public class FinishLine : Photon.MonoBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			PhotonNetwork.LoadLevel(nextLevel);
+			int nextLevel = Application.loadedLevel + 1;
+			if (nextLevel < Application.levelCount)
+			{
+				PhotonNetwork.LoadLevel(nextLevel);
+			}
 		}
 	}
 
