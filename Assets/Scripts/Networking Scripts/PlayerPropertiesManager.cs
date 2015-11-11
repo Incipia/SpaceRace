@@ -9,6 +9,8 @@ public class PlayerPropertiesManager : MonoBehaviour
 	public const string needsToAttachCameraKey = "cam";
 	public const string movementEnabledKey = "mov";
 	public const string needsToResetPositionKey = "rpos";
+	public const string crossedFinishLineKey = "fin";
+	public const string totalPointsKey = "pts";
 }
 
 static class PlayerExtensions
@@ -109,6 +111,31 @@ static class PlayerExtensions
 			PhotonNetwork.player.SetCustomProperties(properties);
 		}
 	}
+	
+	public static bool crossedFinishLine(this PhotonPlayer player)
+	{
+		bool retVal = false;
+		object ready;
+		if (player.customProperties.TryGetValue(PlayerPropertiesManager.crossedFinishLineKey, out ready))
+		{
+			retVal = (bool)ready;
+		}
+		return retVal;
+	}
+	
+	public static void setCrossedFinishLine(this PhotonPlayer player, bool crossed)
+	{
+		if (!PhotonNetwork.connectedAndReady)
+		{
+			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
+		}
+		
+		bool crossedFinishLine = PhotonNetwork.player.crossedFinishLine();
+
+		Hashtable properties = new Hashtable();
+		properties.Add(PlayerPropertiesManager.crossedFinishLineKey, crossed);
+		PhotonNetwork.player.SetCustomProperties(properties);
+	}
 
 	public static int playerNumber(this PhotonPlayer player)
 	{
@@ -136,4 +163,45 @@ static class PlayerExtensions
 			PhotonNetwork.player.SetCustomProperties(properties);
 		}
 	}
+	
+	public static int totalPoints(this PhotonPlayer player)
+	{
+		int retVal = 0;
+		object number;
+		if (player.customProperties.TryGetValue(PlayerPropertiesManager.totalPointsKey, out number))
+		{
+			retVal = (int)number;
+		}
+		return retVal;
+	}
+	
+	public static void setTotalPoints(this PhotonPlayer player, int number)
+	{
+		if (!PhotonNetwork.connectedAndReady)
+		{
+			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
+		}
+		
+		int points = PhotonNetwork.player.totalPoints();
+		if (number != points)
+		{
+			Hashtable properties = new Hashtable();
+			properties.Add(PlayerPropertiesManager.totalPointsKey, number);
+			PhotonNetwork.player.SetCustomProperties(properties);
+		}
+	}
+	
+//	public static bool allPlayersAreReadyToRace(this Room room)
+//	{
+//		bool allPlayersAreReady = true;
+//		foreach(PhotonPlayer player in PhotonNetwork.playerList)
+//		{
+//			if (player.readyToRace() == false)
+//			{
+//				allPlayersAreReady = false;
+//				break;
+//			}
+//		}
+//		return allPlayersAreReady;
+//	}
 }

@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class FinishLine : Photon.MonoBehaviour
 {
 	public EdgeCollider2D edgeCollider;
 	public GameObject finishLineText;
 	public CounterUI finishLineCounter;
-	public int nextLevel = 1;
+
+	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
+	private bool _someoneCrossedFinishLine = false;
 
 	void Start()
 	{
@@ -22,11 +25,13 @@ public class FinishLine : Photon.MonoBehaviour
 			PhotonView playerPhotonView = PhotonView.Get(other.transform.root.gameObject);
 			if (playerPhotonView != null)
 			{
-				int playerNumber = playerPhotonView.owner.playerNumber();
-				activateAndUpdateFinishLineText(playerNumber);
-				photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, playerNumber);
-				
-				StartCoroutine(loadNextLevelAfterDuration(1));
+				playerPhotonView.owner.setCrossedFinishLine(true);
+				if (_someoneCrossedFinishLine == false)
+				{
+					int playerNumber = playerPhotonView.owner.playerNumber();
+					activateAndUpdateFinishLineText(playerNumber);
+					photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, playerNumber);
+				}
 			}
 		}
 	}
@@ -41,13 +46,32 @@ public class FinishLine : Photon.MonoBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			PhotonNetwork.LoadLevel(nextLevel);
+			int nextLevel = Application.loadedLevel + 1;
+			if (nextLevel < Application.levelCount)
+			{
+				PhotonNetwork.LoadLevel(nextLevel);
+			}
 		}
 	}
 
 	[PunRPC] void activateAndUpdateFinishLineText(int playerNumber)
 	{
+		_someoneCrossedFinishLine = true;
 		finishLineText.SetActive(true);
 		finishLineCounter.updateSpritesWithNumber(playerNumber);
+	}
+
+	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
+	{
+		PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
+		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
+
+		if (props.ContainsKey(PlayerPropertiesManager.crossedFinishLineKey))
+		{
+			if (PhotonNetwork.room.allPlayersCrossedFinishLine())
+			{
+				StartCoroutine(loadNextLevelAfterDuration(1));
+			}
+		}
 	}
 }

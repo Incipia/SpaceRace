@@ -17,8 +17,7 @@ public class NetworkPlayerColorSync : MonoBehaviour {
 
 	public void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
-		Debug.Log("properties changed for player");
-		updateColors();
+//		updateColors();
 	}
 	
 	private void updateColors()
@@ -59,7 +58,7 @@ static class ColorExtensions
 	{
 		if (!PhotonNetwork.connectedAndReady)
 		{
-			Debug.LogWarning("JoinTeam was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
+			Debug.LogWarning("SetColor was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
 		}
 		
 		Color currentColor = PhotonNetwork.player.GetColor();

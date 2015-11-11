@@ -12,20 +12,6 @@ public class LevelSetup : Photon.PunBehaviour
 	public bool createPlayerOnStart = false;
 
 	private Room _currentRoom { get { return PhotonNetwork.room; }}
-	private bool _allPlayersAreReadyToRace { 
-		get {
-			bool allPlayersAreReady = true;
-			foreach(PhotonPlayer player in PhotonNetwork.playerList)
-			{
-				if (player.readyToRace() == false)
-				{
-					allPlayersAreReady = false;
-					break;
-				}
-			}
-			return allPlayersAreReady;
-		}
-	}
 	private bool _countdownStarted = false;
 
 	void Start()
@@ -45,13 +31,14 @@ public class LevelSetup : Photon.PunBehaviour
 
 			playerManager.disablePlayerMovement();
 			playerManager.attachPlayerToCamera();
+			playerManager.setPlayerCrossedFinishLine(false);
 			playerManager.setPlayerReadyToRace(true);
 		}
 	}
 
 	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
-		if (PhotonNetwork.isMasterClient && _allPlayersAreReadyToRace)
+		if (PhotonNetwork.isMasterClient && PhotonNetwork.room.allPlayersAreReadyToRace())
 		{
 			// reset player ready status for next race
 			playerManager.setPlayerReadyToRace(false);

@@ -12,7 +12,12 @@ public class NetworkPlayerManager : Photon.PunBehaviour
 	{
 		PhotonNetwork.Instantiate(playerPrefab.name, startPos, Quaternion.identity, 0);
 	}
-	
+
+	public void setPlayerCrossedFinishLine(bool crossed)
+	{
+		_localPlayer.setCrossedFinishLine(crossed);
+	}
+
 	public void setPlayerReadyToRace(bool ready)
 	{
 		_localPlayer.setReadyToRace(ready);

@@ -7,11 +7,13 @@ public class ConnectButton : MonoBehaviour
 	public RoomSizeSelector roomSizeSelector;
 	public SpriteRenderer spriteRenderer;
 
+	private Color _startColor;
 	private bool _canConnect = false;
-	private const float _disconnectedButtonAlpha = 0.5f;
+	private const float _disconnectedButtonAlpha = 0.3f;
 
 	void Start()
 	{
+		_startColor = spriteRenderer.color;
 		updateButtonAlphaForConnectedState(_canConnect);
 	}
 
@@ -26,7 +28,11 @@ public class ConnectButton : MonoBehaviour
 
 	private void updateButtonAlphaForConnectedState(bool canConnect)
 	{
-		Color color = new Color(1, 1, 1, canConnect ? 1 : _disconnectedButtonAlpha);
+		float r = _startColor.r;
+		float g = _startColor.g;
+		float b = _startColor.b;
+
+		Color color = new Color(r, g, b, canConnect ? 1 : _disconnectedButtonAlpha);
 		spriteRenderer.color = color;
 	}
 

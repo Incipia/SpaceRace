@@ -83,7 +83,10 @@ public class MovePlayer : Photon.MonoBehaviour
 
 	public void Stun(float duration, bool deactivateParticles)
 	{
-		StartCoroutine(ActualStun(duration, deactivateParticles));
+		if(controlsActive)
+		{
+			StartCoroutine(ActualStun(duration, deactivateParticles));
+		}
 	}
 
 	public void SetMaxVelocity(Vector2 newMaxVelocity)
@@ -104,26 +107,21 @@ public class MovePlayer : Photon.MonoBehaviour
 
 	private IEnumerator ActualStun(float duration, bool deactivateParticles)
 	{
-		playerRigidBody.gravityScale = 0;
 		controlsActive = false;
+		playerRigidBody.gravityScale = 0;
 		if (deactivateParticles)
 		{
 			trailParticles.SetActive(false);
 		}
 
-		float timer = 0.0f;
-		while(timer < duration)
-		{
-			timer += Time.deltaTime;
-			yield return new WaitForFixedUpdate();
-		}
+		yield return new WaitForSeconds(duration);
 
-		playerRigidBody.gravityScale = 1;
-		controlsActive = true;
 		if (deactivateParticles)
 		{
 			trailParticles.SetActive(true);
 		}
+		playerRigidBody.gravityScale = 1;
+		controlsActive = true;
 	}
 
 	private void disableAngularMovementFromTouchInput()
