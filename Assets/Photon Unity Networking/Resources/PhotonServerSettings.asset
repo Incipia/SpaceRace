@@ -55,4 +55,7 @@ MonoBehaviour:
   - attachCamera
   - updateColorsWithVector
   - updateColors
+  - actuallyLoadNextLevel
+  - blockFromLoadingLevel
+  - stopObservingFinishLine
   DisableAutoOpenWizard: 1

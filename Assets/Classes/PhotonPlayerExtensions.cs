@@ -139,10 +139,12 @@ static class PhotonPlayerExtensions
 		}
 		
 		bool crossedFinishLine = PhotonNetwork.player.crossedFinishLine();
-		
-		Hashtable properties = new Hashtable();
-		properties.Add(PlayerConstants.crossedFinishLineKey, crossed);
-		PhotonNetwork.player.SetCustomProperties(properties);
+		if (crossedFinishLine != crossed)
+		{
+			Hashtable properties = new Hashtable();
+			properties.Add(PlayerConstants.crossedFinishLineKey, crossed);
+			PhotonNetwork.player.SetCustomProperties(properties);
+		}
 	}
 	
 	public static int playerNumber(this PhotonPlayer player)
@@ -197,15 +199,5 @@ static class PhotonPlayerExtensions
 			properties.Add(PlayerConstants.totalPointsKey, number);
 			PhotonNetwork.player.SetCustomProperties(properties);
 		}
-	}
-
-	public static bool isPlayer(this PhotonView photonView, PhotonPlayer player)
-	{
-		return photonView.owner == player;
-	}
-	
-	public static T GetComponent<T>(this PhotonView photonView) where T: Component
-	{
-		return photonView.transform.root.GetComponent<T>();
 	}
 }

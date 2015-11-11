@@ -11111,7 +11111,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 492050, guid: 1342689d68124477d9fedf09dee24f30, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 30.2000008
+      value: 1.14999998
       objectReference: {fileID: 0}
     - target: {fileID: 492050, guid: 1342689d68124477d9fedf09dee24f30, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11135,7 +11135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 492050, guid: 1342689d68124477d9fedf09dee24f30, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11434180, guid: 1342689d68124477d9fedf09dee24f30, type: 2}
       propertyPath: viewIdField
@@ -11144,14 +11144,6 @@ Prefab:
     - target: {fileID: 11434180, guid: 1342689d68124477d9fedf09dee24f30, type: 2}
       propertyPath: instantiationId
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11427302, guid: 1342689d68124477d9fedf09dee24f30, type: 2}
-      propertyPath: nextLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11427302, guid: 1342689d68124477d9fedf09dee24f30, type: 2}
-      propertyPath: nameOfNextLevel
-      value: L2-Multiplayer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1342689d68124477d9fedf09dee24f30, type: 2}

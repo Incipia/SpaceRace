@@ -10,10 +10,11 @@ GameObject:
   - 4: {fileID: 492050}
   - 212: {fileID: 21265830}
   - 114: {fileID: 11427302}
-  - 68: {fileID: 6888494}
   - 68: {fileID: 6840746}
   - 114: {fileID: 11434180}
   - 95: {fileID: 9591074}
+  - 114: {fileID: 11457392}
+  - 114: {fileID: 11467980}
   m_Layer: 0
   m_Name: Finish Line
   m_TagString: Untagged
@@ -233,7 +234,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 30.2000008, z: 0}
+  m_LocalPosition: {x: 0, y: 1.14999998, z: 0}
   m_LocalScale: {x: .899999976, y: .899999976, z: .899999976}
   m_Children:
   - {fileID: 467392}
@@ -277,20 +278,6 @@ EdgeCollider2D:
   m_Points:
   - {x: -2.55999994, y: 0}
   - {x: 2.55999994, y: 0}
---- !u!68 &6888494
-EdgeCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109230}
-  m_Enabled: 0
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: -.270000011}
-  m_Points:
-  - {x: -2.55999994, y: 0}
-  - {x: 2.55999994, y: 0}
 --- !u!95 &9591074
 Animator:
   serializedVersion: 3
@@ -319,10 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be233dc2e3318484c8d76765b797784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  edgeCollider: {fileID: 6840746}
   finishLineText: {fileID: 192770}
   finishLineCounter: {fileID: 11430426}
-  nextLevel: 3
+  edgeCollider: {fileID: 6840746}
 --- !u!114 &11430426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,6 +359,30 @@ MonoBehaviour:
   viewIdField: 0
   instantiationId: -1
   isRuntimeInstantiated: 0
+--- !u!114 &11457392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd280b09d7e00429c9a79e5a4fd7b260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishLineObserver: {fileID: 11467980}
+  nextLevelName: L2-Multiplayer
+--- !u!114 &11467980
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac878f8e561d14128bfbdd25c0fc937c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21217630
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -540,6 +550,14 @@ Prefab:
       propertyPath: nextLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: levelSwitcher
+      value: 
+      objectReference: {fileID: 11457392}
+    - target: {fileID: 0}
+      propertyPath: finishLineObserver
+      value: 
+      objectReference: {fileID: 11467980}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 109230}

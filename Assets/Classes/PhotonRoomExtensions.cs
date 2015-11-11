@@ -32,10 +32,11 @@ static class PhotonRoomExtensions
 		bool allPlayersCrossed = true;
 		foreach (PhotonPlayer player in PhotonNetwork.playerList)
 		{
+			Debug.Log("player " + player.playerNumber() + ": " + player.crossedFinishLine());
 			if (player.crossedFinishLine() == false)
 			{
 				allPlayersCrossed = false;
-				break;
+//				break;
 			}
 		}
 		return allPlayersCrossed;
