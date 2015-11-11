@@ -58,6 +58,16 @@ static class PhotonPlayerExtensions
 		properties.Add(PlayerConstants.movementEnabledKey, enabled);
 		PhotonNetwork.player.SetCustomProperties(properties);
 	}
+
+	public static void enableMovement(this PhotonPlayer player)
+	{
+		player.setMovementEnabled(true);
+	}
+
+	public static void disableMovement(this PhotonPlayer player)
+	{
+		player.setMovementEnabled(false);
+	}
 	
 	public static bool needsToAttachCamera(this PhotonPlayer player)
 	{
@@ -187,6 +197,11 @@ static class PhotonPlayerExtensions
 			properties.Add(PlayerConstants.totalPointsKey, number);
 			PhotonNetwork.player.SetCustomProperties(properties);
 		}
+	}
+
+	public static bool isPlayer(this PhotonView photonView, PhotonPlayer player)
+	{
+		return photonView.owner == player;
 	}
 	
 	public static T GetComponent<T>(this PhotonView photonView) where T: Component

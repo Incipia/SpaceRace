@@ -10,7 +10,7 @@ public class PlayerPropertiesObserver : Photon.PunBehaviour
 		PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
 		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
 
-		if (player == photonView.owner)
+		if (photonView.isPlayer(player))
 		{
 			foreach (string propertyKey in props.Keys)
 			{

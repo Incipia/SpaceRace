@@ -2,7 +2,6 @@
 using System;
 using AssemblyCSharp;
 using System.Collections;
-using System.Collections.Generic;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class LevelSetup : Photon.PunBehaviour 
@@ -11,7 +10,8 @@ public class LevelSetup : Photon.PunBehaviour
 	public LevelComponentsManager levelSetup;
 	public NetworkPlayerManager playerManager;
 	public bool createPlayerOnStart = false;
-
+	
+	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private Room _currentRoom { get { return PhotonNetwork.room; }}
 	private bool _countdownStarted = false;
 	
@@ -27,12 +27,12 @@ public class LevelSetup : Photon.PunBehaviour
 			}
 			else
 			{
-				playerManager.movePlayerToStart();
+				_localPlayer.setNeedsToResetPosition(true);
 			}
 
-			playerManager.disablePlayerMovement();
-			playerManager.attachPlayerToCamera();
-			playerManager.setPlayerCrossedFinishLine(false);
+			_localPlayer.setMovementEnabled(false);
+			_localPlayer.setNeedsToAttachCamera(true);
+			_localPlayer.setCrossedFinishLine(false);
 
 			// Give it about a second until we set player say player is ready to race -- this should help
 			// assure that each client can see everyone else by the time this is called
@@ -50,7 +50,7 @@ public class LevelSetup : Photon.PunBehaviour
 			if (PhotonNetwork.isMasterClient && PhotonNetwork.room.allPlayersAreReadyToRace())
 			{
 				// reset player ready status for next race
-				playerManager.setPlayerReadyToRace(false);
+				_localPlayer.setReadyToRace(false);
 				
 				Debug.Log("players are ready! starting countdown...");
 				photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
@@ -70,7 +70,7 @@ public class LevelSetup : Photon.PunBehaviour
 	private IEnumerator setPlayerReadyToRaceAfterDuration(float duration)
 	{
 		yield return new WaitForSeconds(duration);
-		playerManager.setPlayerReadyToRace(true);
+		_localPlayer.setReadyToRace(true);
 	}
 
 	private void setupCountdownManager()
@@ -80,7 +80,7 @@ public class LevelSetup : Photon.PunBehaviour
 			countdownManager.hideCountdownUI();
 			countdownManager.completion += countdownManager.hideCountdownUI;
 			countdownManager.completion += levelSetup.activateMovingLevelComponents;
-			countdownManager.completion += playerManager.enablePlayerMovement;
+			countdownManager.completion += _localPlayer.enableMovement;
 		}
 	}
 }

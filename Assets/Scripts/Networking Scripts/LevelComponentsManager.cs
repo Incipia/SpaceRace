@@ -7,14 +7,15 @@ public class LevelComponentsManager : MonoBehaviour
 	public GameObject topLevelComponent;
 	private List<PlatformOscillation> platformOscillationScripts = new List<PlatformOscillation>();
 	private List<PlatformRotator> platformRotatorScripts = new List<PlatformRotator>();
+	private List<ObjectScaleOscillation> objectScaleScripts = new List<ObjectScaleOscillation>();
 
 	void Awake()
 	{
-		getPlatformRotatorAndOscillationScripts();
+		getObjectMovementScripts();
 		deactivateMovingLevelComponents();
 	}
 
-	private void getPlatformRotatorAndOscillationScripts()
+	private void getObjectMovementScripts()
 	{
 		foreach (PlatformOscillation oscillation in topLevelComponent.transform.GetComponentsInChildren<PlatformOscillation>(true))
 		{
@@ -23,6 +24,10 @@ public class LevelComponentsManager : MonoBehaviour
 		foreach (PlatformRotator rotator in topLevelComponent.transform.GetComponentsInChildren<PlatformRotator>(true))
 		{
 			platformRotatorScripts.Add(rotator);
+		}
+		foreach (ObjectScaleOscillation scale in topLevelComponent.transform.GetComponentsInChildren<ObjectScaleOscillation>(true))
+		{
+			objectScaleScripts.Add(scale);
 		}
 	}
 	
@@ -35,6 +40,10 @@ public class LevelComponentsManager : MonoBehaviour
 		foreach (PlatformRotator rotator in platformRotatorScripts)
 		{
 			rotator.enabled = enabled;
+		}
+		foreach (ObjectScaleOscillation scale in objectScaleScripts)
+		{
+			scale.enabled = enabled;
 		}
 	}
 

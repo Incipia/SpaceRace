@@ -32,6 +32,7 @@ public class FinishLine : Photon.MonoBehaviour
 					int playerNumber = playerPhotonView.owner.playerNumber();
 					activateAndUpdateFinishLineText(playerNumber);
 					photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, playerNumber);
+
 					StartCoroutine(loadNextLevelAfterDuration(2));
 				}
 			}
