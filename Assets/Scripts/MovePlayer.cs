@@ -75,7 +75,7 @@ public class MovePlayer : Photon.MonoBehaviour
 
 	public void jumpWithDirection(JumpDirection direction)
 	{
-		if (enabled)
+		if (enabled && controlsActive)
 		{
 			jumpDirection = direction;
 		}
