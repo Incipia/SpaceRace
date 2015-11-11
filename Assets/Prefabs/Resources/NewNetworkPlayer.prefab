@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxVelocity: {x: 1, y: 2}
+  baseMaxVelocity: {x: 1.10000002, y: 2.20000005}
   returnToMaxVelocitySpeed: .100000001
   maxFallVelocity: -2
   jumpAngle: 50
@@ -2973,6 +2973,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: InitialModule.startLifetime.scalar
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: baseMaxVelocity.x
+      value: 1.10000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: baseMaxVelocity.y
+      value: 2.20000005
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

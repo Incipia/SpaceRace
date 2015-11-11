@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System;
+using AssemblyCSharp;
 using System.Collections;
 using System.Collections.Generic;
-using AssemblyCSharp;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class LevelSetup : Photon.PunBehaviour 
 {
@@ -13,12 +14,12 @@ public class LevelSetup : Photon.PunBehaviour
 
 	private Room _currentRoom { get { return PhotonNetwork.room; }}
 	private bool _countdownStarted = false;
-
+	
 	void Start()
 	{
-		setupCountdownManager();
 		if (PhotonNetwork.connectedAndReady)
 		{
+			setupCountdownManager();
 			if (createPlayerOnStart)
 			{
 				Vector3 startPosition = PlayerStartPositionProvider.startPositionForPlayer(PhotonNetwork.player);
@@ -38,13 +39,19 @@ public class LevelSetup : Photon.PunBehaviour
 
 	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
-		if (PhotonNetwork.isMasterClient && PhotonNetwork.room.allPlayersAreReadyToRace())
+		// don't bother to check whether players are ready to race if that property is
+		// not what changed
+		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
+		if (props.ContainsKey(PlayerPropertiesManager.readyToRaceKey))
 		{
-			// reset player ready status for next race
-			playerManager.setPlayerReadyToRace(false);
-
-			Debug.Log("players are ready! starting countdown...");
-			photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
+			if (PhotonNetwork.isMasterClient && PhotonNetwork.room.allPlayersAreReadyToRace())
+			{
+				// reset player ready status for next race
+				playerManager.setPlayerReadyToRace(false);
+				
+				Debug.Log("players are ready! starting countdown...");
+				photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
+			}
 		}
 	}
 
