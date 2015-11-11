@@ -61,18 +61,4 @@ public class FinishLine : Photon.MonoBehaviour
 		finishLineText.SetActive(true);
 		finishLineCounter.updateSpritesWithNumber(playerNumber);
 	}
-
-//	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
-//	{
-//		PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
-//		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
-//
-//		if (props.ContainsKey(PlayerPropertiesManager.crossedFinishLineKey))
-//		{
-//			if (PhotonNetwork.room.allPlayersCrossedFinishLine())
-//			{
-//				StartCoroutine(loadNextLevelAfterDuration(1));
-//			}
-//		}
-//	}
 }

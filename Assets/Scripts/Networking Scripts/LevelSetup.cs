@@ -33,7 +33,10 @@ public class LevelSetup : Photon.PunBehaviour
 			playerManager.disablePlayerMovement();
 			playerManager.attachPlayerToCamera();
 			playerManager.setPlayerCrossedFinishLine(false);
-			playerManager.setPlayerReadyToRace(true);
+
+			// Give it about a second until we set player say player is ready to race -- this should help
+			// assure that each client can see everyone else by the time this is called
+			StartCoroutine(setPlayerReadyToRaceAfterDuration(1.5f));
 		}
 	}
 
@@ -42,7 +45,7 @@ public class LevelSetup : Photon.PunBehaviour
 		// don't bother to check whether players are ready to race if that property is
 		// not what changed
 		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
-		if (props.ContainsKey(PlayerPropertiesManager.readyToRaceKey))
+		if (props.ContainsKey(PlayerConstants.readyToRaceKey))
 		{
 			if (PhotonNetwork.isMasterClient && PhotonNetwork.room.allPlayersAreReadyToRace())
 			{
@@ -62,6 +65,12 @@ public class LevelSetup : Photon.PunBehaviour
 			countdownManager.beginCountdown();
 			countdownManager.showCountdownUI();
 		}
+	}
+
+	private IEnumerator setPlayerReadyToRaceAfterDuration(float duration)
+	{
+		yield return new WaitForSeconds(duration);
+		playerManager.setPlayerReadyToRace(true);
 	}
 
 	private void setupCountdownManager()
