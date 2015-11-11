@@ -10,6 +10,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Networking Scenes/L1-Multiplayer.unity
   - enabled: 1
-    path: Assets/Scenes/Networking Scenes/L3-Multiplayer.unity
-  - enabled: 1
     path: Assets/Scenes/Networking Scenes/L2-Multiplayer.unity
+  - enabled: 1
+    path: Assets/Scenes/Networking Scenes/L3-Multiplayer.unity

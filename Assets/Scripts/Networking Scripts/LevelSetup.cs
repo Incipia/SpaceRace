@@ -31,6 +31,7 @@ public class LevelSetup : Photon.PunBehaviour
 
 			playerManager.disablePlayerMovement();
 			playerManager.attachPlayerToCamera();
+			playerManager.setPlayerCrossedFinishLine(false);
 			playerManager.setPlayerReadyToRace(true);
 		}
 	}

@@ -138,7 +138,11 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			PhotonNetwork.LoadLevel(1);
+			int nextLevel = Application.loadedLevel + 1;
+			if (nextLevel < Application.levelCount)
+			{
+				PhotonNetwork.LoadLevel(nextLevel);
+			}
 		}
 	}
 }
