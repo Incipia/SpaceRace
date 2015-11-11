@@ -49,6 +49,7 @@ public class FinishLine : Photon.MonoBehaviour
 			int nextLevel = Application.loadedLevel + 1;
 			if (nextLevel < Application.levelCount)
 			{
+				Debug.Log("loading level: " + nextLevel);
 				PhotonNetwork.LoadLevel(nextLevel);
 			}
 		}
