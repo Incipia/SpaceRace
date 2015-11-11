@@ -13,11 +13,11 @@ public class PlayerColorSetup : Photon.MonoBehaviour
 
 	void Awake() 
 	{
-		Vector3 outerRingColorVector = PlayerColorProvider.colorVectorForPlayer(_localPlayer, PlayerColoredComponentType.OuterRing);
+//		Vector3 outerRingColorVector = PlayerColorProvider.colorVectorForPlayer(_localPlayer, PlayerColoredComponentType.OuterRing);
 		Vector3 innerCircleColorVector = PlayerColorProvider.colorVectorForPlayer(_localPlayer, PlayerColoredComponentType.InnerCircle);
 		Vector3 particleTrailColorVector = PlayerColorProvider.colorVectorForPlayer(_localPlayer, PlayerColoredComponentType.ParticleTrail);
 
-		updateColors(outerRingColorVector, innerCircleColorVector, particleTrailColorVector);
+		updateColors(innerCircleColorVector, innerCircleColorVector, particleTrailColorVector);
 	}
 
 	[PunRPC] void updateColors(Vector3 outerRingColorVector, Vector3 innerCircleColorVector, Vector3 particleTrailColorVector)

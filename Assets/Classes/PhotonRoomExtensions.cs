@@ -26,5 +26,19 @@ static class PhotonRoomExtensions
       }
       return allPlayersAreReady;
    }
+	
+	public static bool allPlayersCrossedFinishLine(this Room room)
+	{
+		bool allPlayersCrossed = true;
+		foreach (PhotonPlayer player in PhotonNetwork.playerList)
+		{
+			if (player.crossedFinishLine() == false)
+			{
+				allPlayersCrossed = false;
+				break;
+			}
+		}
+		return allPlayersCrossed;
+	}
 }
 

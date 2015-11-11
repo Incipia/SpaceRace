@@ -342,7 +342,7 @@ GameObject:
   - 114: {fileID: 980684033}
   - 61: {fileID: 980684034}
   m_Layer: 0
-  m_Name: ConnectButton-FINAL
+  m_Name: JoinButton-Final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -372,7 +372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7cb5ba5cb12be4046bbd18d5c5a25d58, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dedc80ad3bce43029edd79494db0457, type: 3}
   m_Color: {r: .176470593, g: .219607845, b: .227450982, a: 1}
 --- !u!4 &980684032
 Transform:
@@ -382,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 980684030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -.600000024, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
+  m_LocalScale: {x: .150000006, y: .150000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -567,7 +567,7 @@ Transform:
   m_GameObject: {fileID: 1188859442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: .25, y: .25, z: 1}
+  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1049,7 +1049,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: .99000001
+  orthographic size: .949999988
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

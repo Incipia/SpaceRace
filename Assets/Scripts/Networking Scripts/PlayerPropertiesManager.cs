@@ -131,12 +131,10 @@ static class PlayerExtensions
 		}
 		
 		bool crossedFinishLine = PhotonNetwork.player.crossedFinishLine();
-		if (crossed != crossedFinishLine)
-		{
-			Hashtable properties = new Hashtable();
-			properties.Add(PlayerPropertiesManager.crossedFinishLineKey, crossed);
-			PhotonNetwork.player.SetCustomProperties(properties);
-		}
+
+		Hashtable properties = new Hashtable();
+		properties.Add(PlayerPropertiesManager.crossedFinishLineKey, crossed);
+		PhotonNetwork.player.SetCustomProperties(properties);
 	}
 
 	public static int playerNumber(this PhotonPlayer player)
