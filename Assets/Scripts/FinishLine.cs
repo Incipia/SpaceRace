@@ -48,7 +48,7 @@ public class FinishLine : Photon.MonoBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			if (nameOfNextLevel != null)
+			if (nameOfNextLevel != null || nameOfNextLevel != "")
 			{
 				PhotonNetwork.LoadLevel(nameOfNextLevel);
 			}
