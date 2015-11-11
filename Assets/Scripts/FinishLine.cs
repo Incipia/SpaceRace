@@ -33,6 +33,8 @@ public class FinishLine : Photon.MonoBehaviour
 					photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, playerNumber);
 				}
 			}
+			
+			StartCoroutine(loadNextLevelAfterDuration(3));
 		}
 	}
 
@@ -62,17 +64,17 @@ public class FinishLine : Photon.MonoBehaviour
 		finishLineCounter.updateSpritesWithNumber(playerNumber);
 	}
 
-	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
-	{
-		PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
-		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
-
-		if (props.ContainsKey(PlayerPropertiesManager.crossedFinishLineKey))
-		{
-			if (PhotonNetwork.room.allPlayersCrossedFinishLine())
-			{
-				StartCoroutine(loadNextLevelAfterDuration(1));
-			}
-		}
-	}
+//	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
+//	{
+//		PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
+//		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
+//
+//		if (props.ContainsKey(PlayerPropertiesManager.crossedFinishLineKey))
+//		{
+//			if (PhotonNetwork.room.allPlayersCrossedFinishLine())
+//			{
+//				StartCoroutine(loadNextLevelAfterDuration(1));
+//			}
+//		}
+//	}
 }
