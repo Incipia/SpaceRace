@@ -7,6 +7,7 @@ public class FinishLine : Photon.MonoBehaviour
 	public EdgeCollider2D edgeCollider;
 	public GameObject finishLineText;
 	public CounterUI finishLineCounter;
+	public string nameOfNextLevel;
 
 	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private bool _someoneCrossedFinishLine = false;
@@ -31,7 +32,7 @@ public class FinishLine : Photon.MonoBehaviour
 					int playerNumber = playerPhotonView.owner.playerNumber();
 					activateAndUpdateFinishLineText(playerNumber);
 					photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.OthersBuffered, playerNumber);
-					StartCoroutine(loadNextLevelAfterDuration(3));
+					StartCoroutine(loadNextLevelAfterDuration(2));
 				}
 			}
 		}
@@ -47,11 +48,9 @@ public class FinishLine : Photon.MonoBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			int nextLevel = Application.loadedLevel + 1;
-			if (nextLevel < Application.levelCount)
+			if (nameOfNextLevel != null)
 			{
-				Debug.Log("loading level: " + nextLevel);
-				PhotonNetwork.LoadLevel(nextLevel);
+				PhotonNetwork.LoadLevel(nameOfNextLevel);
 			}
 		}
 	}
