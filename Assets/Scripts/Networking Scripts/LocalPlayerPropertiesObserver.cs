@@ -9,6 +9,7 @@ public class LocalPlayerPropertiesObserver : Photon.PunBehaviour
 
 	void Start()
 	{
+		// There is probably a better place to do this...
 		DontDestroyOnLoad(gameObject);
 	}
 	
@@ -16,7 +17,9 @@ public class LocalPlayerPropertiesObserver : Photon.PunBehaviour
 	{
 		PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
 		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
-		
+
+		// this script is only interested in properties that should only affect the local player
+		// e.g. attaching the camera
 		if (player.isLocal)
 		{
 			foreach (string propertyKey in props.Keys)
