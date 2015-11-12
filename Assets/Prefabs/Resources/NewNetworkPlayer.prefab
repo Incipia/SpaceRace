@@ -178,6 +178,7 @@ GameObject:
   - 114: {fileID: 11467946}
   - 114: {fileID: 11441160}
   - 114: {fileID: 11423940}
+  - 114: {fileID: 11408180}
   m_Layer: 12
   m_Name: NewNetworkPlayer
   m_TagString: Untagged
@@ -453,6 +454,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54ae91e72447d4a4b8934c7ebe9c938c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11408180
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f734d57cc5e459ea4b21eacd2f4800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movePlayer: {fileID: 11445884}
 --- !u!114 &11420906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -585,7 +598,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eda0239812bd444cac954eb106fafc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePlayer: {fileID: 11445884}
 --- !u!114 &11472836
 MonoBehaviour:
   m_ObjectHideFlags: 1

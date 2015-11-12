@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using AssemblyCSharp;
+using System.Collections;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class LevelSetup : Photon.PunBehaviour 
 {
@@ -10,15 +10,16 @@ public class LevelSetup : Photon.PunBehaviour
 	public LevelComponentsManager levelSetup;
 	public NetworkPlayerManager playerManager;
 	public bool createPlayerOnStart = false;
-
+	
+	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private Room _currentRoom { get { return PhotonNetwork.room; }}
 	private bool _countdownStarted = false;
-
+	
 	void Start()
 	{
-		setupCountdownManager();
 		if (PhotonNetwork.connectedAndReady)
 		{
+			setupCountdownManager();
 			if (createPlayerOnStart)
 			{
 				Vector3 startPosition = PlayerStartPositionProvider.startPositionForPlayer(PhotonNetwork.player);
@@ -26,25 +27,34 @@ public class LevelSetup : Photon.PunBehaviour
 			}
 			else
 			{
-				playerManager.movePlayerToStart();
+				_localPlayer.setNeedsToResetPosition(true);
 			}
 
-			playerManager.disablePlayerMovement();
-			playerManager.attachPlayerToCamera();
-			playerManager.setPlayerCrossedFinishLine(false);
-			playerManager.setPlayerReadyToRace(true);
+			_localPlayer.setMovementEnabled(false);
+			_localPlayer.setCrossedFinishLine(false);
+			_localPlayer.setNeedsToAttachCamera(true);
+
+			// Give it about a second until we say that the player is ready to race -- this should help
+			// assure that each client can see everyone else by the time this is called
+			StartCoroutine(setPlayerReadyToRaceAfterDuration(1.5f));
 		}
 	}
 
 	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
-		if (PhotonNetwork.isMasterClient && PhotonNetwork.room.allPlayersAreReadyToRace())
+		// don't bother to check whether players are ready to race if that property is
+		// not what changed
+		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
+		if (props.ContainsKey(PlayerConstants.readyToRaceKey))
 		{
-			// reset player ready status for next race
-			playerManager.setPlayerReadyToRace(false);
-
-			Debug.Log("players are ready! starting countdown...");
-			photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
+			if (PhotonNetwork.isMasterClient && PhotonNetwork.room.allPlayersAreReadyToRace())
+			{
+				// reset player ready status for next race
+				_localPlayer.setReadyToRace(false);
+				
+				Debug.Log("players are ready! starting countdown...");
+				photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
+			}
 		}
 	}
 
@@ -57,6 +67,12 @@ public class LevelSetup : Photon.PunBehaviour
 		}
 	}
 
+	private IEnumerator setPlayerReadyToRaceAfterDuration(float duration)
+	{
+		yield return new WaitForSeconds(duration);
+		_localPlayer.setReadyToRace(true);
+	}
+
 	private void setupCountdownManager()
 	{
 		if (countdownManager != null)
@@ -64,7 +80,7 @@ public class LevelSetup : Photon.PunBehaviour
 			countdownManager.hideCountdownUI();
 			countdownManager.completion += countdownManager.hideCountdownUI;
 			countdownManager.completion += levelSetup.activateMovingLevelComponents;
-			countdownManager.completion += playerManager.enablePlayerMovement;
+			countdownManager.completion += _localPlayer.enableMovement;
 		}
 	}
 }

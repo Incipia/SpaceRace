@@ -56,7 +56,7 @@ namespace AssemblyCSharp
 			switch (component)
 			{
 			case PlayerColoredComponentType.InnerCircle:
-				cv = colorVec(255, 53, 94 );
+				cv = colorVec(255, 53, 94);
 				break;
 			case PlayerColoredComponentType.OuterRing:
 				cv = colorVec(255, 68, 134);
@@ -81,7 +81,7 @@ namespace AssemblyCSharp
 				cv = colorVec(120, 210, 182);
 				break;
 			case PlayerColoredComponentType.ParticleTrail:
-				cv = colorVec(175, 227, 19);
+				cv = colorVec(89, 210, 133);
 				break;
 			}
 			return new Color(cv.x, cv.y, cv.z);

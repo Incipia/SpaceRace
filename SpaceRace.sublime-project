@@ -1,0 +1,15 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+            "file_exclude_patterns": ["*.dll", "*.meta"],
+        },
+    ],
+    "solution_file": "./SpaceRace.sln",
+
+    "syntax_override": {
+    	"\\.cs$": ["Unity3D", "UnityC#"]
+    }
+
+}
