@@ -5559,6 +5559,22 @@ Prefab:
       propertyPath: m_Name
       value: Portal Set (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 21295782, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 21211844, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237268, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 21215446, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
   m_IsPrefabParent: 0
@@ -7496,10 +7512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be233dc2e3318484c8d76765b797784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  edgeCollider: {fileID: 499558540}
   finishLineText: {fileID: 1097981887}
   finishLineCounter: {fileID: 52905290}
-  nameOfNextLevel: 
+  edgeCollider: {fileID: 499558540}
 --- !u!212 &499558543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16375,6 +16390,22 @@ Prefab:
     - target: {fileID: 11470578, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
       propertyPath: forceToApply.x
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 21211844, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 21295782, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237268, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 21215446, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1c774c6885dcf4b1c890f5223590b5e5, type: 2}
