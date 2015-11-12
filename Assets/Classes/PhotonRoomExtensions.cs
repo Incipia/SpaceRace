@@ -16,7 +16,7 @@ static class PhotonRoomExtensions
 	public static bool allPlayersAreReadyToRace(this Room room)
 	{
 		bool allPlayersAreReady = true;
-		foreach(PhotonPlayer player in PhotonNetwork.playerList)
+		foreach (PhotonPlayer player in PhotonNetwork.playerList)
 		{
 			if (player.readyToRace() == false)
 			{

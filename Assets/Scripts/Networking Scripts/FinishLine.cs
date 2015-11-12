@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class FinishLine : Photon.MonoBehaviour
@@ -7,7 +6,7 @@ public class FinishLine : Photon.MonoBehaviour
 	public GameObject finishLineText;
 	public CounterUI finishLineCounter;
 	public EdgeCollider2D edgeCollider;
-	private bool _someoneCrossedFinishLine = false;
+	private bool _someoneCrossedFinishLine;
 
 	void Start()
 	{
@@ -23,7 +22,7 @@ public class FinishLine : Photon.MonoBehaviour
 			if (playerPhotonView != null && playerPhotonView.isLocal())
 			{
 				playerPhotonView.setCrossedFinishLine(true);
-				if (_someoneCrossedFinishLine == false)
+				if (!_someoneCrossedFinishLine)
 				{
 					int playerNumber = playerPhotonView.playerNumber();
 					photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.All, playerNumber);
