@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlatformRotator : MonoBehaviour 
 {	
@@ -11,7 +10,7 @@ public class PlatformRotator : MonoBehaviour
 	private Vector3 rotation;
 	private float direction;
 	
-	void Start () 
+	void Start() 
 	{
 		transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, pingpongStartAngle);
 		direction = 1.0f;
@@ -23,7 +22,7 @@ public class PlatformRotator : MonoBehaviour
 		}
 	}
 
-	void Update () 
+	void FixedUpdate() 
 	{
 		if(pingpong)
 		{

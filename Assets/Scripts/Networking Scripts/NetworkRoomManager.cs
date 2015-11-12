@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using AssemblyCSharp;
 using System.Collections;
 using System.Collections.Generic;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
@@ -10,18 +9,19 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	public NetworkRoomConnectionInfo roomConnectionInfo;
 	public GameObject timeToPlayText;
 	public GameObject roomSelector;
+	public string nameOfFirstLevel;
 
 	public List<GameObject> objectsToHideBeforePlaying = new List<GameObject>();
 
 	private string _gameVersion = "0.0.1";
-	private bool _requestedToJoinRoom = false;
+	private bool _requestedToJoinRoom;
 	
 	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private Room _currentRoom { get { return PhotonNetwork.room; } }
 	private bool _roomIsFull { get { return _currentRoom.maxPlayers == _currentRoom.playerCount; }}
 
 	void Start() 
-	{	
+	{
 		timeToPlayText.SetActive(false);
 		setObjectActive(roomConnectionInfo, false);
 		connectButton.setReadyToConnect(false);
@@ -138,7 +138,10 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			PhotonNetwork.LoadLevel(1);
+			if (nameOfFirstLevel != "")
+			{
+				PhotonNetwork.LoadLevel(nameOfFirstLevel);	
+			}
 		}
 	}
 }
