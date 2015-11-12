@@ -7,6 +7,7 @@ public class PlayerStun : MonoBehaviour
 	public float stunStrength = 2.0f;
 	public bool deactivateParticlesOnStun;
 	public Vector2 newPlayerMaxVelocity = new Vector2(1, 10);
+	private Vector3 stunDirectionVector;
 
 	Transform trans;
 
@@ -32,9 +33,9 @@ public class PlayerStun : MonoBehaviour
 			MovePlayer movePlayer = other.GetComponent<MovePlayer>();
 			if(movePlayer != null)
 			{
-				Vector2 flingDirection = (Vector2)(other.transform.position - trans.position);
+				Vector2 flingDirection = (Vector2)(other.transform.position - trans.position);	
 				flingDirection.Normalize();
-				movePlayer.addImpulse(flingDirection * stunStrength);
+				movePlayer.addImpulse(stunDirectionVector * stunStrength);
 				movePlayer.Stun(stunDuration, deactivateParticlesOnStun);
 				movePlayer.SetMaxVelocity(newPlayerMaxVelocity);
 			}

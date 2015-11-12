@@ -11,6 +11,7 @@ TagManager:
   - Coin Holder Digits
   - BounceParticles
   - MovingObjects
+  - Rain
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Walls
   - Speed Boost
   - Outline
-  - 
+  - Rain
   - 
   - 
   - 
