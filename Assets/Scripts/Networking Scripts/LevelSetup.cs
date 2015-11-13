@@ -4,17 +4,20 @@ using AssemblyCSharp;
 using System.Collections;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
-public class LevelSetup : Photon.PunBehaviour 
+public class LevelSetup : Photon.PunBehaviour
 {
 	public CountdownManager countdownManager;
 	public LevelComponentsManager levelSetup;
 	public NetworkPlayerManager playerManager;
-	public bool createPlayerOnStart = false;
-	
-	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
+	public HazardSpawnManager hazardSpawner;
+
+	public bool createPlayerOnStart;
+    public bool useHazards;
+
+    private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private Room _currentRoom { get { return PhotonNetwork.room; }}
 	private bool _countdownStarted = false;
-	
+
 	void Start()
 	{
 		if (PhotonNetwork.connectedAndReady)
@@ -51,7 +54,7 @@ public class LevelSetup : Photon.PunBehaviour
 			{
 				// reset player ready status for next race
 				_localPlayer.setReadyToRace(false);
-				
+
 				Debug.Log("players are ready! starting countdown...");
 				photonView.RPC("beginCountdown", PhotonTargets.AllViaServer);
 			}
@@ -81,6 +84,12 @@ public class LevelSetup : Photon.PunBehaviour
 			countdownManager.completion += countdownManager.hideCountdownUI;
 			countdownManager.completion += levelSetup.activateMovingLevelComponents;
 			countdownManager.completion += _localPlayer.enableMovement;
+
+			// Not sure if this should go here
+			if (useHazards)
+			{
+                countdownManager.completion += hazardSpawner.startSpawning;
+            }
 		}
 	}
 }

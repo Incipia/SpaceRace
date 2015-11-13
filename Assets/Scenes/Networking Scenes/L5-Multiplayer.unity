@@ -16286,6 +16286,14 @@ Prefab:
       propertyPath: countdownManager
       value: 
       objectReference: {fileID: 1340851645}
+    - target: {fileID: 11476582, guid: dc7209da20318481db00b60452909f4d, type: 2}
+      propertyPath: createPlayerOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11476582, guid: dc7209da20318481db00b60452909f4d, type: 2}
+      propertyPath: useHazards
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc7209da20318481db00b60452909f4d, type: 2}
   m_IsPrefabParent: 0
@@ -17791,7 +17799,7 @@ Transform:
   - {fileID: 957661160}
   - {fileID: 2091919454}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
 --- !u!1 &1217913876
 GameObject:
   m_ObjectHideFlags: 0
@@ -28304,49 +28312,6 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 377dc87cbbc504146acc27381478b64f, type: 3}
   m_Color: {r: .176470593, g: .219607845, b: .227450982, a: 1}
---- !u!1 &2120854615
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2120854617}
-  - 114: {fileID: 2120854616}
-  m_Layer: 0
-  m_Name: Hazard Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2120854616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2120854615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33257b3efe5b5403c9ab368066bc34ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnedObstacle: {fileID: 112184, guid: c6df1775ee6634e779d241a707772606, type: 2}
-  initialHazardSpawnInterval: .100000001
-  minimumHazardSpawnInterval: .100000001
-  initialWaitBeforeSpawn: 0
---- !u!4 &2120854617
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2120854615}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
 --- !u!1 &2130870343
 GameObject:
   m_ObjectHideFlags: 0

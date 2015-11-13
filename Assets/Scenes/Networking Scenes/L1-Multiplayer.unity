@@ -25073,8 +25073,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 402500, guid: dc7209da20318481db00b60452909f4d, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 11433446, guid: dc7209da20318481db00b60452909f4d, type: 2}
+      propertyPath: topLevelComponent
+      value: 
+      objectReference: {fileID: 1006815383}
+    - target: {fileID: 11476582, guid: dc7209da20318481db00b60452909f4d, type: 2}
+      propertyPath: countdownManager
+      value: 
+      objectReference: {fileID: 1644982022}
     - target: {fileID: 11482526, guid: dc7209da20318481db00b60452909f4d, type: 2}
       propertyPath: viewIdField
       value: 2
@@ -25082,18 +25090,6 @@ Prefab:
     - target: {fileID: 11482526, guid: dc7209da20318481db00b60452909f4d, type: 2}
       propertyPath: instantiationId
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476582, guid: dc7209da20318481db00b60452909f4d, type: 2}
-      propertyPath: countdownManager
-      value: 
-      objectReference: {fileID: 1644982022}
-    - target: {fileID: 11433446, guid: dc7209da20318481db00b60452909f4d, type: 2}
-      propertyPath: topLevelComponent
-      value: 
-      objectReference: {fileID: 1006815383}
-    - target: {fileID: 11476582, guid: dc7209da20318481db00b60452909f4d, type: 2}
-      propertyPath: createPlayerOnStart
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc7209da20318481db00b60452909f4d, type: 2}

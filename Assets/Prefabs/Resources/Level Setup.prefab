@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11439902}
   - 114: {fileID: 11433446}
   - 114: {fileID: 11476582}
+  - 114: {fileID: 11414016}
   m_Layer: 0
   m_Name: Level Setup
   m_TagString: Untagged
@@ -31,6 +32,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11414016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33257b3efe5b5403c9ab368066bc34ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnedObstacle: {fileID: 112184, guid: c6df1775ee6634e779d241a707772606, type: 2}
+  hazardSpawnInterval: .25
 --- !u!114 &11433446
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,7 +69,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 143902, guid: 3953d3a48543e40b08e01612b2c4d7c3, type: 2}
-  autoDisablePlayerMovementOnCreate: 1
 --- !u!114 &11476582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,7 +83,9 @@ MonoBehaviour:
   countdownManager: {fileID: 0}
   levelSetup: {fileID: 11433446}
   playerManager: {fileID: 11439902}
-  createPlayerOnStart: 0
+  hazardSpawner: {fileID: 11414016}
+  createPlayerOnStart: 1
+  useHazards: 0
 --- !u!114 &11482526
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +126,18 @@ Prefab:
       propertyPath: levelSetup
       value: 
       objectReference: {fileID: 11433446}
+    - target: {fileID: 0}
+      propertyPath: minimumHazardSpawnInterval
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spawnedObstacle
+      value: 
+      objectReference: {fileID: 112184, guid: c6df1775ee6634e779d241a707772606, type: 2}
+    - target: {fileID: 0}
+      propertyPath: hazardSpawner
+      value: 
+      objectReference: {fileID: 11414016}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170122}
