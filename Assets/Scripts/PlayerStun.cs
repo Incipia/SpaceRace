@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class PlayerStun : MonoBehaviour 
 {
@@ -31,7 +30,7 @@ public class PlayerStun : MonoBehaviour
 		if (isActiveAndEnabled)
 		{
 			MovePlayer movePlayer = other.GetComponent<MovePlayer>();
-			if(movePlayer != null)
+			if (movePlayer != null)
 			{
 				Vector2 flingDirection = (Vector2)(other.transform.position - trans.position);	
 				flingDirection.Normalize();

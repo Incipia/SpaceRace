@@ -37,19 +37,7 @@ public class CountdownManager : MonoBehaviour
 		{
 			this.completion = completion;
 			timer.SecondsPerTurn = seconds;
-			
-			timer.startRound();
-			timerStarted = true;
-		}
-	}
 
-	public void beginCountdownWithCompletion(CountdownCompletion completion)
-	{
-		if (timerStarted == false)
-		{
-			this.completion = completion;
-			timer.SecondsPerTurn = countdownDuration;
-			
 			timer.startRound();
 			timerStarted = true;
 		}
@@ -57,11 +45,9 @@ public class CountdownManager : MonoBehaviour
 
 	public void beginCountdown()
 	{
-		if (timerStarted == false)
+		if (!timerStarted)
 		{
-			this.completion = completion;
 			timer.SecondsPerTurn = countdownDuration;
-			
 			timer.startRound();
 			timerStarted = true;
 		}

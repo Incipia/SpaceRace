@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class HazardSpawnManager : MonoBehaviour 
 {
@@ -11,19 +10,15 @@ public class HazardSpawnManager : MonoBehaviour
 	public float initialWaitBeforeSpawn;
 
 	private bool shouldStopSpawning;
-
-	private bool spawningGeneralPrefabs;
 	private Vector3 screenDimensions;
 
 	private float currentHazardSpawnInterval;
 	
 	private bool shouldSpawnPuzzle;
 	private bool firstHazardDidSpawn;
-	private GameObject player;
 
-	void Start () 
+	void Start() 
 	{
-		player = GameObject.FindGameObjectWithTag("Player");
 		currentHazardSpawnInterval = initialHazardSpawnInterval;
 
 		StartCoroutine(spawnPrefabs());
@@ -43,12 +38,12 @@ public class HazardSpawnManager : MonoBehaviour
 	
 	IEnumerator spawnPrefabs()
 	{
-		if (firstHazardDidSpawn == false)
+		if (!firstHazardDidSpawn)
 		{
 			firstHazardDidSpawn = true;
 			yield return new WaitForSeconds(initialWaitBeforeSpawn);
 		}
-		while (shouldSpawnPuzzle == false && player != null && !shouldStopSpawning)
+		while (!shouldSpawnPuzzle && !shouldStopSpawning)
 		{
 			instantiateRandomHazard();
 			yield return new WaitForSeconds(currentHazardSpawnInterval);
