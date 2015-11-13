@@ -21,7 +21,7 @@ public class FinishLine : Photon.MonoBehaviour
 			if (playerPhotonView != null && playerPhotonView.isLocal())
 			{
 				playerPhotonView.setCrossedFinishLine(true);
-				if (!_someoneCrossedFinishLine)
+                if (!_someoneCrossedFinishLine)
 				{
 					int playerNumber = playerPhotonView.playerNumber();
 					photonView.RPC("activateAndUpdateFinishLineText", PhotonTargets.All, playerNumber);

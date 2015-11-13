@@ -39,7 +39,7 @@ public class LevelSetup : Photon.PunBehaviour
 
 			// Give it about a second until we say that the player is ready to race -- this should help
 			// assure that each client can see everyone else by the time this is called
-			StartCoroutine(setPlayerReadyToRaceAfterDuration(1.5f));
+			StartCoroutine(setPlayerReadyToRaceAfterDuration(1.25f));
 		}
 	}
 

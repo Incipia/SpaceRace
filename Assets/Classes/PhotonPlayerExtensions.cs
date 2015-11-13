@@ -33,7 +33,7 @@ static class PhotonPlayerExtensions
 
 		Hashtable properties = new Hashtable();
 		properties.Add(PlayerConstants.needsToResetPositionKey, resetPos);
-		PhotonNetwork.player.SetCustomProperties(properties);
+		player.SetCustomProperties(properties);
 	}
 
 	public static bool movementEnabled(this PhotonPlayer player)
@@ -56,7 +56,7 @@ static class PhotonPlayerExtensions
 
 		Hashtable properties = new Hashtable();
 		properties.Add(PlayerConstants.movementEnabledKey, enabled);
-		PhotonNetwork.player.SetCustomProperties(properties);
+		player.SetCustomProperties(properties);
 	}
 
 	public static void enableMovement(this PhotonPlayer player)
@@ -90,7 +90,7 @@ static class PhotonPlayerExtensions
 		bool needsToAttachCamera = PhotonNetwork.player.needsToAttachCamera();
 		Hashtable properties = new Hashtable();
 		properties.Add(PlayerConstants.needsToAttachCameraKey, attachCamera);
-		PhotonNetwork.player.SetCustomProperties(properties);
+		player.SetCustomProperties(properties);
 	}
 
 	public static bool readyToRace(this PhotonPlayer player)
@@ -116,7 +116,7 @@ static class PhotonPlayerExtensions
 		{
 			Hashtable properties = new Hashtable();
 			properties.Add(PlayerConstants.readyToRaceKey, ready);
-			PhotonNetwork.player.SetCustomProperties(properties);
+			player.SetCustomProperties(properties);
 		}
 	}
 
@@ -143,7 +143,7 @@ static class PhotonPlayerExtensions
 		{
 			Hashtable properties = new Hashtable();
 			properties.Add(PlayerConstants.crossedFinishLineKey, crossed);
-			PhotonNetwork.player.SetCustomProperties(properties);
+			player.SetCustomProperties(properties);
 		}
 	}
 
@@ -170,7 +170,7 @@ static class PhotonPlayerExtensions
 		{
 			Hashtable properties = new Hashtable();
 			properties.Add(PlayerConstants.playerNumberKey, number);
-			PhotonNetwork.player.SetCustomProperties(properties);
+			player.SetCustomProperties(properties);
 		}
 	}
 
@@ -197,7 +197,7 @@ static class PhotonPlayerExtensions
 		{
 			Hashtable properties = new Hashtable();
 			properties.Add(PlayerConstants.totalPointsKey, number);
-			PhotonNetwork.player.SetCustomProperties(properties);
+			player.SetCustomProperties(properties);
 		}
 	}
 

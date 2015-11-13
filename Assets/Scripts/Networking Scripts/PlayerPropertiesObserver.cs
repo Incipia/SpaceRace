@@ -3,7 +3,7 @@ using AssemblyCSharp;
 using System.Collections;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
-public class PlayerPropertiesObserver : Photon.PunBehaviour
+public class PlayerPropertiesObserver : Photon.MonoBehaviour
 {
 	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
@@ -11,7 +11,7 @@ public class PlayerPropertiesObserver : Photon.PunBehaviour
 		Hashtable props = playerAndUpdatedProps[1] as Hashtable;
 
 		// check to see if THIS photon view corresponds to the player before using it
-		if (photonView.isPlayer(player))
+		if (photonView.attachedToPlayer(player))
 		{
 			foreach (string propertyKey in props.Keys)
 			{
@@ -29,6 +29,11 @@ public class PlayerPropertiesObserver : Photon.PunBehaviour
 						player.setNeedsToResetPosition(false);
 					}
 				}
+				if (propertyKey == PlayerConstants.totalPointsKey)
+				{
+                    int score = player.totalPoints();
+                    photonView.GetComponent<PlayerPointsDisplay>().updateScore(score);
+                }
 			}
 		}
 	}
