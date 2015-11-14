@@ -12,7 +12,8 @@ public class PlatformRotator : MonoBehaviour
 	
 	void Start() 
 	{
-		transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, pingpongStartAngle);
+//		transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, pingpongStartAngle);
+		pingpongStartAngle = transform.eulerAngles.z;
 		direction = 1.0f;
 		if(pingpong && pingpongStartAngle > pingpongStopAngle)
 		{
