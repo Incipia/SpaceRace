@@ -13704,9 +13704,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 1
-  pingpong: 0
+  pingpong: 1
   pingpongStartAngle: 90
   pingpongStopAngle: 180
+  duration: 2
 --- !u!114 &749270702
 MonoBehaviour:
   m_ObjectHideFlags: 0
