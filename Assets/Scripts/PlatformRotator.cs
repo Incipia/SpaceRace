@@ -4,9 +4,9 @@ public class PlatformRotator : MonoBehaviour
 {	
 	public float rotationSpeed = 0.5f;
 	public bool pingpong = false;
-	public float pingpongStartAngle = 0.0f;
 	public float pingpongStopAngle = 90.0f;
-
+	
+	private float pingpongStartAngle = 0.0f;
 	private Vector3 rotation;
 	private float direction;
 	
