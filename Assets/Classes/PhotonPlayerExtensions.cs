@@ -47,6 +47,29 @@ static class PhotonPlayerExtensions
 		player.setMovementEnabled(false);
 	}
 
+	public static bool isKinematic(this PhotonPlayer player)
+	{
+		bool retVal = false;
+		object kinematic;
+		if (player.customProperties.TryGetValue(PlayerConstants.isKinematic, out kinematic))
+		{
+			retVal = (bool)kinematic;
+		}
+		return retVal;
+    }
+
+	public static void setKinematic(this PhotonPlayer player, bool kinematic)
+	{
+		if (!PhotonNetwork.connectedAndReady)
+		{
+			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
+		}
+
+		Hashtable properties = new Hashtable();
+		properties.Add(PlayerConstants.isKinematic, kinematic);
+		player.SetCustomProperties(properties);
+	}
+
 	public static bool needsToAttachCamera(this PhotonPlayer player)
 	{
 		bool retVal = false;
@@ -202,9 +225,45 @@ static class PhotonPlayerExtensions
    		player.SetCustomProperties(properties);
    	}
 
+    	public static void updateScale(this PhotonPlayer player, Vector3 scale)
+    	{
+    		if (!PhotonNetwork.connectedAndReady)
+    		{
+    			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
+    		}
+
+    		Hashtable properties = new Hashtable();
+    		properties.Add(PlayerConstants.updateScaleKey, scale);
+    		player.SetCustomProperties(properties);
+    	}
+
 	public static void updatePositionBackToStart(this PhotonPlayer player)
 	{
         Vector3 startPosition = PlayerStartPositionProvider.startPositionForPlayer(player);
 		player.updatePosition(startPosition);
     }
+	
+	
+	public static bool particlesEnabled(this PhotonPlayer player)
+	{
+		bool retVal = false;
+		object ready;
+		if (player.customProperties.TryGetValue(PlayerConstants.particlesEnabledKey, out ready))
+		{
+			retVal = (bool)ready;
+		}
+		return retVal;
+	}
+	
+	public static void setParticlesEnabled(this PhotonPlayer player, bool enabled)
+	{
+		if (!PhotonNetwork.connectedAndReady)
+		{
+			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
+		}
+
+		Hashtable properties = new Hashtable();
+		properties.Add(PlayerConstants.particlesEnabledKey, enabled);
+		player.SetCustomProperties(properties);
+	}
 }

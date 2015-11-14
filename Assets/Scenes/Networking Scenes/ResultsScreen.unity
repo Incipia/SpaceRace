@@ -388,6 +388,7 @@ MonoBehaviour:
   firstPlaceGameObject: {fileID: 829535801}
   secondPlaceGameObject: {fileID: 1095159774}
   thirdPlaceGameObject: {fileID: 307883636}
+  fourthPlaceGameObject: {fileID: 730264878}
 --- !u!4 &1769721272
 Transform:
   m_ObjectHideFlags: 0

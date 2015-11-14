@@ -41,4 +41,9 @@ static class PhotonViewExtensions
 	{
 		photonView.owner.incrementTotalPoints(points);
 	}
+
+	public static void setKinematic(this PhotonView photonView, bool kinematic)
+	{
+        photonView.owner.setKinematic(kinematic);
+    }
 }

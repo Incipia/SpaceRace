@@ -33,6 +33,24 @@ public class PlayerPropertiesObserver : Photon.MonoBehaviour
                         photonView.GetComponent<MovePlayer>().resetToPosition(pos);
 					}
                 }
+				if (propertyKey == PlayerConstants.isKinematic)
+				{
+                    photonView.GetComponent<Rigidbody2D>().isKinematic = player.isKinematic();
+                }
+				if (propertyKey == PlayerConstants.updateScaleKey)
+				{
+                    object updatedScale;
+					if (props.TryGetValue(propertyKey, out updatedScale))
+					{
+						Vector3 newScale = (Vector3)updatedScale;
+                        photonView.transform.root.gameObject.transform.localScale = newScale;
+					}
+				}
+				if (propertyKey == PlayerConstants.particlesEnabledKey)
+				{
+					bool visible = player.particlesEnabled();
+					photonView.GetComponent<NetworkPlayerVisibilitySetup>().makeParticleTrailVisible(visible);
+				}
 			}
 		}
 	}
