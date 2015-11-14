@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stunDuration: .300000012
-  stunStrength: 2
+  stunStrength: 5
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 10}
 --- !u!114 &11445634
@@ -266,6 +266,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: SecondsToDestroy
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stunStrength
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

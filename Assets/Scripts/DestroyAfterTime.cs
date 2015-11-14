@@ -3,14 +3,14 @@ using System.Collections;
 
 public class DestroyAfterTime : MonoBehaviour {
 
-	public float SecondsToDestroy = 12;
+	public float SecondsToDestroy = 10;
 
-	void Start () 
+	void Start ()
 	{
 		StartCoroutine(WaitToDestroy());
 	}
-	
-	IEnumerator WaitToDestroy() 
+
+	IEnumerator WaitToDestroy()
 	{
 		yield return new WaitForSeconds(SecondsToDestroy);
 		destroyObject();
@@ -20,6 +20,4 @@ public class DestroyAfterTime : MonoBehaviour {
 	{
 		Destroy(gameObject);
 	}
-
 }
-

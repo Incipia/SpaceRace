@@ -52,7 +52,7 @@ public class NetworkPlayerVisibilitySetup : Photon.MonoBehaviour
 		}
 	}
 	
-	[PunRPC] void makeParticleTrailVisible(bool visible)
+	[PunRPC] public void makeParticleTrailVisible(bool visible)
 	{
 		particleTrail.GetComponent<ParticleSystem>().enableEmission = visible;
 		if (photonView.isMine)

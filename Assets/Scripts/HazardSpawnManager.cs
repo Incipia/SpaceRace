@@ -1,57 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
-public class HazardSpawnManager : MonoBehaviour 
+public class HazardSpawnManager : MonoBehaviour
 {
-	public GameObject spawnedObstacle;
+    public GameObject spawnedObstacle;
+    public float hazardSpawnInterval;
 
-	public float initialHazardSpawnInterval;
-	public float minimumHazardSpawnInterval;
-	public float initialWaitBeforeSpawn;
-
-	private bool shouldStopSpawning;
-
-	private bool spawningGeneralPrefabs;
+    private bool shouldStopSpawning;
+    private Vector3 pixelDimensions = new Vector3(Screen.width, Screen.height, 0);
 	private Vector3 screenDimensions;
 
-	private float currentHazardSpawnInterval;
-	
-	private bool shouldSpawnPuzzle;
-	private bool firstHazardDidSpawn;
-	private GameObject player;
-
-	void Start () 
-	{
-		player = GameObject.FindGameObjectWithTag("Player");
-		currentHazardSpawnInterval = initialHazardSpawnInterval;
-
-		StartCoroutine(spawnPrefabs());
-	}
-	
 	void Update()
 	{
 		getScreenDimensions();
-	}
-	
-	
+    }
+
 	private void getScreenDimensions()
 	{
-		Vector3 pixelDimensions = new Vector3(Screen.width, Screen.height, 0);
 		screenDimensions = Camera.main.ScreenToWorldPoint(pixelDimensions);
 	}
-	
+
 	IEnumerator spawnPrefabs()
 	{
-		if (firstHazardDidSpawn == false)
-		{
-			firstHazardDidSpawn = true;
-			yield return new WaitForSeconds(initialWaitBeforeSpawn);
-		}
-		while (shouldSpawnPuzzle == false && player != null && !shouldStopSpawning)
+		while (!shouldStopSpawning)
 		{
 			instantiateRandomHazard();
-			yield return new WaitForSeconds(currentHazardSpawnInterval);
+			yield return new WaitForSeconds(hazardSpawnInterval);
 		}
 	}
 
@@ -61,25 +35,16 @@ public class HazardSpawnManager : MonoBehaviour
 		Vector2 spawnPosition = new Vector2(Random.Range(-4f, 4f), screenDimensions.y + yPadding);
 		Quaternion spawnRotation = Quaternion.identity;
 
-		GameObject currentPrefab = spawnedObstacle;
-
-		Instantiate(currentPrefab, spawnPosition, spawnRotation);
-		Debug.Log ("Spawned Rain");
+        Instantiate(spawnedObstacle, spawnPosition, spawnRotation);
     }
-
-	public void continueSpawningRandomHazards()
-	{
-		shouldSpawnPuzzle = false;
-		StartCoroutine(spawnPrefabs());
-	}
-
-	public float getCurrentHazardSpawnInterval()
-	{
-		return currentHazardSpawnInterval;
-	}
 
 	public void stopSpawning()
 	{
 		shouldStopSpawning = true;
 	}
+
+	public void startSpawning()
+	{
+        StartCoroutine(spawnPrefabs());
+    }
 }

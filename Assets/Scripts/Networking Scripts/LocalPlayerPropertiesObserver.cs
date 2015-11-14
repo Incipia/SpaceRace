@@ -12,7 +12,7 @@ public class LocalPlayerPropertiesObserver : Photon.PunBehaviour
 		// There is probably a better place to do this...
 		DontDestroyOnLoad(gameObject);
 	}
-	
+
 	void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
 		PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
@@ -27,7 +27,7 @@ public class LocalPlayerPropertiesObserver : Photon.PunBehaviour
 				if (propertyKey == PlayerConstants.needsToAttachCameraKey && player.needsToAttachCamera())
 				{
 					Camera.main.GetComponent<CameraFollow>().objectToFollow = transform;
-					
+
 					GameObject.Find("Left Input").GetComponent<PlayerTouchInput>().movePlayer = movePlayer;
 					GameObject.Find("Right Input").GetComponent<PlayerTouchInput>().movePlayer = movePlayer;
 				}

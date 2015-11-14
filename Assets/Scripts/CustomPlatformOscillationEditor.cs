@@ -1,7 +1,6 @@
 ﻿#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
-using System.Collections;
 
 [CustomEditor(typeof(PlatformOscillation))]
 public class CustomPlatformOscillationEditor : Editor
