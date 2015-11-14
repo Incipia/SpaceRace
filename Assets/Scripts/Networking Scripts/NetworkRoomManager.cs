@@ -24,10 +24,17 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		timeToPlayText.SetActive(false);
 		setObjectActive(roomConnectionInfo, false);
-		connectButton.setReadyToConnect(false);
-		
-		Debug.Log("Connecting to Photon...");
-		PhotonNetwork.ConnectUsingSettings(_gameVersion);
+
+		if (!PhotonNetwork.connectedAndReady)
+		{
+			Debug.Log("Connecting to Photon...");
+			PhotonNetwork.ConnectUsingSettings(_gameVersion);
+			connectButton.setReadyToConnect(false);
+		}
+		else
+		{
+			connectButton.setReadyToConnect(true);
+		}
 	}
 
 	void OnConnectedToPhoton()
@@ -51,6 +58,7 @@ public class NetworkRoomManager : Photon.PunBehaviour
 
 	void OnJoinedRoom()
 	{
+		_localPlayer.setTotalPoints(0);
 		_localPlayer.setPlayerNumber(_currentRoom.playerCount);
 		_localPlayer.setReadyToRace(false);
 

@@ -15,6 +15,8 @@ public class ResultsScreenSetup : MonoBehaviour
 	{
 		if (PhotonNetwork.connectedAndReady)
 		{
+			PhotonNetwork.automaticallySyncScene = false;
+
 			setupScoresArray();
 
 			int placement = placementForPlayer(_localPlayer);
