@@ -4,16 +4,15 @@ public class PlatformRotator : MonoBehaviour
 {	
 	public float rotationSpeed = 0.5f;
 	public bool pingpong = false;
+	public float pingpongStartAngle = 0.0f;
 	public float pingpongStopAngle = 90.0f;
-	
-	private float pingpongStartAngle = 0.0f;
+
 	private Vector3 rotation;
 	private float direction;
 	
 	void Start() 
 	{
-//		transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, pingpongStartAngle);
-		pingpongStartAngle = transform.eulerAngles.z;
+		transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, pingpongStartAngle);
 		direction = 1.0f;
 		if(pingpong && pingpongStartAngle > pingpongStopAngle)
 		{
