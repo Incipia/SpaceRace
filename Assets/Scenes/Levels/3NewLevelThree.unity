@@ -8683,10 +8683,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be233dc2e3318484c8d76765b797784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  edgeCollider: {fileID: 499558540}
   finishLineText: {fileID: 1097981887}
   finishLineCounter: {fileID: 52905290}
-  nextLevel: 1
+  edgeCollider: {fileID: 499558540}
 --- !u!212 &499558543
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35462,6 +35461,14 @@ Prefab:
       propertyPath: trailParticles
       value: 
       objectReference: {fileID: 303450122}
+    - target: {fileID: 11497646, guid: 912032765097e48d39a6c1b9a3a66466, type: 2}
+      propertyPath: baseMaxVelocity.x
+      value: 1.10000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497646, guid: 912032765097e48d39a6c1b9a3a66466, type: 2}
+      propertyPath: baseMaxVelocity.y
+      value: 2.20000005
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 912032765097e48d39a6c1b9a3a66466, type: 2}
   m_IsPrefabParent: 0
