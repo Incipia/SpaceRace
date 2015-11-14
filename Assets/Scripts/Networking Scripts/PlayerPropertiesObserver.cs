@@ -19,20 +19,19 @@ public class PlayerPropertiesObserver : Photon.MonoBehaviour
 				{
 					photonView.GetComponent<MovePlayer>().enabled = player.movementEnabled();
 				}
-				if (propertyKey == PlayerConstants.needsToResetPositionKey)
-				{
-					if (player.needsToResetPosition())
-					{
-						Vector3 startPosition = PlayerStartPositionProvider.startPositionForPlayer(player);
-						photonView.GetComponent<MovePlayer>().resetToPosition(startPosition);
-
-						player.setNeedsToResetPosition(false);
-					}
-				}
 				if (propertyKey == PlayerConstants.totalPointsKey)
 				{
                     int score = player.totalPoints();
                     photonView.GetComponent<PlayerPointsDisplay>().updateScore(score);
+                }
+				if (propertyKey == PlayerConstants.updatePositionKey)
+				{
+                    object updatedPosition;
+					if (props.TryGetValue(propertyKey, out updatedPosition))
+					{
+						Vector3 pos = (Vector3)updatedPosition;
+                        photonView.GetComponent<MovePlayer>().resetToPosition(pos);
+					}
                 }
 			}
 		}

@@ -30,12 +30,12 @@ public class LevelSetup : Photon.PunBehaviour
 			}
 			else
 			{
-				_localPlayer.setNeedsToResetPosition(true);
+				_localPlayer.updatePositionBackToStart();
 			}
 
 			_localPlayer.setMovementEnabled(false);
 			_localPlayer.setCrossedFinishLine(false);
-			_localPlayer.setNeedsToAttachCamera(true);
+			_localPlayer.attachCamera();
 
 			// Give it about a second until we say that the player is ready to race -- this should help
 			// assure that each client can see everyone else by the time this is called

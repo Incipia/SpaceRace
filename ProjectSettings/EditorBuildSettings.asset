@@ -17,3 +17,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Networking Scenes/L4-Multiplayer.unity
   - enabled: 1
     path: Assets/Scenes/Networking Scenes/L5-Multiplayer.unity
+  - enabled: 1
+    path: Assets/Scenes/Networking Scenes/ResultsScreen.unity

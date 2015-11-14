@@ -6,14 +6,13 @@ public class FinishLineObserver : Photon.MonoBehaviour
 	public delegate void AllPlayersFinishedHandler();
 	public AllPlayersFinishedHandler allPlayersFinishedHandler;
 
-	private bool _allPlayersCrossedFinishLine { get { return PhotonNetwork.room.allPlayersCrossedFinishLine(); }}
-    private int _numberOfPlayersCrossed;
+	private Room _currentRoom { get { return PhotonNetwork.room; }}
 
     void OnPhotonPlayerPropertiesChanged(object[] playerAndUpdatedProps)
 	{
 		// We only want the master client to observe the finish line related properties -- if each
 		// client was observing properties that changed based on then finish line, and actually
-		// doing things based on those changes, then things could get out of hand!
+		// did things based on those changes, then everything could get out of hand!
 		if (PhotonNetwork.isMasterClient)
 		{
 			Hashtable props = playerAndUpdatedProps[1] as Hashtable;
@@ -22,12 +21,12 @@ public class FinishLineObserver : Photon.MonoBehaviour
 				PhotonPlayer player = playerAndUpdatedProps[0] as PhotonPlayer;
 				if (player.crossedFinishLine())
 				{
-					int placement = PhotonNetwork.room.totalPlayersThatCrossedFinishLine();
+					int placement = _currentRoom.totalPlayersThatCrossedFinishLine();
 					int score = scoreForPlacement(placement);
 					player.incrementTotalPoints(score);
 				}
 
-				if (_allPlayersCrossedFinishLine)
+				if (_currentRoom.allPlayersCrossedFinishLine())
 				{
 					allPlayersFinishedHandler();
 				}
@@ -35,6 +34,7 @@ public class FinishLineObserver : Photon.MonoBehaviour
 		}
 	}
 
+	// For now...
 	private int scoreForPlacement(int placement)
 	{
         int score = 0;

@@ -9,33 +9,11 @@
 // ------------------------------------------------------------------------------
 using UnityEngine;
 using System.Collections;
+using AssemblyCSharp;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 static class PhotonPlayerExtensions
 {
-	public static bool needsToResetPosition(this PhotonPlayer player)
-	{
-		bool retVal = false;
-		object resetPos;
-		if (player.customProperties.TryGetValue(PlayerConstants.needsToResetPositionKey, out resetPos))
-		{
-			retVal = (bool)resetPos;
-		}
-		return retVal;
-	}
-
-	public static void setNeedsToResetPosition(this PhotonPlayer player, bool resetPos)
-	{
-		if (!PhotonNetwork.connectedAndReady)
-		{
-			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
-		}
-
-		Hashtable properties = new Hashtable();
-		properties.Add(PlayerConstants.needsToResetPositionKey, resetPos);
-		player.SetCustomProperties(properties);
-	}
-
 	public static bool movementEnabled(this PhotonPlayer player)
 	{
 		bool retVal = false;
@@ -91,6 +69,11 @@ static class PhotonPlayerExtensions
 		Hashtable properties = new Hashtable();
 		properties.Add(PlayerConstants.needsToAttachCameraKey, attachCamera);
 		player.SetCustomProperties(properties);
+	}
+
+	public static void attachCamera(this PhotonPlayer player)
+	{
+		player.setNeedsToAttachCamera(true);
 	}
 
 	public static bool readyToRace(this PhotonPlayer player)
@@ -206,4 +189,22 @@ static class PhotonPlayerExtensions
 		int newTotal = player.totalPoints() + number;
      	player.setTotalPoints(newTotal);
    }
+
+   	public static void updatePosition(this PhotonPlayer player, Vector3 position)
+   	{
+   		if (!PhotonNetwork.connectedAndReady)
+   		{
+   			Debug.LogWarning("setReadyToRace was called in state: " + PhotonNetwork.connectionStateDetailed + ". Not connectedAndReady.");
+   		}
+
+   		Hashtable properties = new Hashtable();
+   		properties.Add(PlayerConstants.updatePositionKey, position);
+   		player.SetCustomProperties(properties);
+   	}
+
+	public static void updatePositionBackToStart(this PhotonPlayer player)
+	{
+        Vector3 startPosition = PlayerStartPositionProvider.startPositionForPlayer(player);
+		player.updatePosition(startPosition);
+    }
 }
