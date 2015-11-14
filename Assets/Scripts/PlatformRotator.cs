@@ -6,7 +6,6 @@ public class PlatformRotator : MonoBehaviour
 	public bool pingpong = false;
 	public float pingpongStartAngle = 0.0f;
 	public float pingpongStopAngle = 90.0f;
-	public float duration;
 
 	private Vector3 rotation;
 	private float direction;
@@ -21,18 +20,12 @@ public class PlatformRotator : MonoBehaviour
 			pingpongStartAngle = pingpongStopAngle;
 			pingpongStopAngle = swap;
 		}
-
-		if (pingpong)
-		{
-			LeanTween.rotateLocal(gameObject, new Vector3(0, 0, pingpongStopAngle), duration).setLoopPingPong();
-		}
 	}
 
 	void FixedUpdate() 
 	{
 		if(pingpong)
 		{
-			return;
 			if(transform.eulerAngles.z > pingpongStopAngle || transform.eulerAngles.z < pingpongStartAngle)
 			{
 				direction *= -1.0f;
