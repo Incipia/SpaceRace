@@ -6,9 +6,11 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class NetworkRoomManager : Photon.PunBehaviour
 {
 	public ConnectButton connectButton;
+	public GameObject startButton;
 	public NetworkRoomConnectionInfo roomConnectionInfo;
 	public GameObject timeToPlayText;
 	public GameObject roomSelector;
+	public GameObject cupSelector;
 	public string nameOfFirstLevel;
 
 	public List<GameObject> objectsToHideBeforePlaying = new List<GameObject>();
@@ -23,6 +25,9 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	void Start() 
 	{
 		timeToPlayText.SetActive(false);
+		cupSelector.SetActive(false);
+		startButton.SetActive(false);
+
 		setObjectActive(roomConnectionInfo, false);
 
 		if (!PhotonNetwork.connectedAndReady)
@@ -72,7 +77,24 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		if (_roomIsFull)
 		{	
 			Debug.Log("Room is full!  Loading the first level.");
-			StartCoroutine(startSequenceBeforeMatch());
+//			StartCoroutine(startSequenceBeforeMatch());
+			StartCoroutine(showCupSelectorForMasterClient());
+		}
+	}
+
+	private IEnumerator showCupSelectorForMasterClient()
+	{
+		yield return new WaitForSeconds(1.5f);
+		photonView.RPC("showCupSelector", PhotonTargets.MasterClient);
+	}
+
+	[PunRPC] void showCupSelector()
+	{
+		if (PhotonNetwork.isMasterClient)
+		{
+			setObjectActive(roomConnectionInfo, false);
+			startButton.SetActive(true);
+			cupSelector.SetActive(true);
 		}
 	}
 	
@@ -148,7 +170,7 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		{
 			if (nameOfFirstLevel != "")
 			{
-				PhotonNetwork.LoadLevel(nameOfFirstLevel);	
+				PhotonNetwork.LoadLevel(nameOfFirstLevel);
 			}
 		}
 	}

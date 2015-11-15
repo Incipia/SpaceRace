@@ -59,4 +59,5 @@ MonoBehaviour:
   - blockFromLoadingLevel
   - stopObservingFinishLine
   - updatePlayerDisplayScore
+  - showCupSelector
   DisableAutoOpenWizard: 1
