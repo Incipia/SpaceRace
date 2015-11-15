@@ -1247,10 +1247,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .300000012
-  stunStrength: 0
-  deactivateParticlesOnStun: 1
-  newPlayerMaxVelocity: {x: 3, y: 3}
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!114 &65401327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7081,10 +7081,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .300000012
-  stunStrength: 0
-  deactivateParticlesOnStun: 1
-  newPlayerMaxVelocity: {x: 3, y: 3}
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!4 &470344032 stripped
 Transform:
   m_PrefabParentObject: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
@@ -7539,7 +7539,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 04dbd029c8d514374af9c502326725ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7dcd271b8f1bb4c13a21a8aa0ea2df7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!95 &499558544
 Animator:
@@ -9968,10 +9968,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .200000003
-  stunStrength: 1
+  stunDuration: .100000001
+  stunStrength: 10
   deactivateParticlesOnStun: 0
-  newPlayerMaxVelocity: {x: 1, y: 3}
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!4 &684879131 stripped
 Transform:
   m_PrefabParentObject: {fileID: 475544, guid: d88af5f59e7a74eb49e29080640a748c, type: 2}
@@ -13255,6 +13255,9 @@ Transform:
   - {fileID: 2039269833}
   - {fileID: 470344032}
   - {fileID: 1064511488}
+  - {fileID: 1528417014}
+  - {fileID: 1532981294}
+  - {fileID: 2137247507}
   m_Father: {fileID: 0}
   m_RootOrder: 6
 --- !u!1 &958343460
@@ -13946,10 +13949,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .200000003
-  stunStrength: 1
+  stunDuration: .100000001
+  stunStrength: 10
   deactivateParticlesOnStun: 0
-  newPlayerMaxVelocity: {x: 1, y: 3}
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!1 &995736439
 GameObject:
   m_ObjectHideFlags: 0
@@ -15273,10 +15276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .300000012
-  stunStrength: 0
-  deactivateParticlesOnStun: 1
-  newPlayerMaxVelocity: {x: 3, y: 3}
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!4 &1064511488 stripped
 Transform:
   m_PrefabParentObject: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
@@ -17017,10 +17020,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .300000012
-  stunStrength: 0
-  deactivateParticlesOnStun: 1
-  newPlayerMaxVelocity: {x: 3, y: 3}
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!114 &1142759795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19261,10 +19264,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .200000003
-  stunStrength: 1
+  stunDuration: .100000001
+  stunStrength: 10
   deactivateParticlesOnStun: 0
-  newPlayerMaxVelocity: {x: 1, y: 3}
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!1 &1323928449
 GameObject:
   m_ObjectHideFlags: 0
@@ -21347,10 +21350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .300000012
-  stunStrength: 0
-  deactivateParticlesOnStun: 1
-  newPlayerMaxVelocity: {x: 3, y: 3}
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!4 &1492225608 stripped
 Transform:
   m_PrefabParentObject: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
@@ -21946,6 +21949,260 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81c5fefb397f04dd1a10b6b94eb85aaf, type: 3}
   m_Color: {r: .176470593, g: .219607845, b: .227450982, a: 1}
+--- !u!1001 &1528417013
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 957661160}
+    m_Modifications:
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.r
+      value: .850980401
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.g
+      value: .129411772
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.b
+      value: .129411772
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821332, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 159646, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Name
+      value: Circle (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1528417014 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_PrefabInternal: {fileID: 1528417013}
+--- !u!1 &1528417015 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 159646, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_PrefabInternal: {fileID: 1528417013}
+--- !u!114 &1528417016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528417015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
+--- !u!114 &1528417017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528417015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 1
+  initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
+--- !u!114 &1528417018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1528417015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c124b71ee57a14a239c9a748e2b33f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1, y: 1}
+  scaleDuration: 2
+--- !u!1001 &1532981293
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 957661160}
+    m_Modifications:
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.r
+      value: .850980401
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.g
+      value: .129411772
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.b
+      value: .129411772
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821332, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 159646, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Name
+      value: Circle (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1532981294 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_PrefabInternal: {fileID: 1532981293}
+--- !u!1 &1532981295 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 159646, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_PrefabInternal: {fileID: 1532981293}
+--- !u!114 &1532981296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1532981295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
+--- !u!114 &1532981297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1532981295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 1
+  initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
+--- !u!114 &1532981298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1532981295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c124b71ee57a14a239c9a748e2b33f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: 1, y: 1}
+  scaleDuration: 2
 --- !u!1 &1534826211
 GameObject:
   m_ObjectHideFlags: 0
@@ -27478,10 +27735,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .300000012
-  stunStrength: 0
-  deactivateParticlesOnStun: 1
-  newPlayerMaxVelocity: {x: 3, y: 3}
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!4 &2039269833 stripped
 Transform:
   m_PrefabParentObject: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
@@ -28333,10 +28590,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .200000003
-  stunStrength: 1
+  stunDuration: .100000001
+  stunStrength: 10
   deactivateParticlesOnStun: 0
-  newPlayerMaxVelocity: {x: 1, y: 3}
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!1 &2106227015
 GameObject:
   m_ObjectHideFlags: 0
@@ -28561,13 +28818,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2120854615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33257b3efe5b5403c9ab368066bc34ec, type: 3}
+  m_Script: {fileID: 11500000, guid: df3a97a031e144a5aa62adf6e6a9e0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnedObstacle: {fileID: 112184, guid: c6df1775ee6634e779d241a707772606, type: 2}
-  initialHazardSpawnInterval: .100000001
-  minimumHazardSpawnInterval: .100000001
-  initialWaitBeforeSpawn: 0
+  hazardSpawnInterval: .100000001
 --- !u!4 &2120854617
 Transform:
   m_ObjectHideFlags: 0
@@ -28688,6 +28943,133 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81c5fefb397f04dd1a10b6b94eb85aaf, type: 3}
   m_Color: {r: .176470593, g: .219607845, b: .227450982, a: 1}
+--- !u!1001 &2137247506
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 957661160}
+    m_Modifications:
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 28.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.r
+      value: .850980401
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.g
+      value: .129411772
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Color.b
+      value: .129411772
+      objectReference: {fileID: 0}
+    - target: {fileID: 21205946, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_SortingLayerID
+      value: -211097725
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821332, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 159646, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+      propertyPath: m_Name
+      value: Circle (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &2137247507 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 473596, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_PrefabInternal: {fileID: 2137247506}
+--- !u!1 &2137247508 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 159646, guid: d2ec9375688224318ae6a29e12900ff1, type: 2}
+  m_PrefabInternal: {fileID: 2137247506}
+--- !u!114 &2137247509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137247508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c124b71ee57a14a239c9a748e2b33f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScale: {x: .300000012, y: .300000012}
+  scaleDuration: 2
+--- !u!114 &2137247510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137247508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59875326eb8fe48c0b731d7507b716e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: .600000024, b: .200000003, a: 1}
+  duration: 1
+  initialWaitDuration: 0
+  loop: 1
+  shouldReverse: 0
+  oscillationColors: []
+--- !u!114 &2137247511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137247508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunDuration: .100000001
+  stunStrength: 10
+  deactivateParticlesOnStun: 0
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!1 &2140878629
 GameObject:
   m_ObjectHideFlags: 0

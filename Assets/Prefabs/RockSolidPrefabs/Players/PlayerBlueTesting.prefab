@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxVelocity: {x: 3, y: 6}
+  baseMaxVelocity: {x: 1.10000002, y: 2.20000005}
   returnToMaxVelocitySpeed: .100000001
   maxFallVelocity: -2
   jumpAngle: 50

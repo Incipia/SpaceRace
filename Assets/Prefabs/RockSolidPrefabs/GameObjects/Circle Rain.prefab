@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 112184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.46927381, y: 6.49997902, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: 1}
+  m_LocalScale: {x: .129999995, y: .129999995, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,7 +40,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112184}
-  m_Mass: 1
+  m_Mass: 9.99999975e-05
   m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: .200000003
@@ -56,7 +56,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112184}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 745d910ed257642cea60e40f7a0e405d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -73,10 +73,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .300000012
+  stunDuration: .100000001
   stunStrength: 5
   deactivateParticlesOnStun: 0
-  newPlayerMaxVelocity: {x: 1, y: 10}
+  newPlayerMaxVelocity: {x: 1.5, y: 1.5}
 --- !u!114 &11445634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2cdb5ba5b2a4626b8054cf01a0444c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecondsToDestroy: 20
+  SecondsToDestroy: 5
 --- !u!212 &21205018
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -189,11 +189,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
-      value: .200000003
+      value: .129999995
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.y
-      value: .200000003
+      value: .129999995
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: oscillationColors.Array.data[0].color.r
@@ -265,12 +265,36 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SecondsToDestroy
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: stunStrength
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: stunDuration
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: newPlayerMaxVelocity.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: newPlayerMaxVelocity.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mass
+      value: 9.99999975e-05
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 745d910ed257642cea60e40f7a0e405d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112184}

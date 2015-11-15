@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 7dcd271b8f1bb4c13a21a8aa0ea2df7a
-timeCreated: 1447575334
+guid: 7f2a50db625fd42748bad492a8da648e
+timeCreated: 1447569656
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: FinishLine1New_0
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +29,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 512
   textureSettings:
-    filterMode: 0
+    filterMode: 2
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -39,28 +38,18 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 6
   spritePivot: {x: .5, y: .5}
-  spriteBorder: {x: 34, y: 0, z: 34, w: 0}
-  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 500
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites:
-    - name: FinishLine1New_0
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 58
-        width: 444
-        height: 55
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+    sprites: []
   spritePackingTag: 
   userData: 
   assetBundleName: 
