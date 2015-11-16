@@ -227,6 +227,7 @@ GameObject:
   - 114: {fileID: 11423940}
   - 114: {fileID: 11408180}
   - 114: {fileID: 11483436}
+  - 114: {fileID: 11422274}
   m_Layer: 12
   m_Name: NewNetworkPlayer
   m_TagString: Untagged
@@ -655,6 +656,19 @@ MonoBehaviour:
   innerCircleRenderer: {fileID: 21253824}
   playerNumberSpriteRenderer: {fileID: 21217442}
   particleTrail: {fileID: 19856484}
+--- !u!114 &11422274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c241c7f24add046bda6795e898f427e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionFeedbackPrefab: {fileID: 157990, guid: 93937db2b722f4adaa997d9afd58a54b,
+    type: 2}
 --- !u!114 &11423940
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -717,7 +731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxVelocity: {x: 1.20000005, y: 2.20000005}
+  baseMaxVelocity: {x: 1.04999995, y: 2.0999999}
   returnToMaxVelocitySpeed: .100000001
   maxFallVelocity: -2
   jumpAngle: 50
@@ -3303,12 +3317,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: baseMaxVelocity.y
-      value: 2.20000005
+      value: 2.0999999
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: baseMaxVelocity.x
-      value: 1.20000005
+      value: 1.04999995
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: collisionFeedbackPrefab
+      value: 
+      objectReference: {fileID: 157990, guid: 93937db2b722f4adaa997d9afd58a54b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 143902}

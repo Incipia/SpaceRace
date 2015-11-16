@@ -6,17 +6,18 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class NetworkRoomManager : Photon.PunBehaviour
 {
 	public ConnectButton connectButton;
-	public GameObject startButton;
+	public StartButton startButton;
 	public NetworkRoomConnectionInfo roomConnectionInfo;
 	public GameObject timeToPlayText;
 	public GameObject roomSelector;
 	public GameObject cupSelector;
-	public string nameOfFirstLevel;
+	private string _nameOfFirstLevel;
 
 	public List<GameObject> objectsToHideBeforePlaying = new List<GameObject>();
 
 	private string _gameVersion = "0.0.1";
 	private bool _requestedToJoinRoom;
+	private bool _startedSequenceBeforeMatch;
 	
 	private PhotonPlayer _localPlayer { get { return PhotonNetwork.player; }}
 	private Room _currentRoom { get { return PhotonNetwork.room; } }
@@ -26,8 +27,8 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		timeToPlayText.SetActive(false);
 		cupSelector.SetActive(false);
-		startButton.SetActive(false);
 
+		setObjectActive(startButton, false);
 		setObjectActive(roomConnectionInfo, false);
 
 		if (!PhotonNetwork.connectedAndReady)
@@ -77,7 +78,6 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		if (_roomIsFull)
 		{	
 			Debug.Log("Room is full!  Loading the first level.");
-//			StartCoroutine(startSequenceBeforeMatch());
 			StartCoroutine(showCupSelectorForMasterClient());
 		}
 	}
@@ -86,16 +86,6 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		yield return new WaitForSeconds(1.5f);
 		photonView.RPC("showCupSelector", PhotonTargets.MasterClient);
-	}
-
-	[PunRPC] void showCupSelector()
-	{
-		if (PhotonNetwork.isMasterClient)
-		{
-			setObjectActive(roomConnectionInfo, false);
-			startButton.SetActive(true);
-			cupSelector.SetActive(true);
-		}
 	}
 	
 	private IEnumerator startSequenceBeforeMatch()
@@ -132,6 +122,20 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		script.transform.root.gameObject.SetActive(hidden);
 	}
 
+	private string firstLevelNameForCupNumber(int number)
+	{
+		string levelName = "";
+		if (number == 1)
+		{
+			levelName = "L1";
+		}
+		else if (number == 2)
+		{
+			levelName = "L2";
+		}
+		return levelName;
+	}
+
 	public void connectToRoomWithSize(int size)
 	{
 		if (PhotonNetwork.connectedAndReady && _requestedToJoinRoom == false)
@@ -148,6 +152,16 @@ public class NetworkRoomManager : Photon.PunBehaviour
 		}
 	}
 
+	public void startGameForCupNumber(int number)
+	{
+		if (!_startedSequenceBeforeMatch)
+		{
+			_startedSequenceBeforeMatch = true;
+			_nameOfFirstLevel = firstLevelNameForCupNumber(number);
+			StartCoroutine(startSequenceBeforeMatch());	
+		}
+	}
+
 	void OnPhotonJoinRoomFailed(object[] codeAndMsg)
 	{
 		Debug.Log("Failed to join room: " + codeAndMsg[1] + "(" + codeAndMsg[0] + ")");
@@ -156,6 +170,16 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	void OnPhotonCreateRoomFailed(object[] codeAndMsg)
 	{
 		Debug.Log("Failed to create room: " + codeAndMsg[1] + "(" + codeAndMsg[0] + ")");
+	}
+
+	[PunRPC] void showCupSelector()
+	{
+		if (PhotonNetwork.isMasterClient)
+		{
+			setObjectActive(roomConnectionInfo, false);
+			setObjectActive(startButton, true);
+			cupSelector.SetActive(true);
+		}
 	}
 
 	[PunRPC] void showTimeToPlayText()
@@ -168,9 +192,9 @@ public class NetworkRoomManager : Photon.PunBehaviour
 	{
 		if (PhotonNetwork.isMasterClient)
 		{
-			if (nameOfFirstLevel != "")
+			if (_nameOfFirstLevel != "")
 			{
-				PhotonNetwork.LoadLevel(nameOfFirstLevel);
+				PhotonNetwork.LoadLevel(_nameOfFirstLevel);
 			}
 		}
 	}
