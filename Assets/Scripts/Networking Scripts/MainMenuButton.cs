@@ -1,12 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class MainMenuButton : MonoBehaviour 
 {
 	public string mainMenuLevelName = "StartScreen";
 	bool _isLeavingRoom;
 
-	void OnMouseDown()
+	void OnMouseUpAsButton()
 	{
 		if (!_isLeavingRoom)
 		{

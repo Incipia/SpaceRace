@@ -1,29 +1,22 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class ConnectButton : MonoBehaviour 
 {
 	public NetworkRoomManager roomManager;
 	public RoomSizeSelector roomSizeSelector;
 	public SpriteRenderer spriteRenderer;
+	public Color selectedColor;
 
 	private Color _startColor;
 	private bool _canConnect = false;
 	private const float _disconnectedButtonAlpha = 0.3f;
 
+	private bool _hasFocus;
+
 	void Start()
 	{
 		_startColor = spriteRenderer.color;
 		updateButtonAlphaForConnectedState(_canConnect);
-	}
-
-	void OnMouseDown()
-	{
-		if (_canConnect)
-		{
-			int roomSize = roomSizeSelector.currentRoomSize;
-			roomManager.connectToRoomWithSize(roomSize);
-		}
 	}
 
 	private void updateButtonAlphaForConnectedState(bool canConnect)
@@ -40,5 +33,59 @@ public class ConnectButton : MonoBehaviour
 	{
 		_canConnect = canConnect;
 		updateButtonAlphaForConnectedState(canConnect);
+	}
+
+	void OnMouseDown()
+	{
+		_hasFocus = true;
+		lightUp();
+	}
+
+	void OnMouseUp()
+	{
+		_hasFocus = false;
+		returnToNormalColor();
+	}
+
+	void OnMouseUpAsButton()
+	{
+		_hasFocus = false;
+		returnToNormalColor();
+
+		if (_canConnect)
+		{
+			int roomSize = roomSizeSelector.currentRoomSize;
+			roomManager.connectToRoomWithSize(roomSize);
+		}
+	}
+
+	void OnMouseExit()
+	{
+		if (_hasFocus)
+		{
+			returnToNormalColor();
+		}
+	}
+
+	void OnMouseEnter()
+	{
+		if (_hasFocus)
+		{
+			lightUp();
+		}
+	}
+
+	void lightUp()
+	{
+		if (_canConnect)
+		{
+			spriteRenderer.color = selectedColor;	
+		}
+	}
+
+	void returnToNormalColor()
+	{
+		spriteRenderer.color = _startColor;
+		updateButtonAlphaForConnectedState(_canConnect);
 	}
 }

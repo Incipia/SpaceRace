@@ -670,6 +670,7 @@ MonoBehaviour:
   roomManager: {fileID: 1407313607}
   roomSizeSelector: {fileID: 75031519}
   spriteRenderer: {fileID: 980684031}
+  selectedColor: {r: 1, g: 0, b: .724137783, a: 1}
 --- !u!61 &980684034
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -852,6 +853,7 @@ GameObject:
   - 212: {fileID: 1129480160}
   - 114: {fileID: 1129480162}
   - 61: {fileID: 1129480163}
+  - 114: {fileID: 1129480164}
   m_Layer: 0
   m_Name: StartButton-FINAL
   m_TagString: Untagged
@@ -923,6 +925,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 5.4000001, y: 3.20000005}
+--- !u!114 &1129480164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129480159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33f2c021e589640e3aca55fb0bdfee78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1129480160}
+  selectedColor: {r: 1, g: 0, b: .724137783, a: 1}
 --- !u!1 &1188859442
 GameObject:
   m_ObjectHideFlags: 0
