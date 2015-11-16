@@ -184,9 +184,9 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 117528}
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: .25
   m_AngularDrag: 0
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -229,13 +229,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa53222a4b4494d4287a5318a694861e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxVelocity: {x: 1.10000002, y: 2.20000005}
+  baseMaxVelocity: {x: 1.39999998, y: 1.79999995}
   returnToMaxVelocitySpeed: .100000001
-  maxFallVelocity: -2
-  jumpAngle: 50
-  jumpForce: 6.65999985
+  maxFallVelocity: -1.20000005
+  jumpAngle: 88
+  jumpForce: 20
   playerRigidBody: {fileID: 5014690}
-  trailParticles: {fileID: 0}
+  trailParticles: {fileID: 115514}
 --- !u!114 &11476844
 MonoBehaviour:
   m_ObjectHideFlags: 1

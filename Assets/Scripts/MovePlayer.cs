@@ -7,6 +7,7 @@ using AssemblyCSharp;
 public enum JumpDirection {
 	Left,
 	Right,
+	Down,
 	Invalid
 }
 
@@ -51,10 +52,10 @@ public class MovePlayer : Photon.MonoBehaviour
 			if (jumpDirection != JumpDirection.Invalid && controlsActive)
 			{
 				// sanity check?
-				if (playerRigidBody.gravityScale != 1)
-				{
-					playerRigidBody.gravityScale = 1;
-				}
+//				if (playerRigidBody.gravityScale != 0.1f)
+//				{
+//					playerRigidBody.gravityScale = 0.1f;
+//				}
 
 				applyForceWithDirection(jumpDirection);
 				resetJumpDirection();
@@ -66,6 +67,7 @@ public class MovePlayer : Photon.MonoBehaviour
 			capVelocity();
 			capFallSpeed();
 			ReturnToMaxVelocity();
+			velocityDetectionForGravity();
 		}
 	}
 
@@ -204,9 +206,46 @@ public class MovePlayer : Photon.MonoBehaviour
 		case JumpDirection.Right:
 			angle = 90 - jumpAngle;
 			break;
+		case JumpDirection.Down:
+			angle = -90;
+			break;
 		case JumpDirection.Invalid:
 			break;
 		}
 		return angle;
 	}
+	
+	private void velocityDetectionForGravity()
+	{
+		Vector2 velocity = playerRigidBody.velocity;
+		if(velocity.y > 1.7f)
+		{
+			playerRigidBody.gravityScale = 0;
+			playerRigidBody.drag = 0;
+			Debug.Log ("Gravity Scale = 0");
+		}
+		else
+		{
+			playerRigidBody.gravityScale = 0.1f;
+			playerRigidBody.drag = 0.25f;
+			Debug.Log ("Gravity Scale = 0.1");
+		}
+	}
+	
+//	private void velocityDetectionForGravity()
+//	{
+//		Vector2 velocity = playerRigidBody.velocity;
+//		if(velocity.y < 0)
+//		{
+//			playerRigidBody.gravityScale = 0;
+//			Debug.Log ("Gravity Scale = 0");
+//		}
+//	}
+	
+	
+	
+	
+	
+	
+	
 }

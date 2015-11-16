@@ -11699,20 +11699,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 409172, guid: 88be067fe7ad54c2f827ab39e353b91b, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
-    - target: {fileID: 11474758, guid: 88be067fe7ad54c2f827ab39e353b91b, type: 2}
-      propertyPath: baseMaxVelocity.x
-      value: 1.10000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474758, guid: 88be067fe7ad54c2f827ab39e353b91b, type: 2}
-      propertyPath: baseMaxVelocity.y
-      value: 2.20000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 11474758, guid: 88be067fe7ad54c2f827ab39e353b91b, type: 2}
-      propertyPath: trailParticles
-      value: 
-      objectReference: {fileID: 1008277090}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 88be067fe7ad54c2f827ab39e353b91b, type: 2}
   m_IsPrefabParent: 0
@@ -14198,10 +14186,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
---- !u!1 &1008277090 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 115514, guid: 88be067fe7ad54c2f827ab39e353b91b, type: 2}
-  m_PrefabInternal: {fileID: 819321152}
 --- !u!4 &1009213111 stripped
 Transform:
   m_PrefabParentObject: {fileID: 421576, guid: 24a29b62429b645cf9932c1d1976a61c, type: 2}
