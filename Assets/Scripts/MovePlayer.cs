@@ -115,14 +115,14 @@ public class MovePlayer : Photon.MonoBehaviour
 	{
 		controlsActive = false;
 		playerRigidBody.gravityScale = 0;
-		if (deactivateParticles)
+		if (deactivateParticles && trailParticles != null)
 		{
 			trailParticles.SetActive(false);
 		}
 
 		yield return new WaitForSeconds(duration);
 
-		if (deactivateParticles)
+		if (deactivateParticles && trailParticles != null)
 		{
 			trailParticles.SetActive(true);
 		}

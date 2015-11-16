@@ -7,19 +7,7 @@ public class PlayerStun : MonoBehaviour
 	public bool deactivateParticlesOnStun;
 	public Vector2 newPlayerMaxVelocity = new Vector2(1, 10);
 
-	Transform trans;
-
-	void Start()
-	{
-		trans = transform;
-	}
-
 	void OnCollisionEnter2D(Collision2D other)
-	{
-		StunPlayer(other.gameObject);
-	}
-
-	void OnTriggerEnter2D(Collider2D other)
 	{
 		StunPlayer(other.gameObject);
 	}
@@ -31,7 +19,7 @@ public class PlayerStun : MonoBehaviour
 			MovePlayer movePlayer = other.GetComponent<MovePlayer>();
 			if (movePlayer != null)
 			{
-				Vector2 flingDirection = (Vector2)(other.transform.position - trans.position);	
+				Vector2 flingDirection = (Vector2)(other.transform.position - transform.position);	
 				flingDirection.Normalize();
 				movePlayer.addImpulse(flingDirection * stunStrength);
 				movePlayer.Stun(stunDuration, deactivateParticlesOnStun);

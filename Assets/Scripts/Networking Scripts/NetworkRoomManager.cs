@@ -148,7 +148,16 @@ public class NetworkRoomManager : Photon.PunBehaviour
 				maxPlayers = (byte)size,
 				isVisible = false
 			};
-			PhotonNetwork.JoinOrCreateRoom("default" + size, roomOptions, TypedLobby.Default);
+
+			string roomName = "default" + size;
+			if (size == 1)
+			{
+				System.Guid g = System.Guid.NewGuid();
+			    string uniqueName = System.Convert.ToBase64String(g.ToByteArray());
+			    uniqueName = uniqueName.Replace("=","");
+			    roomName = uniqueName.Replace("+","");
+			}
+			PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);
 		}
 	}
 

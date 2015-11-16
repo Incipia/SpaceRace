@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseMaxVelocity: {x: 1.04999995, y: 2.0999999}
-  returnToMaxVelocitySpeed: .100000001
+  returnToMaxVelocitySpeed: .0799999982
   maxFallVelocity: -2
   jumpAngle: 50
   jumpForce: 6.65999985
@@ -3293,7 +3293,7 @@ Prefab:
       objectReference: {fileID: 118100}
     - target: {fileID: 0}
       propertyPath: returnToMaxVelocitySpeed
-      value: .100000001
+      value: .0799999982
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalScale.x
