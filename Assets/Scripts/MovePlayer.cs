@@ -26,6 +26,7 @@ public class MovePlayer : Photon.MonoBehaviour
 	private Vector2 environmentForceToAdd;
 	private Vector2 environmentImpulseToAdd;
 	private Vector2 maxVelocity;
+	private Vector2 previousVelocity;
 
 	private float initialJumpAngle;
 	private bool controlsActive;
@@ -36,6 +37,7 @@ public class MovePlayer : Photon.MonoBehaviour
 		environmentForceToAdd = Vector2.zero;
 		environmentImpulseToAdd = Vector2.zero;
 		maxVelocity = baseMaxVelocity;
+		previousVelocity = Vector2.zero;
 		controlsActive = true;
 		
 		if (photonView == null || photonView.isMine)
@@ -45,7 +47,7 @@ public class MovePlayer : Photon.MonoBehaviour
 		}
 	}
 
-	void FixedUpdate()
+	void Update()
 	{
 		if (photonView == null || photonView.isMine)
 		{
@@ -218,18 +220,19 @@ public class MovePlayer : Photon.MonoBehaviour
 	private void velocityDetectionForGravity()
 	{
 		Vector2 velocity = playerRigidBody.velocity;
-		if(velocity.y > 1.7f)
+		if(velocity.y > 1.7f && previousVelocity.y <= 1.7f)
 		{
 			playerRigidBody.gravityScale = 0;
 			playerRigidBody.drag = 0;
 			Debug.Log ("Gravity Scale = 0");
 		}
-		else
+		else if(velocity.y < 1.7f && previousVelocity.y >= 1.7f)
 		{
 			playerRigidBody.gravityScale = 0.1f;
 			playerRigidBody.drag = 0.25f;
 			Debug.Log ("Gravity Scale = 0.1");
 		}
+		previousVelocity = velocity;
 	}
 	
 //	private void velocityDetectionForGravity()
