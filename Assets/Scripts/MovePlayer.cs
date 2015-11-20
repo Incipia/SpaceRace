@@ -3,7 +3,6 @@ using UnityEngine.Networking;
 using System.Collections;
 using System.Collections.Generic;
 using AssemblyCSharp;
-using UnityEngine.UI;
 
 public enum JumpDirection {
 	Left,
@@ -245,15 +244,10 @@ public class MovePlayer : Photon.MonoBehaviour
 //			Debug.Log ("Gravity Scale = 0");
 //		}
 //	}
-	public void DoString(string s)
-	{
-		Debug.Log (s);
-	}
 	
-	public void DoStringHarder(string s)
-	{
-		Debug.Log (s + "!!!!!!!!!!!!!!!");
-	}
+	
+	
+	
 	
 	
 	
