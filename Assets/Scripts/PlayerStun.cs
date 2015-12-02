@@ -9,17 +9,12 @@ public class PlayerStun : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		StunPlayer(other.gameObject);
-	}
-
-	void StunPlayer(GameObject other)
-	{
 		if (isActiveAndEnabled)
 		{
-			MovePlayer movePlayer = other.GetComponent<MovePlayer>();
+			MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
 			if (movePlayer != null)
 			{
-				Vector2 flingDirection = (Vector2)(other.transform.position - transform.position);	
+				Vector2 flingDirection = (Vector2)(other.gameObject.transform.position - other.contacts[0].point);	
 				flingDirection.Normalize();
 				movePlayer.addImpulse(flingDirection * stunStrength);
 				movePlayer.Stun(stunDuration, deactivateParticlesOnStun);
