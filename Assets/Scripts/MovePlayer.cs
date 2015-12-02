@@ -51,10 +51,10 @@ public class MovePlayer : Photon.MonoBehaviour
 			if (jumpDirection != JumpDirection.Invalid && controlsActive)
 			{
 				// sanity check?
-				if (playerRigidBody.gravityScale != 1)
-				{
-					playerRigidBody.gravityScale = 1;
-				}
+//				if (playerRigidBody.gravityScale != 1)
+//				{
+//					playerRigidBody.gravityScale = 1;
+//				}
 
 				applyForceWithDirection(jumpDirection);
 				resetJumpDirection();
@@ -126,7 +126,7 @@ public class MovePlayer : Photon.MonoBehaviour
 		{
 			trailParticles.SetActive(true);
 		}
-		playerRigidBody.gravityScale = 1;
+		playerRigidBody.gravityScale = .3f;
 		controlsActive = true;
 	}
 
