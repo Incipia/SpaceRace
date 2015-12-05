@@ -688,8 +688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!4 &31446282 stripped
@@ -1523,8 +1523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &94131972
@@ -2464,8 +2464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &158054403
@@ -6800,8 +6800,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 1
-  stunStrength: .200000003
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 1
   newPlayerMaxVelocity: {x: 0, y: 0}
 --- !u!114 &444970363
@@ -7179,8 +7179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &464315633
@@ -7370,8 +7370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &467633041
@@ -10211,8 +10211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &605371880
@@ -10984,8 +10984,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 1
-  stunStrength: .200000003
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 1
   newPlayerMaxVelocity: {x: 0, y: 0}
 --- !u!4 &652136484 stripped
@@ -11434,8 +11434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &690880739
@@ -11634,8 +11634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &694254280
@@ -15381,8 +15381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &942879617
@@ -18402,8 +18402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &1129790118
@@ -19283,8 +19283,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &1170115331
@@ -19474,8 +19474,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 1
-  stunStrength: .200000003
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 1
   newPlayerMaxVelocity: {x: 0, y: 0}
 --- !u!114 &1176446763
@@ -19725,8 +19725,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 1
-  stunStrength: .200000003
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 1
   newPlayerMaxVelocity: {x: 0, y: 0}
 --- !u!4 &1186383969 stripped
@@ -24545,8 +24545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!4 &1497578969 stripped
@@ -26875,8 +26875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &1640163183
@@ -29329,8 +29329,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &1746030414
@@ -31289,8 +31289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &1888860893
@@ -31951,8 +31951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
-  stunStrength: 10
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 0
   newPlayerMaxVelocity: {x: 1, y: 1}
 --- !u!114 &1930626629
@@ -34630,8 +34630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: 1
-  stunStrength: .200000003
+  stunDuration: 0
+  stunStrength: 0
   deactivateParticlesOnStun: 1
   newPlayerMaxVelocity: {x: 0, y: 0}
 --- !u!114 &2078921211

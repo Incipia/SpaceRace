@@ -5069,6 +5069,10 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81c5fefb397f04dd1a10b6b94eb85aaf, type: 3}
   m_Color: {r: .176470593, g: .219607845, b: .227450982, a: 1}
+--- !u!1 &307215826 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 112422, guid: 6294f4fc2790a4c3e8c34a09290ab32c, type: 2}
+  m_PrefabInternal: {fileID: 1572277510}
 --- !u!1001 &307482918
 Prefab:
   m_ObjectHideFlags: 0
@@ -23143,7 +23147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea7ec91ecfc73a644bad5fd74c5e4c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stunDuration: .100000001
+  stunDuration: 1
   stunStrength: 10
   deactivateParticlesOnStun: 1
   newPlayerMaxVelocity: {x: 1.5, y: 1.5}
@@ -24255,6 +24259,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 11463630, guid: 6294f4fc2790a4c3e8c34a09290ab32c, type: 2}
+      propertyPath: trailParticles
+      value: 
+      objectReference: {fileID: 307215826}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6294f4fc2790a4c3e8c34a09290ab32c, type: 2}
   m_IsPrefabParent: 0

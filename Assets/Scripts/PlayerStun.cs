@@ -14,7 +14,7 @@ public class PlayerStun : MonoBehaviour
 			MovePlayer movePlayer = other.gameObject.GetComponent<MovePlayer>();
 			if (movePlayer != null)
 			{
-				Vector2 flingDirection = (Vector2)(other.gameObject.transform.position - other.contacts[0].point);	
+				Vector2 flingDirection = (Vector2) other.gameObject.transform.position - other.contacts[0].point;	
 				flingDirection.Normalize();
 				movePlayer.addImpulse(flingDirection * stunStrength);
 				movePlayer.Stun(stunDuration, deactivateParticlesOnStun);
