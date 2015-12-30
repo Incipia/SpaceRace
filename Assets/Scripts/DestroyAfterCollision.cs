@@ -3,20 +3,51 @@ using System.Collections;
 
 public class DestroyAfterCollision : MonoBehaviour 
 {
-	public GameObject breakCollisionFeedbackPrefab;
-
-	void OnCollisionExit2D(Collision2D other)
-	{
-		Vector3 contactPosition = other.contacts[0].point;
-		GameObject breakCollisionFeedbackGameObject = Instantiate(breakCollisionFeedbackPrefab, contactPosition, Quaternion.identity) as GameObject;
-//		BreakCollisionFeedback collisionFeedback = breakCollisionFeedbackGameObject.GetComponent<BreakCollisionFeedback>();
-//		if (collisionFeedback != null)
+	public ParticleSystem feedbackParticleSystem;
+	public Collider2D objectCollider;
+	public SpriteRenderer spriteRenderer;
+	
+	public float destroyDelay = 0.1f;
+	
+	private bool _shouldDestroy;
+	private Vector3 _pointOfContact;
+	
+//	void Update()
+//	{
+//		if (_shouldDestroy)
 //		{
-//			collisionFeedback.showBreakFeedback();
-//			
-//					Debug.Log ("Feedback");
+//			_shouldDestroy = false;
+//			StartCoroutine(triggerFeedbackAndDestroyObjectAfterDuration(destroyDelay));
 //		}
-		Destroy(gameObject);
-//		Debug.Log ("Destroyed");
+//	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if (!_shouldDestroy)
+		{
+			_shouldDestroy = true;
+			_pointOfContact = other.contacts[0].point;
+			
+			
+			
+			StartCoroutine(triggerFeedbackAndDestroyObjectAfterDuration(destroyDelay));
+		}
+	}
+	
+	IEnumerator triggerFeedbackAndDestroyObjectAfterDuration(float duration)
+	{
+		yield return new WaitForSeconds(duration);
+		triggerFeedbackAndHideObject();
+	}
+	
+	void triggerFeedbackAndHideObject()
+	{
+		spriteRenderer.enabled = false;
+		objectCollider.isTrigger = true;
+		
+		feedbackParticleSystem.transform.position = _pointOfContact;
+		feedbackParticleSystem.Play();
+		
+		Destroy(gameObject, feedbackParticleSystem.duration);
 	}
 }
